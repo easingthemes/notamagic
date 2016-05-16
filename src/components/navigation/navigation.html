@@ -1,0 +1,17 @@
+<nav
+	id="menu"
+	class="o-navigation{{#if modifier}} o-navigation--{{modifier}}{{/if}}"
+	data-t-name="Navigation"
+	{{#if decorator}} data-t-decorator="{{decorator}}"{{/if}}
+>
+	<ul class="menu">
+		{{#each menu}}
+			<li class="menu__item">
+			<a class="menu__link travelLink {{this.style}}">
+				<span class="menu__icon {{this.icon}}"></span>
+				{{this.label}}
+			</a>
+			</li>
+		{{/each}}
+	</ul>
+</nav>

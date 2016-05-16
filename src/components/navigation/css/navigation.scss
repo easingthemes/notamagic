@@ -1,0 +1,65 @@
+.o-navigation {
+
+	&#menu {
+	    position: fixed;
+	    z-index: 9999;
+	    left: 0;
+	    top: 0;
+	    right: 0;
+	    height: 80px;
+	    text-align: center;
+	    background: url('../img/lightpaperfibers-darker.png')
+	}
+
+	.menu li {
+	    display: inline-block;
+	    margin: 0
+	}
+
+	.menu li a {
+	    display: block;
+	    width: 200px;
+	    height: 65px;
+	    padding-top: 15px;
+	    text-align: center;
+	    font-size: 22px;
+	    font-weight: 400;
+	    text-transform: uppercase;
+	    color: #444;
+	    text-shadow: rgba(255,255,255,1) 0 1px 0;
+	    position: relative;
+	    -webkit-transition: all 1s ease;
+	    -moz-transition: all 1s ease;
+	    -o-transition: all 1s ease;
+	    transition: all 1s ease;
+	    margin-left: -4px
+	}
+
+	.menu li a:hover {
+	    cursor: pointer;
+	    background-color: #fc7f05;
+	    color: rgba(0,0,0,1);
+	    text-shadow: #ff7b06 1px 0 0
+	}
+
+	.menu li a:active {
+	    color: #fff;
+	    background-color: #444
+	}
+
+	.menu li a span {
+	    position: absolute;
+	    width: 200px;
+	    top: 50px;
+	    left: 0
+	}
+
+	.menu li a span:before {
+	    font-size: 22px
+	}
+
+	.menu li a:hover span:before {
+	    color: #fff;
+	    text-shadow: #ff7b06 0 0 5px
+	}
+}
