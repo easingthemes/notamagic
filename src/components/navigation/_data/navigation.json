@@ -1,0 +1,31 @@
+{
+	"modifier": "",
+	"decorator": "",
+	"menu": [
+		{
+			"style": "travelLink1",
+			"icon": "icon-lightbulb",
+			"label": "About"
+		},
+		{
+			"style": "travelLink2",
+			"icon": "icon-html5-2",
+			"label": "Developing"
+		},
+		{
+			"style": "travelLink5",
+			"icon": "icon-graduate",
+			"label": "Teaching"
+		},
+		{
+			"style": "travelLink6",
+			"icon": "icon-bike",
+			"label": "Activism"
+		},
+		{
+			"style": "travelLink4",
+			"icon": "icon-compass-2 icon-wave",
+			"label": "Hire me!"
+		}
+	]
+}
