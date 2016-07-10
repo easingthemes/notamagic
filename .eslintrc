@@ -1,0 +1,87 @@
+{
+	"parser": "babel-eslint",
+	"globals": {
+		"React": true,
+		"ReactApp": true,
+		"ReactAppI18n": true,
+		"module": true,
+		"helperI18n": true,
+		"sunrise": true,
+		"Cookies": true,
+		"createComponent": true,
+		"createJQueryComponent": true,
+		"componentSelector": true,
+		"grecaptcha": true,
+		"Datatrans": true
+	},
+	"settings": {
+		"import/resolver": {
+			"webpack": {
+				"config": "./internals/webpack/webpack.test.babel.js"
+			}
+		}
+	},
+	"rules": {
+		"indent": [
+			1,
+			"tab",
+			{
+				"SwitchCase": 1
+			}
+		],
+		"linebreak-style": [
+			2,
+			"unix"
+		],
+		"no-console": [
+			1
+		],
+		"no-empty": [
+			0
+		],
+		"semi": [
+			2,
+			"always"
+		],
+		"quotes": [
+			2,
+			"single"
+		],
+		"no-unused-vars": [
+			1
+		],
+		"jsx-a11y/href-no-hash": 2,
+		"jsx-a11y/label-has-for": 2,
+		"jsx-a11y/mouse-events-have-key-events": 2,
+		"jsx-a11y/role-has-required-aria-props": 2,
+		"jsx-a11y/role-supports-aria-props": 2,
+		"jsx-a11y/aria-props": 2
+	},
+	"env": {
+		"browser": true,
+		"amd": true,
+		"jquery": true,
+		"node": true,
+		"mocha": true,
+		"es6": true
+	},
+	"extends": ["eslint:recommended", "plugin:react/recommended"],
+	"ecmaFeatures": {
+		"jsx": true,
+		"experimentalObjectRestSpread": true,
+		"modules": true,
+		"blockBindings": true,
+		"spread": true
+	},
+	"plugins": [
+		"react",
+		"jsx-a11y"
+	],
+	"parserOptions": {
+		"ecmaVersion": 6,
+		"sourceType": "module",
+		"ecmaFeatures": {
+			"jsx": true
+		}
+	}
+}

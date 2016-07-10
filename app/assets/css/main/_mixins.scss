@@ -1,0 +1,15 @@
+@import 'variables';
+
+@mixin font-global() {
+    font-family: $font-global-fallback;
+    .font-global-loaded & {
+        font-family: $font-global;
+    }
+}
+
+@mixin font-extra() {
+    font-family: $font-extra-fallback;
+    .font-extra-loaded & {
+        font-family: $font-extra;
+    }
+}

@@ -1,3 +1,13 @@
-documentation
+# Don't check auto-generated stuff into git
+coverage
+build
 node_modules
-bower_components
+stats.json
+
+# Cruft
+.DS_Store
+npm-debug.log
+.idea
+
+# Source template
+/html-template/

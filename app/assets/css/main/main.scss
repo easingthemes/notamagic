@@ -1,0 +1,334 @@
+/*  Table of Contents
+========================================================
+1. GOOGLE FONTS
+2. GENERAL
+3. LIST
+4. HEADING
+5. MODAL DIALOG BOX
+6. PANEL
+7. ACCORDIAN
+8. BUTTONS
+9. CONTENT BOX
+10. BLOCKQUOTE
+11. FORM
+12. PRICE
+13. TAB PILL
+14. TABLE
+15. TESTIMONIAL
+16. HEADER CAROUSEL
+17. NAVBAR
+18. INTRO
+19. TEAM
+20. PORTFOLIO
+21. FUN FACT
+22. CLIENTS
+23. BLOG
+24. BANNER
+25. ONLINE SHOP
+26. NEWSLETTER
+27. PROGRESS BAR
+28. CONTACT
+29. SOCIAL MEDIA
+30. FOOTER
+31. PARALLAX
+
+/*  ----------------------------------------------------
+1. IMPORT GOOGLE FONTS
+-------------------------------------------------------- */
+// FontFaceObserver used, fonts are in index.html
+/*  ----------------------------------------------------
+2. GENERAL STYLES
+-------------------------------------------------------- */
+/* @import 'mixins';
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+html {
+    width: 100%;
+    height: 100%;
+    text-rendering: optimizeLegibility !important;
+    -webkit-font-smoothing: antialiased !important;
+}
+body {
+    font-family: $font-global-fallback;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    color: #747474;
+}
+body.font-global-loaded {
+  font-family: $font-global;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal !important;
+    color: #000;
+    -webkit-font-smoothing: antialiased;
+    @include font-global;
+}
+h1 { font-size: 36px; line-height: 45px; }
+h2 { font-size: 30px; line-height: 40px; }
+h3 { font-size: 24px; line-height: 35px; }
+h4 { font-size: 18px; line-height: 30px; }
+h5 { font-size: 14px; line-height: 25px; }
+h6 { font-size: 12px; line-height: 20px; }
+
+h1 small { font-size: 50%; }
+h2 small { font-size: 60%; }
+h3 small { font-size: 70%; }
+h4 small { font-size: 80%; }
+h5 small { font-size: 90%; }
+h6 small { font-size: 90%; }
+
+small { 
+    font-size: 90%; 
+    opacity: .7; 
+    @include font-global;
+}
+
+code { text-transform:none; font-family: monospace, serif;}
+
+p {
+    margin: 0 0 25px 0;
+    font-size: 13px;
+    line-height: 25px;
+    color: #747474;
+    @include font-global;
+}
+p strong { font-weight: 600; }
+.lead {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 25px;
+}
+.dropcap {
+    float: left;
+    width: 0.7em;
+    font-size: 400%;
+    font-family: algerian, courier;
+    line-height: 80%;
+    -webkit-border-radius: 2px;
+       -moz-border-radius: 2px;
+            border-radius: 2px;
+    padding-left: 3px;
+    margin-top: 5px;
+    margin-right: 5px;
+}
+
+a {
+    color: #111;
+    outline: none;
+    -webkit-transition: all .2s ease-in-out;
+       -moz-transition: all .2s ease-in-out;
+            transition: all .2s ease-in-out;
+}
+a:hover,
+a:focus {
+    color: #111;
+    text-decoration: none;
+    outline: none;
+}
+small {
+    display: block;
+    margin-top: 5px;
+}
+.animated { visibility:hidden; }
+.visible { visibility:visible; }
+
+.font-pacifico    { font-family: 'Pacifico', cursive !important; }
+.font-open-sans   { font-family: 'Open Sans', sans-serif !important; }
+.font-montserrat  { font-family: 'Montserrat', sans-serif !important; }
+.font-source-sans-pro  { font-family: 'Source Sans Pro', sans-serif !important; }
+
+.fs-75 { font-size: 75px !important; }
+.fs-100 { font-size: 100px !important; }
+.font-size-light { font-weight: 200 !important; }
+.font-size-normal { font-weight: 300 !important; }
+.font-size-bold { font-weight: 400 !important; }
+
+.strong { font-weight: 600; }
+#pageloader {
+    background-color: #E74C3C;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+}
+#pageloader.bw {
+    background-color: #000000;
+}
+.loader-item {
+    margin: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    height: 40px;
+    width: 40px;
+}
+.loader-item img {
+    width: 80px;
+}
+::-moz-selection { 
+    color: #fff;
+}
+
+::selection {
+    color: #fff;
+}
+
+.intro-direction {
+    position: absolute;
+    left: 50%;
+    bottom: 5%;
+}
+.mouse-icon {
+    border: 2px solid #fff;
+    height: 40px;
+    width: 24px;
+    display: block;
+    z-index: 10;
+    opacity: 0.7;
+    background-color: rgba(255,255,255,.5);
+    -webkit-border-radius: 16px;
+       -moz-border-radius: 16px;
+            border-radius: 16px;
+}
+.mouse-icon .wheel {
+    -webkit-animation-name: mouse-anim-drop;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-delay: 0s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-play-state: running;
+    -webkit-animation-name: mouse-anim-drop;
+          animation-name: mouse-anim-drop;
+    -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+    -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+    -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+    -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+    -webkit-animation-play-state: running;
+          animation-play-state: running;
+}
+.mouse-icon .wheel {
+    position: relative;
+    width: 2px;
+    height: 6px;
+    top: 4px;
+    margin-left: auto;
+    margin-right: auto;
+    -webkit-border-radius: 10px;
+       -moz-border-radius: 10px;
+            border-radius: 10px;
+}
+@-webkit-keyframes mouse-anim-drop {
+  0% {
+    top: 5px;
+    opacity: 0;
+  }
+  30% {
+    top: 10px;
+    opacity: 1;
+  }
+  100% {
+    top: 25px;
+    opacity: 0;
+  }
+}
+@keyframes mouse-anim-drop {
+  0% {
+    top: 5px;
+    opacity: 0;
+  }
+  30% {
+    top: 10px;
+    opacity: 1;
+  }
+  100% {
+    top: 25px;
+    opacity: 0;
+  }
+}
+.icon-svg {
+    max-height: 80px;
+}
+
+.go-to-top {
+    background-color: rgba(0,0,0,.1);
+    color: #fff;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    text-align: center;
+    padding-top: 5px;
+    display: block;
+    width: 30px;
+    height: 30px;
+    z-index: 99999;
+    -webkit-border-radius: 2px;
+       -moz-border-radius: 2px;
+            border-radius: 2px;    
+}
+*/
+/*  ----------------------------------------------------
+3. LIST STYLES
+-------------------------------------------------------- */
+/*ul, ol {
+    font-size: 13px;
+    color: #747474;
+    margin: 0;
+    padding: 0;
+    @include font-global;
+}
+ol li {
+    line-height: 25px;
+    padding: 0;
+    margin-left: 20px;
+}
+ul.icon-list {
+    text-align: left;
+}
+ul.icon-list li,
+ul.icon-list-underline li {
+    list-style: none;
+    line-height: 25px;
+}
+ul.icon-list li i,
+ul.icon-list-underline li i {
+    margin-right: 10px;
+}
+ul.icon-list-underline li {
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+}
+.underline-solid li {
+    border-bottom: 1px solid #b9b9b9;
+}
+.underline-dotted li {
+    border-bottom: 1px dotted #b9b9b9;
+}
+.underline-dashed li {
+    border-bottom: 1px dashed #b9b9b9;
+}
+.underline-double li {
+    border-bottom: 3px double #b9b9b9;
+}
+ul.no-icon-list {
+    margin: 0;
+    padding: 0;
+}
+ul.no-icon-list li {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}*/
