@@ -2,6 +2,7 @@ import webpack from 'webpack'
 import cssnano from 'cssnano'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import ExtractTextPlugin from 'extract-text-webpack-plugin'
+import CompressionPlugin from 'compression-webpack-plugin'
 import config from '../config'
 import _debug from 'debug'
 
@@ -315,6 +316,15 @@ if (!__DEV__) {
       allChunks: true
     })
   )
+	webpackConfig.plugins.push(
+		new CompressionPlugin({
+			asset: "[path].gz[query]",
+			algorithm: "gzip",
+			test: /\.js$|\.css$|\.html$/,
+			threshold: 10240,
+			minRatio: 0.8
+		})
+	)
 }
 
 export default webpackConfig
