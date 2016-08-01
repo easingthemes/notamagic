@@ -1,6 +1,9 @@
 # Don't check auto-generated stuff into git
 coverage
 node_modules
+/bower_components
+/bower_components/
+bower_components
 stats.json
 
 # Cruft
@@ -11,3 +14,4 @@ npm-debug.log
 # Source template
 /html-template/
 html-template
+
