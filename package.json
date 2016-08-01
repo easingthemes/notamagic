@@ -72,9 +72,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/davezuko/react-redux-starter-kit.git"
+    "url": "git+https://github.com/easingthemes/notamagic.git"
   },
-  "author": "David Zukowski <david@zuko.me> (http://zuko.me)",
+  "author": "Dragan Filipovic <info@frontenddot.com> (http://frontenddot.com)",
   "license": "MIT",
   "dependencies": {
     "babel-cli": "^6.5.1",
