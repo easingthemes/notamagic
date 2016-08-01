@@ -42,9 +42,9 @@ Envato Profile: http://themeforest.net/user/myboodesign
 1. IMPORT GOOGLE FONTS
 -------------------------------------------------------- */
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,800);
-@import url(https://fonts.googleapis.com/css?family=Pacifico);
+//@import url(https://fonts.googleapis.com/css?family=Pacifico);
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
-@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,200);
+//@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,200);
 
 /*  ----------------------------------------------------
 2. GENERAL STYLES
@@ -146,10 +146,10 @@ small {
 .animated { visibility:hidden; }
 .visible { visibility:visible; }
 
-.font-pacifico    { font-family: 'Pacifico', cursive !important; }
+.font-pacifico    { font-family: 'Montserrat', cursive !important; }
 .font-open-sans   { font-family: 'Open Sans', sans-serif !important; }
 .font-montserrat  { font-family: 'Montserrat', sans-serif !important; }
-.font-source-sans-pro  { font-family: 'Source Sans Pro', sans-serif !important; }
+.font-source-sans-pro  { font-family: 'Open Sans', sans-serif !important; }
 
 .fs-75 { font-size: 75px !important; }
 .fs-100 { font-size: 100px !important; }
@@ -1385,7 +1385,7 @@ sup {
 .price-one span {
 	display: block;
     font-size: 50px;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-weight: 100 !important;
 }
 
@@ -1420,12 +1420,12 @@ sup {
     color: #555;
 }
 .price-two h4 {
-	font-family: 'Pacifico', cursive;
+	font-family: 'Montserrat', cursive;
 }
 .price-two span {
 	display: block;
     font-size: 50px;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-weight: 100 !important;
 }
 .price-two sup {
@@ -1452,7 +1452,7 @@ sup {
 
 .price-three span {
     font-size: 80px;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-weight: 100 !important;
     line-height: 70px;
 }
@@ -1506,7 +1506,7 @@ sup {
 }
 
 .price-four .price-header span {
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: 80px;
     font-weight: 200;
     line-height: 1;
@@ -1568,7 +1568,7 @@ sup {
 }
 .price-five .price-header span {
     font-size: 40px;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-weight: 100;
     line-height: 1;
 }
@@ -2700,7 +2700,7 @@ canvas {
 -------------------------------------------------------- */
 .fact, .factor {
     text-align: center;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: 80px;
     margin-bottom: 30px;
     font-weight: 200;
@@ -3190,7 +3190,7 @@ ul.breadcrumb li a:hover {
     color: #323a45;
 }
 .shop-item-price {
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: 20px;
 }
 
@@ -3212,7 +3212,7 @@ ul.breadcrumb li a:hover {
     color: #aaa;
 }
 .shop-item-detail-price {
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Open Sans', sans-serif;
 }
 .shop-item-detail-price ins {
     font-size: 50px;
@@ -3926,7 +3926,7 @@ ul.pagination.pagination-pasific li.active a {
     display: block;
     width: 100px;
     height: 50px;
-    font-family: 'Pacifico', cursive;
+    font-family: 'Montserrat', cursive;
     font-size: 20px;
     color: #8b949b;
     padding-left: 40px;
