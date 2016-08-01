@@ -142,6 +142,7 @@
     "eslint-plugin-promise": "^2.0.0",
     "eslint-plugin-react": "^5.0.0",
     "eslint-plugin-standard": "^2.0.0",
+    "image-webpack-loader": "^2.0.0",
     "isparta-loader": "^2.0.0",
     "karma": "^1.0.0",
     "karma-coverage": "^1.0.0",

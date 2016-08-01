@@ -284,7 +284,14 @@ webpackConfig.module.loaders.push(
   { test: /\.eot(\?.*)?$/,   loader: 'file?prefix=fonts/&name=[path][name].[ext]' },
   { test: /\.svg(\?.*)?$/,   loader: 'url?prefix=fonts/&name=[path][name].[ext]&limit=10000&mimetype=image/svg+xml' },
   { test: /\.(png|jpg)$/,    loader: 'url?limit=8192' }
-)
+);
+webpackConfig.module.loaders.push({
+	test: /\.(jpe?g|png|gif|svg)$/i,
+	loaders: [
+		'file?hash=sha512&digest=hex&name=[hash].[ext]',
+		'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
+	]
+});
 /* eslint-enable */
 
 // ------------------------------------
