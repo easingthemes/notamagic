@@ -5,7 +5,6 @@ import style from './style.global.scss';
 export class PageLoader extends React.Component {
 	
 	componentWillReceiveProps (nextProps) {
-		console.log('PageLoader componentWillReceiveProps');
 		if (nextProps.isLoaded) {
 			$(".loader-item").delay(700).fadeOut();
 			$("#pageloader").delay(800).fadeOut("slow");

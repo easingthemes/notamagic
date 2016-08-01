@@ -1,9 +1,7 @@
 import React from 'react';
-import PageLoader from 'components/PageLoader';
 import Navbar from 'components/Navbar/Navbar';
 import GoToTop from 'components/GoToTop';
 import Footer from '../../components/Footer';
-import classes from './CoreLayout.scss';
 import '../../styles/vendor.scss';
 import '../../styles/core.scss';
 import helperScroll from '../../utils/animateScroll';
@@ -19,12 +17,13 @@ export class CoreLayout extends React.Component {
 		this.setState({
 			isLoaded: true
 		});
+		$(".loader-item").delay(700).fadeOut();
+		$("#pageloader").delay(800).fadeOut("slow");
 		helperScroll();
 	}
 	render () {
 		return (
 			<div style={{height: '100%'}}>
-				<PageLoader isLoaded={this.state.isLoaded} />
 				<GoToTop />
 				<Navbar />
 				{this.props.children}
