@@ -50,11 +50,10 @@ export class Achievement extends React.Component {
 	 * @public
 	 */
 	render () {
-		const baseUrl = '/img/';
 		return (
 			<div>
 				<SvgLine />
-				<div className="pt50" style={{background: 'url(' + baseUrl + '/bg/bg-wood.jpg) 100% 100% repeat-x #e8f3f5'}}>
+				<div className="pt50" style={{background: 'url(' + data.image + ') 100% 100% repeat-x #e8f3f5'}}>
 					<div className="container">
 
 						<div className="row">
@@ -63,9 +62,9 @@ export class Achievement extends React.Component {
 									<small className="heading heading-icon heading-icon-rounded bg-grad-stellar center-block">
 										<i className="fa fa-trophy color-light"></i>
 									</small>
-									The Best Web &amp; App Developer 2016
+									{data.title}
 									<small className="heading-desc text-lowercase color-dark">
-										Every day, We makes thousands of customers happy.
+										{data.text}
 									</small>
 								</h2>
 							</div>
@@ -81,7 +80,7 @@ export class Achievement extends React.Component {
 						</div>
 
 						<div className="col-md-12">
-							<img src={baseUrl + '/other/img-other-6.png'} alt="device" className="img-responsive center-block" />
+							<img src={data.icons} alt="device" className="img-responsive center-block" />
 						</div>
 
 					</div>

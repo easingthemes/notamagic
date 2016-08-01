@@ -51,12 +51,30 @@ export class SvgLine extends React.Component {
 	 */
 	render () {
 		const svgTag = `
-			<svg id="svgLine" xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="300" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 2000 250" preserveAspectRatio="xMinYMax">
+			<svg 
+				id="svgLine" 
+				xmlns="http://www.w3.org/2000/svg" 
+				version="1.1" 
+				width="100%" 
+				height="300" 
+				xmlns:xlink="http://www.w3.org/1999/xlink" 
+				viewBox="0 0 2000 250" 
+				preserveAspectRatio="xMinYMax"
+			>
 
-				<polygon points="-150,300 200,90 550,140 800,60 1100,150 1400,100 1700,10 1900,50 2500,90 2500,300" fill="url(#BglinierGradient)" stroke="none">
+				<polygon 
+					points="-150,300 200,90 550,140 800,60 1100,150 1400,100 1700,10 1900,50 2500,90 2500,300" 
+					fill="url(#BglinierGradient)" 
+					stroke="none"
+				>
 				</polygon>
 
-				<polyline points="-150,244 200,90 550,140 800,60 1100,150 1400,100 1700,10 1900,50 2500,90 2500,500" fill="none" stroke="#7668af" stroke-width="0">
+				<polyline 
+					points="-150,244 200,90 550,140 800,60 1100,150 1400,100 1700,10 1900,50 2500,90 2500,500" 
+					fill="none" 
+					stroke="#7668af" 
+					stroke-width="0"
+				>
 				</polyline>
 
 				<text x="170" y="20" fill="#8b949b" style="font-size: 120%; font-weight: 400;">Lines of Code</text>
