@@ -42,7 +42,7 @@ Envato Profile: http://themeforest.net/user/myboodesign
 1. IMPORT GOOGLE FONTS
 -------------------------------------------------------- */
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,800);
-//@import url(https://fonts.googleapis.com/css?family=Pacifico);
+@import url(https://fonts.googleapis.com/css?family=Pacifico);
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
 //@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,200);
 
@@ -146,7 +146,7 @@ small {
 .animated { visibility:hidden; }
 .visible { visibility:visible; }
 
-.font-pacifico    { font-family: 'Montserrat', cursive !important; }
+.font-pacifico    { font-family: 'Pacifico', cursive !important; }
 .font-open-sans   { font-family: 'Open Sans', sans-serif !important; }
 .font-montserrat  { font-family: 'Montserrat', sans-serif !important; }
 .font-source-sans-pro  { font-family: 'Open Sans', sans-serif !important; }
@@ -1420,7 +1420,7 @@ sup {
     color: #555;
 }
 .price-two h4 {
-	font-family: 'Montserrat', cursive;
+	font-family: 'Pacifico', cursive;
 }
 .price-two span {
 	display: block;
@@ -3926,7 +3926,7 @@ ul.pagination.pagination-pasific li.active a {
     display: block;
     width: 100px;
     height: 50px;
-    font-family: 'Montserrat', cursive;
+    font-family: 'Pacifico', cursive;
     font-size: 20px;
     color: #8b949b;
     padding-left: 40px;
