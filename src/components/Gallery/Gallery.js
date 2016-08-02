@@ -4,29 +4,31 @@ import Isotope from 'isotope-layout';
 
 export class Gallery extends React.Component {
 	componentDidMount () {
-
+		let $portfolio;
 		jQueryBridget( 'isotope', Isotope, $ );
 		$('.magnific-popup').magnificPopup({
 			type: 'image',
 			gallery:{enabled:true}
 		});
-		var $portfolio = $('.portfolio').imagesLoaded( function() {
-			$portfolio.isotope({
-				itemSelector: '.portfolio-item',
-				masonry: {
-					rowHeight: 280
-				}
+		setTimeout(function () {
+			$portfolio = $('.portfolio').imagesLoaded( function() {
+				$portfolio.isotope({
+					itemSelector: '.portfolio-item',
+					masonry: {
+						rowHeight: 280
+					}
+				});
 			});
-		});
 
-		$('.filters li a').on('click', function() {
-			var filterValue = $(this).attr('data-filter');
-			$portfolio.isotope({ filter: filterValue });
-		});
-		$('.filters li a').on('click', function(){
-			$('.filters li a').removeClass('active');
-			$(this).addClass('active');
-		});
+			$('.filters li a').on('click', function() {
+				var filterValue = $(this).attr('data-filter');
+				$portfolio.isotope({ filter: filterValue });
+			});
+			$('.filters li a').on('click', function(){
+				$('.filters li a').removeClass('active');
+				$(this).addClass('active');
+			});
+		}, 300);
 	}
 	renderFilter () {
 		const filters = data.filters;

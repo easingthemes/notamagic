@@ -11,7 +11,4 @@ describe('(Route) Home', () => {
     expect(typeof(HomeRoute)).to.equal('object')
   })
 
-  it('Should define a route component', () => {
-    expect(_component.type).to.equal('div')
-  })
 })

@@ -15,25 +15,18 @@ class Navbar extends React.Component {
 		/* --------------------------------------------
 		 CLOSE COLLAPSE MENU ON MOBILE VIEW EXCEPT DROPDOWN
 		 -------------------------------------------- */
-		$(function () {
-			'use strict';
-			$('.navbar-collapse ul li a:not(.dropdown-toggle)').on('click',function (event) {
-				$('.navbar-toggle:visible').click();
-			});
+		$('.navbar-collapse ul li a:not(.dropdown-toggle)').on('click',function (event) {
+			$('.navbar-toggle:visible').click();
 		});
 		/* --------------------------------------------
 		 STICKY SETTING
 		 -------------------------------------------- */
-		$(function () {
-			'use strict';
-			if( $('.navbar-sticky').length > 0){
-				//$('.navbar-sticky').sticky({ topSpacing: 0 });
-				$('.navbar-sticky').css('z-index','100');
-				$('.navbar-sticky').addClass('bg-light');
-				$('.navbar-sticky').addClass('top-nav-collapse');
-			}
-		});
-
+		if( $('.navbar-sticky').length > 0){
+			//$('.navbar-sticky').sticky({ topSpacing: 0 });
+			$('.navbar-sticky').css('z-index','100');
+			$('.navbar-sticky').addClass('bg-light');
+			$('.navbar-sticky').addClass('top-nav-collapse');
+		}
 
 		/* --------------------------------------------------------
 		 ANIMATED SCROLL PAGE WITH ACTIVE MENU - BOOTSTRAP SROLLSPY
@@ -80,7 +73,6 @@ class Navbar extends React.Component {
 				}
 			});
 		}
-		console.log('didmount');
 	}
 	render() {
 		return (

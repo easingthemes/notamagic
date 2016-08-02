@@ -73,7 +73,7 @@ export class Contact extends React.Component {
 								</div>
 
 								<div className="col-md-3 col-sm-3 col-xs-12">
-									<span className="icon-map color-light el-icon2x"></span>
+									<span className="fa-map-o color-light fa fs-75"></span>
 									<h5 className="color-light">
 										<strong>Address</strong>
 									</h5>
@@ -81,7 +81,7 @@ export class Contact extends React.Component {
 								</div>
 
 								<div className="col-md-3 col-sm-3 col-xs-6">
-									<span className="icon-megaphone color-light el-icon2x"></span>
+									<span className="fa-phone color-light fa fs-75"></span>
 									<h5 className="color-light">
 										<strong>Phone</strong>
 									</h5>
@@ -89,7 +89,7 @@ export class Contact extends React.Component {
 								</div>
 
 								<div className="col-md-3 col-sm-3 col-xs-6">
-									<span className="icon-envelope color-light el-icon2x"></span>
+									<span className="fa-envelope-o color-light fa fs-75"></span>
 									<h5 className="color-light">
 										<strong>Email</strong>
 									</h5>
@@ -109,7 +109,7 @@ export class Contact extends React.Component {
 										</small>
 									</h4>
 								</div>
-								<form name="contactform" id="contactForm" method="post" action="assets/php/send.php">
+								<form name="contactform" id="contactForm" method="post" action="/php/send.php">
 
 									<div className="form-group col-md-6 col-sm-6 col-xs-12">
 										<input type="text" name="senderName" id="senderName" className="input-md input-rounded form-control" placeholder="fullname" maxLength="100" required="" />
