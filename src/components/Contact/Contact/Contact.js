@@ -36,23 +36,100 @@ export class Contact extends React.Component {
 	 * @public
 	 */
 	componentDidMount () {
-		var frm = $('#contactForm');
-		frm.submit(function (ev) {
-			$.ajax({
-				type: frm.attr('method'),
-				url: frm.attr('action'),
-				data: frm.serialize(),
-				success: function (data) {
-					console.log('ok');
-				}
-			});
-
-			ev.preventDefault();
-		});
-		// $('#sendMessage').click(function (ev) {
+		// var frm = $('#contactForm');
+		// frm.submit(function (ev) {
+		// 	$.ajax({
+		// 		type: frm.attr('method'),
+		// 		url: frm.attr('action'),
+		// 		data: frm.serialize(),
+		// 		success: function (data) {
+		// 			$('#successMessage').show();
+		// 		}
+		// 	});
+        //
 		// 	ev.preventDefault();
-		// 	$('#contactForm').submit();
 		// });
+
+		/* --------------------------------------------
+		 SECURITY CHECK HUMAN
+		 -------------------------------------------- */
+		if($("#senderHuman").length > 0 ) {
+			var a = Math.ceil(Math.random() * 10) + 1;
+			var b = Math.ceil(Math.random() * 10) + 1;
+			document.getElementById("senderHuman").placeholder = a +" + "+ b +" = ?";
+			document.getElementById("checkHuman_a").value = a;
+			document.getElementById("checkHuman_b").value = b;
+		}
+
+		/* --------------------------------------------
+		 CONTACT FORM
+		 -------------------------------------------- */
+		var messageDelay = 2000;
+		$(init);
+
+		function init() {
+			$('#contactForm').show().submit( submitForm ).addClass( 'positioned' );
+		}
+
+		// Submit the form via Ajax
+		function submitForm() {
+			var contactForm = $(this);
+
+			// Are all the fields filled in?
+
+			if ( !$('#senderName').val() || !$('#senderEmail').val() || !$('#message').val() ) {
+
+				// No; display a warning message and return to the form
+				$('#incompleteMessage').fadeIn().delay(messageDelay).fadeOut();
+				contactForm.fadeOut().delay(messageDelay).fadeIn();
+
+			} else {
+
+				// Yes; submit the form to the PHP script via Ajax
+
+				$('#sendingMessage').fadeIn();
+				contactForm.show();
+
+				$.ajax( {
+					url: contactForm.attr( 'action' ) + "?ajax=true",
+					type: contactForm.attr( 'method' ),
+					data: contactForm.serialize(),
+					success: submitFinished
+				} );
+			}
+
+			// Prevent the default form submission occurring
+			return false;
+		}
+
+
+		// Handle the Ajax response
+		function submitFinished( response ) {
+			response = $.trim( response );
+			$('#sendingMessage').fadeOut();
+
+			if ( response == "success" ) {
+
+				// Form submitted successfully:
+				// 1. Display the success message
+				// 2. Clear the form fields
+				// 3. Fade the content back in
+
+				$('#successMessage').fadeIn().delay(messageDelay).fadeOut();
+				$('#senderName').val( "" );
+				$('#senderEmail').val( "" );
+				$('#message').val( "" );
+
+				$('#content').delay(messageDelay+500).fadeTo( 'slow', 1 );
+
+			} else {
+
+				// Form submission failed: Display the failure message,
+				// then redisplay the form
+				$('#failureMessage').fadeIn().delay(messageDelay).fadeOut();
+				$('#contactForm').delay(messageDelay+500).fadeIn();
+			}
+		}
 	}
 
 	//------------------------------------------------------------------------------------------------------------------
