@@ -36,7 +36,10 @@ export class Contact extends React.Component {
 	 * @public
 	 */
 	componentDidMount () {
-
+		$('#sendMessage').click(function (ev) {
+			ev.preventDefault();
+			$('#contactForm').submit();
+		});
 	}
 
 	//------------------------------------------------------------------------------------------------------------------
