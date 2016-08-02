@@ -1,0 +1,131 @@
+/*  ----------------------------------------------------
+4. HEADING STYLE
+-------------------------------------------------------- */
+.heading {
+	height: 20px;
+	display: block;
+	margin-bottom: 20px;
+	font-size: 15px;
+	opacity: 1 !important;
+}
+.heading-desc {
+	display: block;
+	font-family: $f-primary;
+	font-size: 14px;
+	line-height: 25px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.heading-solid,
+.heading-dotted,
+.heading-dashed,
+.heading-double {
+	width: 50px;
+	border-bottom-width: 3px;
+}
+.heading-solid {
+	border-bottom-style: solid;
+}
+.heading-dotted {
+	border-bottom-style: dotted;
+}
+.heading-dashed {
+	border-bottom-style: dashed;
+}
+.heading-double {
+	border-bottom-style: double;
+
+}
+
+.heading-solid-icon,
+.heading-dotted-icon,
+.heading-dashed-icon,
+.heading-double-icon {
+	width: 120px;
+	margin-top: 20px;
+}
+.heading-solid-icon span,
+.heading-dotted-icon span,
+.heading-dashed-icon span,
+.heading-double-icon span {
+	width: 40px;
+	height: 2px;
+	float: left;
+}
+.heading-solid-icon span span,
+.heading-dotted-icon span span,
+.heading-dashed-icon span span,
+.heading-daouble-icon span span {
+	width: 40px;
+	height: 2px;
+	float: right;
+}
+.heading-solid-icon span,
+.heading-dotted-icon span,
+.heading-dashed-icon span,
+.heading-solid-icon span span,
+.heading-dotted-icon span span,
+.heading-dashed-icon span span {
+	border-top-width: 2px;
+	border-top-style: solid;
+	display: block;
+}
+.heading-double-icon span,
+.heading-double-icon span span {
+	border-bottom-width: 3px;
+	border-top-style: solid;
+	display: block;
+}
+.heading-solid-icon i,
+.heading-dotted-icon i,
+.heading-dashed-icon i,
+.heading-double-icon i {
+	float: left;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-top: -5px;
+}
+
+.heading-solid-icon div,
+.heading-solid-icon div div {
+	border-bottom-style: solid;
+}
+.heading-dotted-icon div,
+.heading-dotted-icon div div {
+	border-bottom-style: dotted;
+}
+.heading-dashed-icon div,
+.heading-dashed-icon div div {
+	border-bottom-style: dashed;
+}
+.heading-double-icon div,
+.heading-double-icon div div {
+	border-bottom-style: double;
+}
+
+.heading-icon,
+.heading-icon-o {
+	width: 60px;
+	height: 60px;
+	font-size: 20px;
+	padding-top: 20px;
+
+}
+.heading-icon {
+	color: #fff;
+}
+.heading-icon-o {
+	background-color: transparent;
+	border-width: 2px;
+	border-style: solid;
+}
+.heading-icon-rounded {
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+.heading-icon-circle {
+	-webkit-border-radius: 100%;
+	-moz-border-radius: 100%;
+	border-radius: 100%;
+}

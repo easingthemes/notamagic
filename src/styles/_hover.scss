@@ -1843,7 +1843,7 @@
   backface-visibility: hidden;
   -moz-osx-font-smoothing: grayscale;
   position: relative;
-  background: #2098d1;
+  background: $c-blue-2;
   -webkit-transition-property: color;
   transition-property: color;
   -webkit-transition-duration: 0.3s;
@@ -1857,7 +1857,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: #e1e1e1;
+  background: $c-grey-2;
   -webkit-transform: scale(1);
   transform: scale(1);
   -webkit-transition-property: transform;
@@ -1928,7 +1928,7 @@
   backface-visibility: hidden;
   -moz-osx-font-smoothing: grayscale;
   position: relative;
-  background: #2098d1;
+  background: $c-blue-2;
   -webkit-transition-property: color;
   transition-property: color;
   -webkit-transition-duration: 0.3s;
@@ -1942,7 +1942,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background: #e1e1e1;
+  background: $c-grey-2;
   -webkit-transform: scaleX(1);
   transform: scaleX(1);
   -webkit-transform-origin: 50%;
@@ -2017,7 +2017,7 @@
   backface-visibility: hidden;
   -moz-osx-font-smoothing: grayscale;
   position: relative;
-  background: #2098d1;
+  background: $c-blue-2;
   -webkit-transition-property: color;
   transition-property: color;
   -webkit-transition-duration: 0.3s;
@@ -2031,7 +2031,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background: #e1e1e1;
+  background: $c-grey-2;
   -webkit-transform: scaleY(1);
   transform: scaleY(1);
   -webkit-transform-origin: 50%;
@@ -3216,9 +3216,9 @@
 
 }
 
-.button-rounded.hover-sweep-to-right:before, 
-.button-rounded.hover-sweep-to-left:before, 
-.button-rounded.hover-sweep-to-bottom:before, 
+.button-rounded.hover-sweep-to-right:before,
+.button-rounded.hover-sweep-to-left:before,
+.button-rounded.hover-sweep-to-bottom:before,
 .button-rounded.hover-sweep-to-top:before,
 .button-rounded.hover-bounce-to-right:before,
 .button-rounded.hover-bounce-to-left:before,
@@ -3233,9 +3233,9 @@
   -moz-border-radius: 4px;
   border-radius: 4px;
 }
-.button-lg.button-rounded.hover-sweep-to-right:before, 
-.button-lg.button-rounded.hover-sweep-to-left:before, 
-.button-lg.button-rounded.hover-sweep-to-bottom:before, 
+.button-lg.button-rounded.hover-sweep-to-right:before,
+.button-lg.button-rounded.hover-sweep-to-left:before,
+.button-lg.button-rounded.hover-sweep-to-bottom:before,
 .button-lg.button-rounded.hover-sweep-to-top:before,
 .button-lg.button-rounded.hover-bounce-to-right:before,
 .button-lg.button-rounded.hover-bounce-to-left:before,
@@ -3251,9 +3251,9 @@
   border-radius: 7px;
 }
 .button-circle.hover-fade:hover, .button-circle.hover-fade:focus, .button-circle.hover-fade:active,
-.button-circle.hover-sweep-to-right:before, 
-.button-circle.hover-sweep-to-left:before, 
-.button-circle.hover-sweep-to-bottom:before, 
+.button-circle.hover-sweep-to-right:before,
+.button-circle.hover-sweep-to-left:before,
+.button-circle.hover-sweep-to-bottom:before,
 .button-circle.hover-sweep-to-top:before,
 .button-circle.hover-bounce-to-right:before,
 .button-circle.hover-bounce-to-left:before,
@@ -3270,9 +3270,9 @@
 }
 
 .button-red.hover-fade:hover, .button-red.hover-fade:focus, .button-red.hover-fade:active,
-.button-red.hover-sweep-to-right:before, 
-.button-red.hover-sweep-to-left:before, 
-.button-red.hover-sweep-to-bottom:before, 
+.button-red.hover-sweep-to-right:before,
+.button-red.hover-sweep-to-left:before,
+.button-red.hover-sweep-to-bottom:before,
 .button-red.hover-sweep-to-top:before,
 .button-red.hover-bounce-to-right:before,
 .button-red.hover-bounce-to-left:before,
@@ -3283,12 +3283,12 @@
 .button-red.hover-shutter-out-horizontal:before,
 .button-red.hover-shutter-out-vertical:before
 {
-  background-color: #fd3635 !important;
+  background-color: $c-red-2 !important;
 }
 .button-pink.hover-fade:hover, .button-pink.hover-fade:focus, .button-pink.hover-fade:active,
-.button-pink.hover-sweep-to-right:before, 
-.button-pink.hover-sweep-to-left:before, 
-.button-pink.hover-sweep-to-bottom:before, 
+.button-pink.hover-sweep-to-right:before,
+.button-pink.hover-sweep-to-left:before,
+.button-pink.hover-sweep-to-bottom:before,
 .button-pink.hover-sweep-to-top:before,
 .button-pink.hover-bounce-to-right:before,
 .button-pink.hover-bounce-to-left:before,
@@ -3299,12 +3299,12 @@
 .button-pink.hover-shutter-out-horizontal:before,
 .button-pink.hover-shutter-out-vertical:before
 {
-  background-color: #fd40b3 !important;;
+  background-color: $c-pink-1 !important;;
 }
 .button-orange.hover-fade:hover, .button-orange.hover-fade:focus, .button-orange.hover-fade:active,
-.button-orange.hover-sweep-to-right:before, 
-.button-orange.hover-sweep-to-left:before, 
-.button-orange.hover-sweep-to-bottom:before, 
+.button-orange.hover-sweep-to-right:before,
+.button-orange.hover-sweep-to-left:before,
+.button-orange.hover-sweep-to-bottom:before,
 .button-orange.hover-sweep-to-top:before,
 .button-orange.hover-bounce-to-right:before,
 .button-orange.hover-bounce-to-left:before,
@@ -3315,12 +3315,12 @@
 .button-orange.hover-shutter-out-horizontal:before,
 .button-orange.hover-shutter-out-vertical:before
 {
-  background-color: #ff8b34 !important;;
+  background-color: $c-orange-1 !important;;
 }
 .button-purple.hover-fade:hover, .button-purple.hover-fade:focus, .button-purple.hover-fade:active,
-.button-purple.hover-sweep-to-right:before, 
-.button-purple.hover-sweep-to-left:before, 
-.button-purple.hover-sweep-to-bottom:before, 
+.button-purple.hover-sweep-to-right:before,
+.button-purple.hover-sweep-to-left:before,
+.button-purple.hover-sweep-to-bottom:before,
 .button-purple.hover-sweep-to-top:before,
 .button-purple.hover-bounce-to-right:before,
 .button-purple.hover-bounce-to-left:before,
@@ -3331,12 +3331,12 @@
 .button-purple.hover-shutter-out-horizontal:before,
 .button-purple.hover-shutter-out-vertical:before
 {
-  background-color: #a85ad4 !important;;
+  background-color: $c-purple-1 !important;;
 }
 .button-blue.hover-fade:hover, .button-blue.hover-fade:focus, .button-blue.hover-fade:active,
-.button-blue.hover-sweep-to-right:before, 
-.button-blue.hover-sweep-to-left:before, 
-.button-blue.hover-sweep-to-bottom:before, 
+.button-blue.hover-sweep-to-right:before,
+.button-blue.hover-sweep-to-left:before,
+.button-blue.hover-sweep-to-bottom:before,
 .button-blue.hover-sweep-to-top:before,
 .button-blue.hover-bounce-to-right:before,
 .button-blue.hover-bounce-to-left:before,
@@ -3347,12 +3347,12 @@
 .button-blue.hover-shutter-out-horizontal:before,
 .button-blue.hover-shutter-out-vertical:before
 {
-  background-color: #3dace1 !important;;
+  background-color: $c-blue-2 !important;;
 }
 .button-cyan.hover-fade:hover, .button-cyan.hover-fade:focus, .button-cyan.hover-fade:active,
-.button-cyan.hover-sweep-to-right:before, 
-.button-cyan.hover-sweep-to-left:before, 
-.button-cyan.hover-sweep-to-bottom:before, 
+.button-cyan.hover-sweep-to-right:before,
+.button-cyan.hover-sweep-to-left:before,
+.button-cyan.hover-sweep-to-bottom:before,
 .button-cyan.hover-sweep-to-top:before,
 .button-cyan.hover-bounce-to-right:before,
 .button-cyan.hover-bounce-to-left:before,
@@ -3363,12 +3363,12 @@
 .button-cyan.hover-shutter-out-horizontal:before,
 .button-cyan.hover-shutter-out-vertical:before
 {
-  background-color: #1abc9c !important;;
+  background-color: $c-green-3 !important;;
 }
 .button-green.hover-fade:hover, .button-green.hover-fade:focus, .button-green.hover-fade:active,
-.button-green.hover-sweep-to-right:before, 
-.button-green.hover-sweep-to-left:before, 
-.button-green.hover-sweep-to-bottom:before, 
+.button-green.hover-sweep-to-right:before,
+.button-green.hover-sweep-to-left:before,
+.button-green.hover-sweep-to-bottom:before,
 .button-green.hover-sweep-to-top:before,
 .button-green.hover-bounce-to-right:before,
 .button-green.hover-bounce-to-left:before,
@@ -3379,12 +3379,12 @@
 .button-green.hover-shutter-out-horizontal:before,
 .button-green.hover-shutter-out-vertical:before
 {
-  background-color: #b2cc71 !important;
+  background-color: $c-green-2 !important;
 }
 .button-yellow.hover-fade:hover, .button-yellow.hover-fade:focus, .button-yellow.hover-fade:active,
-.button-yellow.hover-sweep-to-right:before, 
-.button-yellow.hover-sweep-to-left:before, 
-.button-yellow.hover-sweep-to-bottom:before, 
+.button-yellow.hover-sweep-to-right:before,
+.button-yellow.hover-sweep-to-left:before,
+.button-yellow.hover-sweep-to-bottom:before,
 .button-yellow.hover-sweep-to-top:before,
 .button-yellow.hover-bounce-to-right:before,
 .button-yellow.hover-bounce-to-left:before,
@@ -3395,12 +3395,12 @@
 .button-yellow.hover-shutter-out-horizontal:before,
 .button-yellow.hover-shutter-out-vertical:before
 {
-  background-color: #ffc501 !important;;
+  background-color: $c-yellow-1 !important;;
 }
 .button-dark.hover-fade:hover, .button-dark.hover-fade:focus, .button-dark.hover-fade:active,
-.button-dark.hover-sweep-to-right:before, 
-.button-dark.hover-sweep-to-left:before, 
-.button-dark.hover-sweep-to-bottom:before, 
+.button-dark.hover-sweep-to-right:before,
+.button-dark.hover-sweep-to-left:before,
+.button-dark.hover-sweep-to-bottom:before,
 .button-dark.hover-sweep-to-top:before,
 .button-dark.hover-bounce-to-right:before,
 .button-dark.hover-bounce-to-left:before,
@@ -3411,12 +3411,12 @@
 .button-dark.hover-shutter-out-horizontal:before,
 .button-dark.hover-shutter-out-vertical:before
 {
-  background-color: #5f6467 !important;;
+  background-color: $c-grey-5 !important;;
 }
 .button-black.hover-fade:hover, .button-dark.hover-fade:focus, .button-dark.hover-fade:active,
-.button-black.hover-sweep-to-right:before, 
-.button-black.hover-sweep-to-left:before, 
-.button-black.hover-sweep-to-bottom:before, 
+.button-black.hover-sweep-to-right:before,
+.button-black.hover-sweep-to-left:before,
+.button-black.hover-sweep-to-bottom:before,
 .button-black.hover-sweep-to-top:before,
 .button-black.hover-bounce-to-right:before,
 .button-black.hover-bounce-to-left:before,
@@ -3427,12 +3427,12 @@
 .button-black.hover-shutter-out-horizontal:before,
 .button-black.hover-shutter-out-vertical:before
 {
-  background-color: #000000 !important;;
+  background-color: $c-black !important;;
 }
 .button-white.hover-fade:hover, .button-dark.hover-fade:focus, .button-dark.hover-fade:active,
-.button-white.hover-sweep-to-right:before, 
-.button-white.hover-sweep-to-left:before, 
-.button-white.hover-sweep-to-bottom:before, 
+.button-white.hover-sweep-to-right:before,
+.button-white.hover-sweep-to-left:before,
+.button-white.hover-sweep-to-bottom:before,
 .button-white.hover-sweep-to-top:before,
 .button-white.hover-bounce-to-right:before,
 .button-white.hover-bounce-to-left:before,
@@ -3443,12 +3443,12 @@
 .button-white.hover-shutter-out-horizontal:before,
 .button-white.hover-shutter-out-vertical:before
 {
-  background-color: #ffffff !important;;
+  background-color: $c-white !important;;
 }
 .button-gray.hover-fade:hover, .button-gray.hover-fade:focus, .button-gray.hover-fade:active,
-.button-gray.hover-sweep-to-right:before, 
-.button-gray.hover-sweep-to-left:before, 
-.button-gray.hover-sweep-to-bottom:before, 
+.button-gray.hover-sweep-to-right:before,
+.button-gray.hover-sweep-to-left:before,
+.button-gray.hover-sweep-to-bottom:before,
 .button-gray.hover-sweep-to-top:before,
 .button-gray.hover-bounce-to-right:before,
 .button-gray.hover-bounce-to-left:before,
@@ -3459,12 +3459,12 @@
 .button-gray.hover-shutter-out-horizontal:before,
 .button-gray.hover-shutter-out-vertical:before
 {
-  background-color: #e0e0e0 !important;;
+  background-color: $c-grey-1 !important;;
 }
 .button-primary.hover-fade:hover, .button-primary.hover-fade:focus, .button-primary.hover-fade:active,
-.button-primary.hover-sweep-to-right:before, 
-.button-primary.hover-sweep-to-left:before, 
-.button-primary.hover-sweep-to-bottom:before, 
+.button-primary.hover-sweep-to-right:before,
+.button-primary.hover-sweep-to-left:before,
+.button-primary.hover-sweep-to-bottom:before,
 .button-primary.hover-sweep-to-top:before,
 .button-primary.hover-bounce-to-right:before,
 .button-primary.hover-bounce-to-left:before,
@@ -3475,12 +3475,12 @@
 .button-primary.hover-shutter-out-horizontal:before,
 .button-primary.hover-shutter-out-vertical:before
 {
-  background-color: #286090 !important;;
+  background-color: $c-blue-1 !important;;
 }
 .button-success.hover-fade:hover, .button-success.hover-fade:focus, .button-success.hover-fade:active,
-.button-success.hover-sweep-to-right:before, 
-.button-success.hover-sweep-to-left:before, 
-.button-success.hover-sweep-to-bottom:before, 
+.button-success.hover-sweep-to-right:before,
+.button-success.hover-sweep-to-left:before,
+.button-success.hover-sweep-to-bottom:before,
 .button-success.hover-sweep-to-top:before,
 .button-success.hover-bounce-to-right:before,
 .button-success.hover-bounce-to-left:before,
@@ -3491,12 +3491,12 @@
 .button-success.hover-shutter-out-horizontal:before,
 .button-success.hover-shutter-out-vertical:before
 {
-  background-color: #5cb85c !important;;
+  background-color: $c-green-1 !important;;
 }
 .button-info.hover-fade:hover, .button-info.hover-fade:focus, .button-info.hover-fade:active,
-.button-info.hover-sweep-to-right:before, 
-.button-info.hover-sweep-to-left:before, 
-.button-info.hover-sweep-to-bottom:before, 
+.button-info.hover-sweep-to-right:before,
+.button-info.hover-sweep-to-left:before,
+.button-info.hover-sweep-to-bottom:before,
 .button-info.hover-sweep-to-top:before,
 .button-info.hover-bounce-to-right:before,
 .button-info.hover-bounce-to-left:before,
@@ -3507,12 +3507,12 @@
 .button-info.hover-shutter-out-horizontal:before,
 .button-info.hover-shutter-out-vertical:before
 {
-  background-color: #5bc0de !important;;
+  background-color: $c-blue-3 !important;;
 }
 .button-warning.hover-fade:hover, .button-warning.hover-fade:focus, .button-warning.hover-fade:active,
-.button-warning.hover-sweep-to-right:before, 
-.button-warning.hover-sweep-to-left:before, 
-.button-warning.hover-sweep-to-bottom:before, 
+.button-warning.hover-sweep-to-right:before,
+.button-warning.hover-sweep-to-left:before,
+.button-warning.hover-sweep-to-bottom:before,
 .button-warning.hover-sweep-to-top:before,
 .button-warning.hover-bounce-to-right:before,
 .button-warning.hover-bounce-to-left:before,
@@ -3523,12 +3523,12 @@
 .button-warning.hover-shutter-out-horizontal:before,
 .button-warning.hover-shutter-out-vertical:before
 {
-  background-color: #ec971f !important;;
+  background-color: $c-orange-2 !important;;
 }
 .button-danger.hover-fade:hover, .button-danger.hover-fade:focus, .button-danger.hover-fade:active,
-.button-danger.hover-sweep-to-right:before, 
-.button-danger.hover-sweep-to-left:before, 
-.button-danger.hover-sweep-to-bottom:before, 
+.button-danger.hover-sweep-to-right:before,
+.button-danger.hover-sweep-to-left:before,
+.button-danger.hover-sweep-to-bottom:before,
 .button-danger.hover-sweep-to-top:before,
 .button-danger.hover-bounce-to-right:before,
 .button-danger.hover-bounce-to-left:before,
@@ -3539,7 +3539,7 @@
 .button-danger.hover-shutter-out-horizontal:before,
 .button-danger.hover-shutter-out-vertical:before
 {
-  background-color: #c9302c !important;;
+  background-color: $c-red-3 !important;;
 }
 .hover-trim:before { -webkit-border-radius: 0; -moz-border-radius: 0; border-radius: 0; }
 .hover-trim.hover-trim-rounded:before { -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; }
@@ -3560,87 +3560,87 @@
 .button-circle.hover-ripple-in:before { -webkit-border-radius: 100px; -moz-border-radius: 100px; border-radius: 100px;}
 
 .button-red.hover-ripple-out:before,
-.button-red.hover-ripple-in:before 
+.button-red.hover-ripple-in:before
 {
-    border-color: #fd3635 !important;
+    border-color: $c-red-2 !important;
 }
 .button-pink.hover-ripple-out:before,
-.button-pink.hover-ripple-in:before 
+.button-pink.hover-ripple-in:before
 {
-    border-color: #fd40b3 !important;
+    border-color: $c-pink-1 !important;
 }
 .button-orange.hover-ripple-out:before,
-.button-orange.hover-ripple-in:before 
+.button-orange.hover-ripple-in:before
 {
-    border-color: #ff8b34 !important;
+    border-color: $c-orange-1 !important;
 }
 .button-purple.hover-ripple-out:before,
-.button-purple.hover-ripple-in:before 
+.button-purple.hover-ripple-in:before
 {
-    border-color: #a85ad4 !important;
+    border-color: $c-purple-1 !important;
 }
 .button-blue.hover-ripple-out:before,
-.button-blue.hover-ripple-in:before 
+.button-blue.hover-ripple-in:before
 {
-    border-color: #3dace1 !important;
+    border-color: $c-blue-2 !important;
 }
 .button-cyan.hover-ripple-out:before,
-.button-cyan.hover-ripple-in:before 
+.button-cyan.hover-ripple-in:before
 {
-    border-color: #1abc9c !important;
+    border-color: $c-green-3 !important;
 }
 .button-green.hover-ripple-out:before,
-.button-green.hover-ripple-in:before 
+.button-green.hover-ripple-in:before
 {
-    border-color: #b2cc71 !important;
+    border-color: $c-green-2 !important;
 }
 .button-yellow.hover-ripple-out:before,
-.button-yellow.hover-ripple-in:before 
+.button-yellow.hover-ripple-in:before
 {
-    border-color: #ffc501 !important;
+    border-color: $c-yellow-1 !important;
 }
 .button-dark.hover-ripple-out:before,
-.button-dark.hover-ripple-in:before 
+.button-dark.hover-ripple-in:before
 {
-    border-color: #5f6467 !important;
+    border-color: $c-grey-5 !important;
 }
 .button-black.hover-ripple-out:before,
-.button-black.hover-ripple-in:before 
+.button-black.hover-ripple-in:before
 {
-    border-color: #000000 !important;
+    border-color: $c-black !important;
 }
 .button-gray.hover-ripple-out:before,
-.button-gray.hover-ripple-in:before 
+.button-gray.hover-ripple-in:before
 {
-    border-color: #e0e0e0 !important;
+    border-color: $c-grey-1 !important;
 }
 .button-white.hover-ripple-out:before,
-.button-white.hover-ripple-in:before 
+.button-white.hover-ripple-in:before
 {
-    border-color: #ffffff !important;
+    border-color: $c-white !important;
 }
 .button-primary.hover-ripple-out:before,
-.button-primary.hover-ripple-in:before 
+.button-primary.hover-ripple-in:before
 {
-    border-color: #286090 !important;
+    border-color: $c-blue-1 !important;
 }
 .button-success.hover-ripple-out:before,
-.button-success.hover-ripple-in:before 
+.button-success.hover-ripple-in:before
 {
-    border-color: #5cb85c !important;
+    border-color: $c-green-1 !important;
 }
 .button-info.hover-ripple-out:before,
-.button-info.hover-ripple-in:before 
+.button-info.hover-ripple-in:before
 {
-    border-color: #5bc0de !important;
+    border-color: $c-blue-3 !important;
 }
 .button-warning.hover-ripple-out:before,
-.button-warning.hover-ripple-in:before 
+.button-warning.hover-ripple-in:before
 {
-    border-color: #ec971f !important;
+    border-color: $c-orange-2 !important;
 }
 .button-danger.hover-ripple-out:before,
-.button-danger.hover-ripple-in:before 
+.button-danger.hover-ripple-in:before
 {
-    border-color: #c9302c !important;
+    border-color: $c-red-3 !important;
 }

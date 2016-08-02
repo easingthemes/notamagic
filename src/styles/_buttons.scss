@@ -1,0 +1,317 @@
+/*  ----------------------------------------------------
+8. BUTTONS
+-------------------------------------------------------- */
+.button,
+.button-3d,
+.button-o {
+	display: inline-block;
+	padding: 8px 16px;
+	margin-bottom: 5px;
+	font-size: 12px;
+	font-weight: normal;
+	line-height: 1.42857143;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	-ms-touch-action: manipulation;
+	touch-action: manipulation;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	background-image: none;
+	border: 1px solid transparent;
+	font-family: 'Montserrat', sans-serif;
+	text-transform: uppercase;
+	text-shadow: none;
+	font-weight: normal !important;
+	letter-spacing: 1px;
+	-webkit-transition: all .25s ease-in-out;
+	-moz-transition: all .25s ease-in-out;
+	transition: all .25s ease-in-out;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+.button,
+.button:hover,
+.button-3d,
+.button-3d:hover {
+	color: #fff !important;
+}
+.button-o {
+	background: transparent !important;
+	border-width: 1px;
+	border-style: solid;
+}
+.button i,
+.button-3d i,
+.button-o i {
+	margin-left: 15px;
+	margin-right: 0;
+	font-size: 14px;
+}
+.button small,
+.button-3d small,
+.button-o small {
+	margin-top: 0px;
+}
+.button:focus {
+	outline: none;
+	color: #fff;
+}
+.button-xs { font-size: 9px; padding: 5px 12px; }
+.button-sm { font-size: 10px; padding: 8px 20px;}
+.button-md { font-size: 11px; padding: 12px 25px;}
+.button-lg { font-size: 13px; padding: 15px 30px;}
+.button-square {
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+}
+
+.button-xs.button-rounded,
+.button-rounded.button-xs { -webkit-border-radius: 2px;-moz-border-radius: 2px;border-radius: 2px;}
+.button-sm.button-rounded,
+.button-rounded.button-sm { -webkit-border-radius: 4px;-moz-border-radius: 4px;border-radius: 4px;}
+.button-md.button-rounded,
+.button-rounded.button-md { -webkit-border-radius: 7px;-moz-border-radius: 7px;border-radius: 7px;}
+.button-lg.button-rounded,
+.button-rounded.button-lg { -webkit-border-radius: 10px;-moz-border-radius: 10px;border-radius: 10px;}
+
+.button-circle {
+	-webkit-border-radius: 100px;
+	-moz-border-radius: 100px;
+	border-radius: 100px;
+}
+.button-block {
+	display: block;
+	width: 100%;
+	margin-top: 5px;
+}
+/* Main Colors */
+.button.button-pasific {
+	color: #fff;
+}
+.button-3d.button-pasific {
+	color: #fff;
+	-webkit-box-shadow: 0 5px 0 #ee3135;
+	-moz-box-shadow: 0 5px 0 #ee3135;
+	box-shadow: 0 5px 0 #ee3135;
+}
+.button-3d:hover.button-pasific {
+	-webkit-box-shadow: 0 3px 0 #ee3135;
+	-moz-box-shadow: 0 3px 0 #ee3135;
+	box-shadow: 0 3px 0 #ee3135;
+}
+.button-o.button-pasific {
+	background: transparent !important;
+}
+.button-o.button-pasific:hover {
+	color: #fff !important;
+}
+/* Secondary Colors */
+.button.button-red, .button-3d.button-red 		    { background-color: #fd3635; }
+.button.button-pink, .button-3d.button-pink 		{ background-color: #fd40b3; }
+.button.button-orange, .button-3d.button-orange 	{ background-color: #ff8b34; }
+.button.button-purple, .button-3d.button-purple 	{ background-color: #a85ad4; }
+.button.button-blue, .button-3d.button-blue 		{ background-color: #3dace1; }
+.button.button-cyan, .button-3d.button-cyan 		{ background-color: #1abc9c; }
+.button.button-green, .button-3d.button-green 	    { background-color: #b2cc71; }
+.button.button-yellow, .button-3d.button-yellow 	{ background-color: #ffc501; }
+.button.button-gray, .button-3d.button-gray 		{ background-color: #e0e0e0; color: #111 !important; }
+.button.button-dark, .button-3d.button-dark 		{ background-color: #5f6467; }
+.button.button-black, .button-3d.button-black 		{ background-color: #000000; }
+.button.button-white, .button-3d.button-white 		{ background-color: #ffffff; color: #111 !important;}
+
+.button-3d.button-red 		{ -webkit-box-shadow: 0 5px 0 #d92726; -moz-box-shadow: 0 5px 0 #d92726; box-shadow: 0 5px 0 #d92726; }
+.button-3d.button-pink 	    { -webkit-box-shadow: 0 5px 0 #dc2193; -moz-box-shadow: 0 5px 0 #dc2193; box-shadow: 0 5px 0 #dc2193; }
+.button-3d.button-orange 	{ -webkit-box-shadow: 0 5px 0 #e1660b; -moz-box-shadow: 0 5px 0 #e1660b; box-shadow: 0 5px 0 #e1660b; }
+.button-3d.button-purple 	{ -webkit-box-shadow: 0 5px 0 #8632b5; -moz-box-shadow: 0 5px 0 #8632b5; box-shadow: 0 5px 0 #8632b5; }
+.button-3d.button-blue 	    { -webkit-box-shadow: 0 5px 0 #1f8abe; -moz-box-shadow: 0 5px 0 #1f8abe; box-shadow: 0 5px 0 #1f8abe; }
+.button-3d.button-cyan 	    { -webkit-box-shadow: 0 5px 0 #148d75; -moz-box-shadow: 0 5px 0 #148d75; box-shadow: 0 5px 0 #148d75; }
+.button-3d.button-green 	{ -webkit-box-shadow: 0 5px 0 #7d9345; -moz-box-shadow: 0 5px 0 #7d9345; box-shadow: 0 5px 0 #7d9345; }
+.button-3d.button-yellow 	{ -webkit-box-shadow: 0 5px 0 #deac02; -moz-box-shadow: 0 5px 0 #deac02; box-shadow: 0 5px 0 #deac02; }
+.button-3d.button-gray 	    { -webkit-box-shadow: 0 5px 0 #a7a7a7; -moz-box-shadow: 0 5px 0 #a7a7a7; box-shadow: 0 5px 0 #a7a7a7; }
+.button-3d.button-dark 	    { -webkit-box-shadow: 0 5px 0 #404345; -moz-box-shadow: 0 5px 0 #404345; box-shadow: 0 5px 0 #404345; }
+.button-3d.button-black 	{ -webkit-box-shadow: 0 5px 0 #555555; -moz-box-shadow: 0 5px 0 #555555; box-shadow: 0 5px 0 #555555; }
+.button-3d.button-white 	{ -webkit-box-shadow: 0 5px 0 #f9f9f9; -moz-box-shadow: 0 5px 0 #f9f9f9; box-shadow: 0 5px 0 #f9f9f9; }
+
+.button-3d:hover.button-red 	{ -webkit-box-shadow: 0 3px 0 #d92726; -moz-box-shadow: 0 3px 0 #d92726; box-shadow: 0 3px 0 #d92726; }
+.button-3d:hover.button-pink 	{ -webkit-box-shadow: 0 3px 0 #dc2193; -moz-box-shadow: 0 3px 0 #dc2193; box-shadow: 0 3px 0 #dc2193; }
+.button-3d:hover.button-orange  { -webkit-box-shadow: 0 3px 0 #e1660b; -moz-box-shadow: 0 3px 0 #e1660b; box-shadow: 0 3px 0 #e1660b; }
+.button-3d:hover.button-purple  { -webkit-box-shadow: 0 3px 0 #8632b5; -moz-box-shadow: 0 3px 0 #8632b5; box-shadow: 0 3px 0 #8632b5; }
+.button-3d:hover.button-blue 	{ -webkit-box-shadow: 0 3px 0 #1f8abe; -moz-box-shadow: 0 3px 0 #1f8abe; box-shadow: 0 3px 0 #1f8abe; }
+.button-3d:hover.button-cyan 	{ -webkit-box-shadow: 0 3px 0 #148d75; -moz-box-shadow: 0 3px 0 #148d75; box-shadow: 0 3px 0 #148d75; }
+.button-3d:hover.button-green 	{ -webkit-box-shadow: 0 3px 0 #7d9345; -moz-box-shadow: 0 3px 0 #7d9345; box-shadow: 0 3px 0 #7d9345; }
+.button-3d:hover.button-yellow  { -webkit-box-shadow: 0 3px 0 #deac02; -moz-box-shadow: 0 3px 0 #deac02; box-shadow: 0 3px 0 #deac02; }
+.button-3d:hover.button-gray 	{ -webkit-box-shadow: 0 3px 0 #a7a7a7; -moz-box-shadow: 0 3px 0 #a7a7a7; box-shadow: 0 3px 0 #a7a7a7; }
+.button-3d:hover.button-dark 	{ -webkit-box-shadow: 0 3px 0 #404345; -moz-box-shadow: 0 3px 0 #404345; box-shadow: 0 3px 0 #404345; }
+.button-3d:hover.button-black 	{ -webkit-box-shadow: 0 3px 0 #555555; -moz-box-shadow: 0 3px 0 #555555; box-shadow: 0 3px 0 #555555; }
+.button-3d:hover.button-white 	{ -webkit-box-shadow: 0 3px 0 #f9f9f9; -moz-box-shadow: 0 3px 0 #f9f9f9; box-shadow: 0 3px 0 #f9f9f9; }
+
+.button-o.button-red		{ border-color: #fd3635; color: #fd3635; }
+.button-o.button-pink 		{ border-color: #fd40b3; color: #fd40b3; }
+.button-o.button-orange 	{ border-color: #ff8b34; color: #ff8b34; }
+.button-o.button-purple	    { border-color: #a85ad4; color: #a85ad4; }
+.button-o.button-blue 		{ border-color: #3dace1; color: #3dace1; }
+.button-o.button-cyan 		{ border-color: #1abc9c; color: #1abc9c; }
+.button-o.button-green		{ border-color: #b2cc71; color: #b2cc71; }
+.button-o.button-yellow	    { border-color: #edc951; color: #edc951; }
+.button-o.button-gray 		{ border-color: #e0e0e0; color: #e0e0e0; }
+.button-o.button-dark 		{ border-color: #323a45; color: #323a45; }
+.button-o.button-black 		{ border-color: #000000; color: #000000; }
+.button-o.button-white 		{ border-color: #ffffff; color: #ffffff; }
+.button-o.button-white:hover{ color: #000000 !important;}
+/* Bootstrap Colors */
+.button.button-primary, .button-3d.button-primary { background-color: #286090; }
+.button.button-success, .button-3d.button-success { background-color: #5cb85c; }
+.button.button-info, .button-3d.button-info       { background-color: #5bc0de; }
+.button.button-warning, .button-3d.button-warning { background-color: #ec971f; }
+.button.button-danger, .button-3d.button-danger   { background-color: #c9302c; }
+
+.button-3d.button-primary { -webkit-box-shadow: 0 5px 0 #1a456b; -moz-box-shadow: 0 5px 0 #1a456b; box-shadow: 0 5px 0 #1a456b; }
+.button-3d.button-success { -webkit-box-shadow: 0 5px 0 #408940; -moz-box-shadow: 0 5px 0 #408940; box-shadow: 0 5px 0 #408940; }
+.button-3d.button-info    { -webkit-box-shadow: 0 5px 0 #398ca5; -moz-box-shadow: 0 5px 0 #398ca5; box-shadow: 0 5px 0 #398ca5; }
+.button-3d.button-warning { -webkit-box-shadow: 0 5px 0 #bb7614; -moz-box-shadow: 0 5px 0 #bb7614; box-shadow: 0 5px 0 #bb7614; }
+.button-3d.button-danger  { -webkit-box-shadow: 0 5px 0 #9d201c; -moz-box-shadow: 0 5px 0 #9d201c; box-shadow: 0 5px 0 #9d201c; }
+
+.button-3d:hover.button-primary { -webkit-box-shadow: 0 3px 0 #1a456b; -moz-box-shadow: 0 3px 0 #1a456b; box-shadow: 0 3px 0 #1a456b; }
+.button-3d:hover.button-success { -webkit-box-shadow: 0 3px 0 #408940; -moz-box-shadow: 0 3px 0 #408940; box-shadow: 0 3px 0 #408940; }
+.button-3d:hover.button-info    { -webkit-box-shadow: 0 3px 0 #398ca5; -moz-box-shadow: 0 3px 0 #398ca5; box-shadow: 0 3px 0 #398ca5; }
+.button-3d:hover.button-warning { -webkit-box-shadow: 0 3px 0 #bb7614; -moz-box-shadow: 0 3px 0 #bb7614; box-shadow: 0 3px 0 #bb7614; }
+.button-3d:hover.button-danger  { -webkit-box-shadow: 0 3px 0 #9d201c; -moz-box-shadow: 0 3px 0 #9d201c; box-shadow: 0 3px 0 #9d201c; }
+
+.button-o.button-primary    { border-color: #286090; color: #286090; }
+.button-o.button-success    { border-color: #5cb85c; color: #5cb85c; }
+.button-o.button-info       { border-color: #5bc0de; color: #5bc0de; }
+.button-o.button-warning    { border-color: #ec971f; color: #ec971f; }
+.button-o.button-danger     { border-color: #c9302c; color: #c9302c; }
+
+
+/* Gradient Colors */
+.button-grad-violet {
+	background: #5f2c82;
+	background: -webkit-linear-gradient(-45deg, #4776E6, #8E54E9);
+	background: -o-linear-gradient(-45deg, #4776E6, #8E54E9);
+	background: -moz-linear-gradient(-45deg, #4776E6, #8E54E9);
+	background: linear-gradient(-45deg, #4776E6, #8E54E9);
+}
+.button-grad-violet:hover {
+	background: #5f2c82;
+	background: -webkit-linear-gradient(45deg, #4776E6, #8E54E9);
+	background: -o-linear-gradient(45deg, #4776E6, #8E54E9);
+	background: -moz-linear-gradient(45deg, #4776E6, #8E54E9);
+	background: linear-gradient(45deg, #4776E6, #8E54E9);
+}
+.button-grad-blood-mary {
+	background: #FF512F;
+	background: -webkit-linear-gradient(-45deg, #FF512F, #DD2476);
+	background: -o-linear-gradient(-45deg, #FF512F, #DD2476);
+	background: -moz-linear-gradient(-45deg, #FF512F, #DD2476);
+	background: linear-gradient(-45deg, #FF512F, #DD2476);
+}
+.button-grad-blood-mary:hover {
+	background: #FF512F;
+	background: -webkit-linear-gradient(45deg, #FF512F, #DD2476);
+	background: -o-linear-gradient(45deg, #FF512F, #DD2476);
+	background: -moz-linear-gradient(45deg, #FF512F, #DD2476);
+	background: linear-gradient(45deg, #FF512F, #DD2476);
+}
+.button-grad-bora {
+	background: #2BC0E4;
+	background: -webkit-linear-gradient(45deg, #2BC0E4, #EAECC6);
+	background: -o-linear-gradient(45deg, #2BC0E4, #EAECC6);
+	background: -moz-linear-gradient(45deg, #2BC0E4, #EAECC6);
+	background: linear-gradient(45deg, #2BC0E4, #EAECC6);
+}
+.button-grad-bora:hover {
+	background: #2BC0E4;
+	background: -webkit-linear-gradient(-45deg, #2BC0E4, #EAECC6);
+	background: -o-linear-gradient(-45deg, #2BC0E4, #EAECC6);
+	background: -moz-linear-gradient(-45deg, #2BC0E4, #EAECC6);
+	background: linear-gradient(-45deg, #2BC0E4, #EAECC6);
+}
+.button-grad-mojito {
+	background: #68e9b6;
+	background: -webkit-linear-gradient(45deg, #68e9b6, #4e75b9);
+	background: -o-linear-gradient(45deg, #68e9b6, #4e75b9);
+	background: -moz-linear-gradient(45deg, #68e9b6, #4e75b9);
+	background: linear-gradient(45deg, #68e9b6, #4e75b9);
+}
+.button-grad-mojito:hover {
+	background: #4e75b9;
+	background: -webkit-linear-gradient(-45deg, #4e75b9, #68e9b6);
+	background: -o-linear-gradient(-45deg, #4e75b9, #68e9b6);
+	background: -moz-linear-gradient(-45deg, #4e75b9, #68e9b6);
+	background: linear-gradient(-45deg, #4e75b9, #68e9b6);
+}
+.button-grad-orange {
+	background: #FFB75E;
+	background: -webkit-linear-gradient(-45deg, #FFB75E, #ED8F03);
+	background: -o-linear-gradient(-45deg, #FFB75E, #ED8F03);
+	background: -moz-linear-gradient(-45deg, #FFB75E, #ED8F03);
+	background: linear-gradient(-45deg, #FFB75E, #ED8F03);
+}
+.button-grad-orange:hover {
+	background: #FFB75E;
+	background: -webkit-linear-gradient(45deg, #FFB75E, #ED8F03);
+	background: -o-linear-gradient(45deg, #FFB75E, #ED8F03);
+	background: -moz-linear-gradient(45deg, #FFB75E, #ED8F03);
+	background: linear-gradient(45deg, #FFB75E, #ED8F03);
+}
+.button-grad-purple {
+	background: #DA22FF;
+	background: -webkit-linear-gradient(-45deg, #DA22FF, #9733EE);
+	background: -o-linear-gradient(-45deg, #DA22FF, #9733EE);
+	background: -moz-linear-gradient(-45deg, #DA22FF, #9733EE);
+	background: linear-gradient(-45deg, #DA22FF, #9733EE);
+}
+.button-grad-purple:hover {
+	background: #DA22FF;
+	background: -webkit-linear-gradient(45deg, #DA22FF, #9733EE);
+	background: -o-linear-gradient(45deg, #DA22FF, #9733EE);
+	background: -moz-linear-gradient(45deg, #DA22FF, #9733EE);
+	background: linear-gradient(45deg, #DA22FF, #9733EE);
+}
+.button-grad-stellar {
+	background: #7474BF;
+	background: -webkit-linear-gradient(-45deg, #7474BF, #348AC7);
+	background: -o-linear-gradient(-45deg, #7474BF, #348AC7);
+	background: -moz-linear-gradient(-45deg, #7474BF, #348AC7);
+	background: linear-gradient(-45deg, #7474BF, #348AC7);
+}
+.btn-grad-stellar:hover {
+	background: #7474BF;
+	background: -webkit-linear-gradient(45deg, #7474BF, #348AC7);
+	background: -o-linear-gradient(45deg, #7474BF, #348AC7);
+	background: -moz-linear-gradient(45deg, #7474BF, #348AC7);
+	background: linear-gradient(45deg, #7474BF, #348AC7);
+}
+.button-grad-day-tripper {
+	background: #f857a6;
+	background: -webkit-linear-gradient(-45deg, #f857a6, #ff5858);
+	background: -o-linear-gradient(-45deg, #f857a6, #ff5858);
+	background: -moz-linear-gradient(-45deg, #f857a6, #ff5858);
+	background: linear-gradient(-45deg, #f857a6, #ff5858);
+}
+.button-grad-day-tripper:hover {
+	background: #f857a6;
+	background: -webkit-linear-gradient(45deg, #f857a6, #ff5858);
+	background: -o-linear-gradient(45deg, #f857a6, #ff5858);
+	background: -moz-linear-gradient(45deg, #f857a6, #ff5858);
+	background: linear-gradient(45deg, #f857a6, #ff5858);
+}
+
+.button-grad-violet,
+.button-grad-blood-mary,
+.button-grad-bora,
+.button-grad-mojito,
+.button-grad-orange,
+.button-grad-purple,
+.button-grad-stellar,
+.button-grad-tripper {
+	border: 0 !important;
+	color: #ffffff !important;
+}

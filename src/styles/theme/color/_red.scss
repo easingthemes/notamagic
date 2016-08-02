@@ -2,10 +2,10 @@
 SELECTION COLOR
 -------------------------------------------------------- */
 ::-moz-selection { /* Code for Firefox */
-    background: #ff4530;
+    background: $c-red-1;
 }
 ::selection {
-    background: #ff4530;
+    background: $c-red-1;
 }
 
 /*  --------------------------------------------------------
@@ -42,7 +42,7 @@ input[type=checkbox]:checked + label:before,
 .button-pasific.hover-rectangle-out:before,
 .button-pasific.hover-shutter-out-horizontal:before,
 .button-pasific.hover-shutter-out-vertical:before {
-    background-color: #ff4530 !important;
+    background-color: $c-red-1 !important;
 }
 
 /*  --------------------------------------------------------
@@ -70,8 +70,8 @@ blockquote.blockquote-pasific-reverse,
 a.add-to-cart:hover,
 input[type=checkbox]:checked + label:before,
 #sidebar ul.tag li:hover,
-.copyright a:hover {        
-    border-color: #ff4530;
+.copyright a:hover {
+    border-color: $c-red-1;
 }
 
 
@@ -126,7 +126,7 @@ a[class*="color-"]:hover,
 #footer ul li a:hover,
 .copyright i.fa,
 .typed-cursor {
-    color: #ff4530;
+    color: $c-red-1;
 }
 
 .top-nav-collapse .navbar-nav li a:hover,
@@ -138,13 +138,13 @@ a[class*="color-"]:hover,
 a.color-light:hover,
 .blog-title a:hover,
 .megamenu .dropdown .dropdown-menu li a:hover {
-    color: #ff4530 !important;
+    color: $c-red-1 !important;
 }
 /*  --------------------------------------------------------
 OTHER
 -------------------------------------------------------- */
 .irs-from:after, .irs-to:after, .irs-single:after {
-    border-top-color: #ff4530;
+    border-top-color: $c-red-1;
 }
 .heading,
 .heading-solid-icon div,
@@ -155,9 +155,9 @@ OTHER
 .heading-dashed-icon div div,
 .heading-double-icon div,
 .heading-double-icon div div {
-    border-top-color: #ff4530 !important;
+    border-top-color: $c-red-1 !important;
 }
 .megamenu .dropdown-submenu:hover>a:after{
-	border-left-color:#ff4530;
+	border-left-color:$c-red-1;
 }
 

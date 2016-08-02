@@ -1,50 +1,11 @@
-//:global {
-	//@import '~normalize.css/normalize';
-	//@import 'vendor';
-	@import 'base';
-
+@import 'settings';
 //<!-- Load Main CSS
 //=====================================-->
-@import 'theme/main/main';
-@import 'theme/main/setting';
-@import 'theme/main/hover';
-
-//<!-- Load Magnific Popup CSS
+@import 'main';
+//<!-- Load Extra CSS
 //=====================================-->
-@import 'theme/magnific/magic.min';
-@import 'theme/magnific/magnific-popup';
-@import 'theme/magnific/magnific-popup-zoom-gallery';
-
-//<!-- Load OWL Carousel CSS
+@import 'hover';
+//<!-- Load Theme CSS
 //=====================================-->
-@import 'theme/owl-carousel/owl.carousel';
-@import 'theme/owl-carousel/owl.theme';
-@import 'theme/owl-carousel/owl.transitions';
+@import 'theme/color/red';
 
-//<!-- Load Color CSS - Please uncomment to apply the color.
-//=====================================
-@import 'theme/color/pasific';
-
-//<!-- Load Fontbase Icons - Please Uncomment to use linea icons
-//=====================================
-@import 'theme/icon/et-line-font';
-
-// Some best-practice CSS that's useful for most apps
-  // Just remove them if they're not what you want
-  html {
-    box-sizing: border-box;
-  }
-
-  html,
-  body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-  }
-
-  *,
-  *:before,
-  *:after {
-    box-sizing: inherit;
-  }
-//}

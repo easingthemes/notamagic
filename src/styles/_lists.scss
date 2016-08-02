@@ -1,0 +1,49 @@
+ul, ol {
+	font-family: $f-primary;
+	font-size: 13px;
+	color: #747474;
+	margin: 0;
+	padding: 0;
+}
+ol li {
+	line-height: 25px;
+	padding: 0;
+	margin-left: 20px;
+}
+ul.icon-list {
+	text-align: left;
+}
+ul.icon-list li,
+ul.icon-list-underline li {
+	list-style: none;
+	line-height: 25px;
+}
+ul.icon-list li i,
+ul.icon-list-underline li i {
+	margin-right: 10px;
+}
+ul.icon-list-underline li {
+	padding-bottom: 5px;
+	margin-bottom: 5px;
+}
+.underline-solid li {
+	border-bottom: 1px solid #b9b9b9;
+}
+.underline-dotted li {
+	border-bottom: 1px dotted #b9b9b9;
+}
+.underline-dashed li {
+	border-bottom: 1px dashed #b9b9b9;
+}
+.underline-double li {
+	border-bottom: 3px double #b9b9b9;
+}
+ul.no-icon-list {
+	margin: 0;
+	padding: 0;
+}
+ul.no-icon-list li {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
