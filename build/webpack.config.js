@@ -77,8 +77,7 @@ webpackConfig.plugins = [
 	  "appear": "jquery_appear"
   }),
   new webpack.ResolverPlugin(
-	  [new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin(".bower.json", ["main"]),
-	  new webpack.ResolverPlugin.FileAppendPlugin(['/owl-carousel/owl.carousel.js'])]
+	  [new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin(".bower.json", ["main"])]
   )
 ]
 

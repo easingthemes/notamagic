@@ -48,7 +48,7 @@ const config = {
 	'jquery',
 	'bootstrap-sass',
 	'jquery_appear',
-	'owlcar',
+	//'owlcar',
 	'jquery-bridget',
 	'imagesloaded',
 	'magnific-popup',
@@ -131,7 +131,6 @@ config.compiler_bower = config.compiler_bower
   })
 
 config.compiler_vendor = config.compiler_bower.concat(config.compiler_npm);
-console.log(config.compiler_vendor);
 // ------------------------------------
 // Utilities
 // ------------------------------------
