@@ -46,7 +46,7 @@ export class BlogItem extends React.Component {
 			<div className="blog-one">
 				<div className="blog-one-header">
 					<Link
-						to={'/blog/' + post.slug}
+						to={'/blog/' + post.id}
 					>
 						<img src={post.imageMedium} alt={post.title} className="img-responsive" />
 					</Link>
