@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 /**
  * React component implementation.
@@ -14,28 +15,6 @@ export class BlogItem extends React.Component {
 	// React methods
 	//------------------------------------------------------------------------------------------------------------------
 
-	/**
-	 *
-	 * Set the initial state
-	 *
-	 * @private
-	 */
-	constructor(props) {
-		super(props);
-		this.state = {};
-	}
-
-	/**
-	 * When component is mounted add the Change event listeners and get initial data
-	 *
-	 * @method componentDidMount
-	 * @returns void
-	 * @public
-	 */
-	componentDidMount () {
-
-	}
-
 	//------------------------------------------------------------------------------------------------------------------
 	// Render methods
 	//------------------------------------------------------------------------------------------------------------------
@@ -48,27 +27,59 @@ export class BlogItem extends React.Component {
 	 * @public
 	 */
 	render () {
-		const item = this.props.data;
+		const post = this.props.post || {};
+		const comments = post.comments;
+		const readMore = 'read more';
+		let commentsLabel = 'Comment';
+		let commentsNumber = 0;
+		if (!comments || comments.length === 0) {
+			commentsLabel = commentsLabel + 's';
+		}
+		if (comments && comments.length === 1) {
+			commentsNumber = comments.length;
+		}
+		if (comments && comments.length > 1) {
+			commentsNumber = comments.length;
+			commentsLabel = commentsLabel + 's';
+		}
 		return (
 			<div className="blog-one">
 				<div className="blog-one-header">
-					<img src={item.image} alt={item.title} className="img-responsive" />
+					<Link
+						to={'/blog/' + post.slug}
+					>
+						<img src={post.imageMedium} alt={post.title} className="img-responsive" />
+					</Link>
 				</div>
 				<div className="blog-one-attrib">
-					<img src={item.author.photo} alt="photo blog" className="blog-author-photo" />
-						<span className="blog-author-name">{item.author.name}</span>
-						<span className="blog-date">{item.date}</span>
+					<img src={post.author.avatar} alt={post.author.name} className="blog-author-photo" />
+						<span className="blog-author-name">{post.author.name}</span>
+						<span className="blog-date">{post.date}</span>
 				</div>
 				<div className="blog-one-body">
-					<h4 className="blog-title"><a href={item.url}>{item.title}</a></h4>
+					<h4 className="blog-title">
+						<Link
+							to={'/blog/' + post.id}
+						>
+							{post.title}
+						</Link>
+					</h4>
 					<p className="">
-						{item.text}
+						{post.leadText}
 					</p>
 				</div>
 				<div className="blog-one-footer">
-					<a href="#">{item.buttonLabel}</a>
-					<i className="fa fa-heart"></i>{item.likes} Likes
-					<i className="fa fa-comments"></i><a href="#">{item.comments} Comments</a>
+					<Link
+						to={'/blog/' + post.id}
+					>
+						{readMore}
+					</Link>
+					<i className="fa fa-comments"></i>
+					<Link
+						to={'/blog/' + post.id}
+					>
+						{commentsNumber} {commentsLabel}
+					</Link>
 				</div>
 			</div>
 		);
@@ -76,11 +87,11 @@ export class BlogItem extends React.Component {
 }
 
 BlogItem.propTypes = {
-	data: React.PropTypes.object
+	post: React.PropTypes.object
 };
 
 BlogItem.defaultProps = {
-	data: {author: {}}
+	post: {author: {}}
 };
 
 export default BlogItem;

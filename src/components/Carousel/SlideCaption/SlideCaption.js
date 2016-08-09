@@ -74,9 +74,9 @@ export class SlideCaption extends React.Component {
 		}
 
 		return (
-			<p className={style}>
-				<span dangerouslySetInnerHTML={{__html: this.props.subtitle}} />
-			</p>
+			<div className={style}>
+				<div dangerouslySetInnerHTML={{__html: this.props.subtitle}} />
+			</div>
 		);
 	}
 

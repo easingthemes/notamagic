@@ -890,6 +890,7 @@ table th.bg-pasific {
 .carousel-caption {
     position: absolute;
     top: 30%;
+	font-size: 18px;
 }
 .carousel-caption h1 {
     font-size: 50px;
@@ -903,6 +904,9 @@ table th.bg-pasific {
         font-size: 200%;
         line-height: 1.5;
     }
+	.carousel-caption {
+		font-size: 100%;
+	}
     .carousel-caption p {
         font-size: 100%;
     }

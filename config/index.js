@@ -3,6 +3,7 @@ import path from 'path'
 import _debug from 'debug'
 import { argv } from 'yargs'
 import ip from 'ip'
+import Constants from './globals'
 
 const localip = ip.address();
 const debug = _debug('app:config');
@@ -98,7 +99,8 @@ config.globals = {
   '__TEST__'     : config.env === 'test',
   '__DEBUG__'    : config.env === 'development' && !argv.no_debug,
   '__COVERAGE__' : !argv.watch && config.env === 'test',
-  '__BASENAME__' : JSON.stringify(process.env.BASENAME || '')
+  '__BASENAME__' : JSON.stringify(process.env.BASENAME || ''),
+	'Constants'  : JSON.stringify(Constants || {})
 };
 
 // ------------------------------------

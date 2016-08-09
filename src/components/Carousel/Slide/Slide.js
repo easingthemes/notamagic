@@ -3,12 +3,12 @@ import SlideCaption from '../SlideCaption/SlideCaption';
 
 export const Slide = (props) => {
 
-	var style = ' item carousel-img ' + props.image;
+	var style = ' item carousel-img ';
 	if (props.index === props.initialSlideIndex) {
 		style = 'active ' + style;
 	}
 	return (
-	<div className={style}>
+	<div className={style} style={{'backgroundImage': 'url(' + props.image + ')'}}>
 		<div className="container">
 			<SlideCaption {...props} />
 		</div>

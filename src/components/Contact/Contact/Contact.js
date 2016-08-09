@@ -36,19 +36,6 @@ export class Contact extends React.Component {
 	 * @public
 	 */
 	componentDidMount () {
-		// var frm = $('#contactForm');
-		// frm.submit(function (ev) {
-		// 	$.ajax({
-		// 		type: frm.attr('method'),
-		// 		url: frm.attr('action'),
-		// 		data: frm.serialize(),
-		// 		success: function (data) {
-		// 			$('#successMessage').show();
-		// 		}
-		// 	});
-        //
-		// 	ev.preventDefault();
-		// });
 
 		/* --------------------------------------------
 		 SECURITY CHECK HUMAN

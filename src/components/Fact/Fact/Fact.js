@@ -1,6 +1,7 @@
 import React from 'react';
 import data from '../data';
 import FactItem from '../FactItem/FactItem';
+import getPageData from '../../../utils/getPageData';
 
 /**
  * React component implementation.
@@ -21,8 +22,34 @@ export class Fact extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
+			post: {
+				leadTitle: '',
+				title: '',
+				leadText: '',
+				text: '',
+				image: null,
+				content: ''
+			},
 			isLoading: true
 		};
+	}
+
+	componentDidMount () {
+		const _this = this;
+		getPageData('posts', 50, _this.successCallback.bind(_this), _this.errorCallback.bind(_this));
+	}
+
+	successCallback (data) {
+		this.setState({
+			post: data,
+			isLoading: false
+		});
+	}
+
+	errorCallback () {
+		this.setState({
+			isLoading: false
+		});
 	}
 
 	//------------------------------------------------------------------------------------------------------------------
@@ -36,12 +63,12 @@ export class Fact extends React.Component {
 	 * @returns {XML}
 	 * @public
 	 */
-	renderTitle = () => (
+	renderTitle = (post) => (
 		<div className="row">
 			<div className="col-md-8 col-md-offset-2 text-center mb50">
 				<h1 className="font-size-normal color-light">
-					<small className="color-light">{data.leadTitle}</small>
-					{data.title}
+					<small className="color-light">{post.leadTitle}</small>
+					{post.title}
 				</h1>
 			</div>
 		</div>
@@ -54,18 +81,10 @@ export class Fact extends React.Component {
 	 * @returns {XML}
 	 * @public
 	 */
-	renderText = () => (
+	renderText = (content) => (
 		<div className="row">
 			<div className="col-sm-8 col-sm-push-2 text-center">
-				<h4 className="pt25 color-light">
-					{data.text.title}
-				</h4>
-				<p className="pb10 color-light alpha8">
-					{data.text.text}
-				</p>
-				<a href="#" className="button button-md button-gray hover-ripple-out">
-					<span className="color-primary">{data.text.buttonLabel}</span>
-				</a>
+				<div dangerouslySetInnerHTML={{__html:content}} />
 			</div>
 		</div>
 	)
@@ -78,12 +97,12 @@ export class Fact extends React.Component {
 	 * @public
 	 */
 	render () {
-		const baseUrl = '/img/';
+		const _this = this;
 		return (
 			<div id="fact" className="bg-grad-stellar pt100 pb100">
 				<div className="container">
 
-					{this.renderTitle()}
+					{this.renderTitle(_this.state.post)}
 
 					<div className="row">
 
@@ -116,12 +135,12 @@ export class Fact extends React.Component {
 						</div>
 
 						<div className="col-md-6 col-md-pull-3">
-							<img src={baseUrl + '/other/map.png'} alt="macbook" className="img-responsive" />
+							<img src={_this.state.post.image} alt="macbook" className="img-responsive" />
 						</div>
 
 					</div>
 
-					{this.renderText()}
+					{this.renderText(_this.state.post.content)}
 
 				</div>
 			</div>

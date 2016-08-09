@@ -41,6 +41,10 @@ webpackConfig.entry = {
     : APP_ENTRY_PATHS,
   vendor: config.compiler_vendor
 }
+//
+// webpackConfig.externals = {
+// 	'Globals': config.globals
+// }
 
 // ------------------------------------
 // Bundle Output
@@ -79,7 +83,7 @@ webpackConfig.plugins = [
   new webpack.ResolverPlugin(
 	  [new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin(".bower.json", ["main"])]
   )
-]
+];
 
 if (__DEV__) {
   debug('Enable plugins for live development (HMR, NoErrors).')

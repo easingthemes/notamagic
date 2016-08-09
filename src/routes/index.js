@@ -4,6 +4,8 @@ import Home from './Home';
 import CounterRoute from './Counter';
 import ContactRoute from './ContactRoute';
 import PortfolioRoute from './PortfolioRoute';
+import BlogRoute from './BlogRoute';
+import PostRoute from './PostRoute';
 
 /*  Note: Instead of using JSX, we recommend using react-router
     PlainRoute objects to build route definitions.   */
@@ -15,7 +17,9 @@ export const createRoutes = (store) => ({
 	childRoutes: [
 		CounterRoute(store),
 		ContactRoute(store),
-		PortfolioRoute(store)
+		PortfolioRoute(store),
+		BlogRoute(store),
+		PostRoute(store)
 	]
 });
 

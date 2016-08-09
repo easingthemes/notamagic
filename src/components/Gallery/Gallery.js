@@ -1,16 +1,58 @@
 import React from 'react';
 import data from './data';
 import Isotope from 'isotope-layout';
+import getGalleryData from '../../utils/getGalleryData';
 
 export class Gallery extends React.Component {
+
+	constructor(props) {
+		super(props);
+		this.state = {
+			src: [],
+			full: [],
+			alt: [],
+			filters: [],
+			isLoading: true
+		};
+	}
+
 	componentDidMount () {
+		const _this = this;
+		getGalleryData('posts', 29, _this.successCallback.bind(_this), _this.errorCallback.bind(_this));
+	}
+
+	componentDidUpdate (nextProps, nextState) {
+		this.initPlugins();
+	}
+
+	successCallback (data) {
+		let filters = data.alt.filter(function(filter, index) {
+			return data.alt.indexOf(filter) === index;
+		});
+		data.isLoading = false;
+		data.filters = filters;
+		console.log('data', data);
+		this.setState(data);
+	}
+
+	errorCallback () {
+		this.setState({
+			isLoading: false
+		});
+	}
+
+	initPlugins () {
 		let $portfolio;
 		jQueryBridget( 'isotope', Isotope, $ );
-		$('.magnific-popup').magnificPopup({
-			type: 'image',
-			gallery:{enabled:true}
-		});
+
 		setTimeout(function () {
+			$('.magnific-popup').magnificPopup({
+				type: 'image',
+				gallery:{
+					enabled: true
+				}
+			});
+
 			$portfolio = $('.portfolio').imagesLoaded( function() {
 				$portfolio.isotope({
 					itemSelector: '.portfolio-item',
@@ -30,8 +72,9 @@ export class Gallery extends React.Component {
 			});
 		}, 300);
 	}
+
 	renderFilter () {
-		const filters = data.filters;
+		const filters = this.state.filters || [];
 		return filters.map(function (filter, index) {
 			let filterId = filter.replace(' ', '-').toLowerCase();
 			return (
@@ -41,6 +84,7 @@ export class Gallery extends React.Component {
 			);
 		});
 	}
+
 	renderFilters () {
 		return (
 			<ul className="filters text-center  mt25 mb50">
@@ -49,29 +93,33 @@ export class Gallery extends React.Component {
 			</ul>
 		);
 	}
+
 	renderImages () {
-		const images = data.images;
+		let images = [];
+		const srcs = this.state.src || [];
 		const _this = this;
-		return images.map(function (image, index) {
+		return srcs.map(function(src, index) {
+			let image = {
+				thumbUrl: src,
+				largeUrl: _this.state.full[index],
+				alt: _this.state.alt[index]
+			};
+			images.push(image);
 			return _this.renderImage(image, index);
 		});
 	}
-	renderImage (image, index) {
-		const baseUrl = '/img/portfolio';
-		let filtersIds = image.filters.map(function (filter) {
-			return filter.replace(' ', '-').toLowerCase();
-		});
-		const filters = filtersIds.join(' ');
 
+	renderImage (image, index) {
 		return (
-			<div key={index} className={'portfolio-item col-lg-3 col-md-4 col-sm-6 col-xs-12 ' + filters} data-category="">
-					<a href={baseUrl + '/' + image.largeUrl} className="magnific-popup">
+			<div key={index} className={'portfolio-item col-lg-3 col-md-4 col-sm-6 col-xs-12 ' + image.alt} data-category="">
+				<a href={image.largeUrl} className="magnific-popup external-media">
 					<span className="glyphicon glyphicon-search hover-bounce-out"></span>
 				</a>
-				<img src={baseUrl + '/' + image.thumbUrl} alt={image.alt} className="img-responsive" />
+				<img src={image.thumbUrl} alt={image.alt} className="img-responsive" />
 			</div>
 		);
 	}
+	
 	render () {
 		return (
 			<div id="portfolioGrid">

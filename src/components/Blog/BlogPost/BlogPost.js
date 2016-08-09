@@ -8,10 +8,10 @@ import getPostsData from '../../../utils/getPostsData';
  *
  * @author dfilipovic
  * @namespace ReactApp
- * @class Blog
+ * @class BlogPost
  * @extends ReactApp
  */
-export class Blog extends React.Component {
+export class BlogPost extends React.Component {
 
 	//------------------------------------------------------------------------------------------------------------------
 	// React methods
@@ -59,9 +59,8 @@ export class Blog extends React.Component {
 	//------------------------------------------------------------------------------------------------------------------
 	// Render methods
 	//------------------------------------------------------------------------------------------------------------------
-	renderItems () {
-		const posts = this.state.posts || [];
-		const items = data.items || [];
+	renderItem () {
+		const post = this.state.post || [];
 
 		//const posts = $.merge(true, items, wpposts);
 		if (this.state.isLoading) {
@@ -69,14 +68,12 @@ export class Blog extends React.Component {
 				<span />
 			);
 		}
-
-		return posts.map(function (post, index) {
-			return (
-				<div key={index} className="col-md-4 col-sm-6 col-xs-12 mb50">
-					<BlogItem data={items[index]} post={post} />
-				</div>
-			);
-		});
+		
+		return (
+			<div className="col-md-12 col-sm-12 col-xs-12 mb50">
+				<BlogItem post={post} />
+			</div>
+		);
 	}
 	/**
 	 * Renders the component
@@ -99,7 +96,7 @@ export class Blog extends React.Component {
 					</div>
 
 					<div className="row">
-						{this.renderItems()}
+						{this.renderItem()}
 					</div>
 				</div>
 			</div>
@@ -107,10 +104,10 @@ export class Blog extends React.Component {
 	}
 }
 
-Blog.propTypes = {
+BlogPost.propTypes = {
 };
 
-Blog.defaultProps = {
+BlogPost.defaultProps = {
 };
 
-export default Blog;
+export default BlogPost;

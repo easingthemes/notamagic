@@ -1,0 +1,21 @@
+:global {
+	.Loader {
+		position: relative;
+		min-width: 50px;
+		min-height: 50px;
+		text-decoration: none;
+		line-height: 1;
+		i {
+			color: inherit;
+			position: absolute;
+			font-size: 32px;
+			top: 50%;
+			left: 50%;
+			margin-top: -.585em;
+			margin-left: -.585em;
+			display: inline-block;
+			width: 1em;
+			height: 1em;
+		}
+	}
+}
