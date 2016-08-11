@@ -11,7 +11,16 @@ import Logo from 'components/navbar/Logo';
 import Navigation from 'components/navbar/Navigation';
 
 class Navbar extends React.Component {
+	componentDidUpdate (nextProps, nextState) {
+		//console.log('nextState', nextState);
+		//console.log('Navbar did update: ', this.props.path);
+		this.initPlugins();
+	}
 	componentDidMount() {
+		//console.log('Navbar did mount: ', this.props.path);
+	}
+
+	initPlugins () {
 		/* --------------------------------------------
 		 CLOSE COLLAPSE MENU ON MOBILE VIEW EXCEPT DROPDOWN
 		 -------------------------------------------- */
@@ -45,18 +54,22 @@ class Navbar extends React.Component {
 		/* --------------------------------------------------------
 		 NAVBAR FIXED TOP ON SCROLL
 		 ----------------------------------------------------------- */
+		const toggleNav = function() {
+			if ($('.navbar').offset().top > 10)  {
+				$('.navbar-pasific').addClass('top-nav-collapse');
+			} else {
+				$('.navbar-pasific').removeClass('top-nav-collapse');
+			}
+		}
 
-		if( $('.navbar-standart').length > 0 ){
+		if(this.props.path !== '/' && this.props.path !== '/portfolio') {
 			$('.navbar-pasific').addClass('top-nav-collapse');
+			console.log('off');
+			$(window).off('scroll', toggleNav);
 		} else {
-			$(window).scroll(function() {
-				if ($('.navbar').offset().top > 10)  {
-					$('.navbar-pasific').addClass('top-nav-collapse');
-
-				} else {
-					$('.navbar-pasific').removeClass('top-nav-collapse');
-				}
-			});
+			toggleNav();
+			console.log('on');
+			$(window).on('scroll', toggleNav);
 		}
 
 		/* --------------------------------------------------------
@@ -74,9 +87,13 @@ class Navbar extends React.Component {
 			});
 		}
 	}
+
 	render() {
+		const path = this.props.path === '/' ? '' : 'navbar-standart';
+		const style = path + ' ';
+		console.log('style', this.props.path);
 		return (
-			<nav className="navbar navbar-pasific navbar-mp megamenu navbar-fixed-top">
+			<nav className={style + ' navbar navbar-pasific navbar-fixed-top navbar-mp megamenu'}>
 				<div className="container-fluid">
 					<Logo />
 					<Navigation />

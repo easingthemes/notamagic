@@ -4,7 +4,7 @@ const getGalleryData = (type, id, successCallback, errorCallback) => {
 		crossDomain: true
 	})
 	.done(function(data) {
-		console.log('data gallery', data);
+		//console.log('data gallery', data);
 		const gallery = data.gallery;
 		let full = [];
 		let src = [];

@@ -4,7 +4,7 @@ const getPostsData = (category, successCallback, errorCallback) => {
 		crossDomain: true
 	})
 		.done(function(data) {
-			console.log('medias', data);
+			//console.log('medias', data);
 			let medias = [];
 			data.map(function(media) {
 				medias.push(media);

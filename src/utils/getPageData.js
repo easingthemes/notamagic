@@ -4,7 +4,7 @@ const getPageData = (type, id, successCallback, errorCallback) => {
 		crossDomain: true
 	})
 	.done(function(data) {
-		console.log('data post', data);
+		//console.log('data post', data);
 
 		const content = data.content.rendered;
 		let text = data.content.rendered;

@@ -5,7 +5,7 @@ const getPostsData = (category, successCallback, errorCallback) => {
 	})
 		.done(function(data) {
 			let posts = [];
-			console.log('data category', data);
+			//console.log('data category', data);
 
 			data.map(function(post) {
 				const content = post.content.rendered;

@@ -1,6 +1,5 @@
 import React from 'react';
-//import { fetchBlogItem } from '../actions/index';
-import BlogItem from '../../../components/Blog/BlogItem/BlogItem';
+import BlogPost from '../../../components/Blog/BlogPost/BlogPost';
 
 export const BlogItemPage = React.createClass({
 
@@ -10,13 +9,10 @@ export const BlogItemPage = React.createClass({
 	},
 
 	render () {
+		const post = this.props.post || {};
 		return (
-			<div className="container mt90">
-				<div className="row">
-					<div className="col-md-8 col-md-offset-2">
-						<BlogItem post={this.props.post}/>
-					</div>
-				</div>
+			<div>
+				<BlogPost post={post} isLoading={this.props.isLoading} onSendComment={this.props.sendComment} />
 			</div>
 		);
 	}

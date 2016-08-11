@@ -1,76 +1,72 @@
-//import getPageData from '../../../utils/getPageData';
-//import {rootReducer} from '../reducers/index';
 import { combineReducers } from 'redux';
 
 // ------------------------------------
 // Constants
 // ------------------------------------
-export const COUNTER_INCREMENT = 'PostRoute.COUNTER_INCREMENT';
 
 // ------------------------------------
 // Helpers
 // ------------------------------------
-const successCallback = (data) => {
-	console.log('_this start');
-	return dispatch => {
-		console.log('_this dispatch', data);
-		dispatch(receiveQuestions(data));
-	};
-}
-// function successCallback(data) {
-// 	dispatch(receiveQuestions(data));
-// }
 
-function errorCallback() {
-	console.log('GET request failed!');
+function requestPost() {
+	return { type: 'REQUEST_POST' }
 }
 
-function requestQuestions() {
-	return { type: 'REQUEST_QUESTIONS' }
+function receivePost(post) {
+	return { type: 'RECEIVE_POST', post };
 }
 
-function receiveQuestions(post) {
-	return { type: 'RECEIVE_QUESTIONS', post };
+function failPost(xhr) {
+	return { type: 'FAIL_POST', xhr };
 }
 
 // ------------------------------------
 // Actions
 // ------------------------------------
-export function increment (value = 1) {
-	return {
-		type: COUNTER_INCREMENT,
-		payload: value
-	}
-}
-export const doubleAsync = () => {
-	return (dispatch, getState) => {
-		return new Promise((resolve) => {
-			setTimeout(() => {
-				dispatch(increment(getState().counter))
-				resolve()
-			}, 200)
-		})
-	}
-}
-
-export const actions = {
-	increment,
-	doubleAsync
-}
-
 export function fetchBlogItem(id) {
 	return dispatch => {
-		dispatch(requestQuestions());
+		dispatch(requestPost());
 		$.ajax({
 			url: Constants.apiUrl + 'posts/' + id + '?_embed=1',
 			crossDomain: true
 		})
 		.done(function(data) {
-			console.log('data', data);
-			dispatch(receiveQuestions(data));
+			dispatch(receivePost(data));
 		})
 		.fail(function(xhr) {
-			console.log('error');
+			dispatch(failPost(xhr));
+		});
+	};
+}
+export function sendComment(post, parent) {
+	return dispatch => {
+		//dispatch(requestPost());
+		$.ajax({
+			url: Constants.apiUrl + 'comments',
+			type: 'POST',
+			crossDomain: true,
+			data: {
+				author: 0,
+				author_email: 'df@df.com',
+				author_name: 'Df fffd',
+				author_url: '',
+				content: 'tst post cmmt',
+				date: '2016-08-10T21:46:15',
+				//date_gmt: '',
+				karma: 0,
+				parent: parent,
+				post: post,
+				//status: 'approve',
+				type: 'comment'
+			}
+		})
+		.done(function(data) {
+			console.log('data com', data);
+			//dispatch(receivePost(data));
+		})
+		.fail(function(xhr) {
+			console.log('xhr com', xhr);
+			//dispatch(failPost(xhr));
 		});
 	};
 }
@@ -78,51 +74,43 @@ export function fetchBlogItem(id) {
 // ------------------------------------
 // Action Handlers
 // ------------------------------------
-const ACTION_HANDLERS = {
-	[COUNTER_INCREMENT]: (state, action) => state + action.payload
-}
 
 // ------------------------------------
 // Reducer
 // ------------------------------------
-// const initialState = 0;
-// export default function counterReducer (state = initialState, action) {
-// 	const handler = ACTION_HANDLERS[action.type]
-//
-// 	return handler ? handler(state, action) : state
-// }
-
-
 const initialState = {
 	fetching: false,
 	post: {}
-}
+};
 
-function questions(state = initialState, action) {
+function post(state = initialState, action) {
 	switch (action.type) {
-		case 'REQUEST_QUESTIONS':
+		case 'REQUEST_POST':
 			return Object.assign({}, state, {
 				fetching: true
 			});
-		case 'RECEIVE_QUESTIONS':
+		case 'RECEIVE_POST':
 			return Object.assign({}, state, {
 				fetching: false,
 				post: action.post
+			});
+		case 'FAIL_POST':
+			return Object.assign({}, state, {
+				fetching: false,
+				error: action.xhr
 			});
 	}
 
 	return state;
 }
 
-function counterReducer (state = initialState, action) {
-	const handler = ACTION_HANDLERS[action.type]
-
-	return handler ? handler(state, action) : state
+function auth(state = initialState, action) {
+	return state;
 }
 
 const rootReducer = combineReducers({
-	questions,
-	counterReducer
+	post,
+	auth
 });
 
 export default rootReducer;

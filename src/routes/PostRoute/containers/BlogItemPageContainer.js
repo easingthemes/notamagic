@@ -1,17 +1,39 @@
 import { connect } from 'react-redux';
-import { increment, doubleAsync, fetchBlogItem } from '../actions/index';
-//import { increment, doubleAsync } from '../modules/BlogItemPage';
+import { fetchBlogItem, sendComment } from '../actions/index';
+
 
 // 1. Import Component: Smart
 import BlogItemPage from '../components/BlogItemPage';
 
 
 const mapActionCreators = {
-	increment: () => increment(1),
-	doubleAsync,
-	fetchBlogItem
-}
+	fetchBlogItem,
+	sendComment
+};
 
+const mapComments = (embeddedComments) => {
+	let comments = [];
+	let commentsMapped = {};
+	let commentsArr = [];
+	if (embeddedComments && embeddedComments instanceof Array && embeddedComments.length > 0) {
+		comments = embeddedComments[0];
+	}
+	comments.map(function(comment) {
+		const id = comment.id;
+		const parent = comment.parent;
+		if (parent === 0) {
+			commentsMapped[id] = comment;
+			commentsMapped[id].replies = [];
+			commentsArr.push(commentsMapped[id]);
+		} else {
+			commentsMapped[parent].replies.push(comment);
+		}
+	});
+	return {
+		total: comments.length,
+		comments: commentsArr
+	};
+};
 const mapData = (post) => {
 	const contentO = post.content || {};
 	const content = contentO.rendered || '';
@@ -34,6 +56,7 @@ const mapData = (post) => {
 	try {
 		imageMedium = post._embedded['wp:featuredmedia'][0].media_details.sizes.medium.source_url;
 	} catch (err){}
+	const comments = mapComments(_embedded.replies);
 	return {
 		subtitle: contentO.rendered,
 		leadTitle: leadTitle,
@@ -44,20 +67,20 @@ const mapData = (post) => {
 		content: content,
 		date: post.date,
 		slug: post.slug,
+		tags: post.tags,
 		id: post.id,
-		comments: _embedded.replies,
+		comments: comments,
 		author: {
 			avatar: avatarUrl,
 			name: author.name
 		},
 		imageMedium: imageMedium
 	};
-}
+};
 // 2. Use only part of global state data
 const mapStateToProps = (state) => ({
-	counter: state.counter,
-	post: mapData(state.blog.questions.post),
-	test: 'test',
+	post: mapData(state.blog.post.post),
+	isLoading: state.blog.post.fetching,
 	all: state
 });
 // 3. Make it Smart with connect

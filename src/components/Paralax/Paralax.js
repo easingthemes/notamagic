@@ -25,7 +25,7 @@ export class Parallax extends React.Component {
 	}
 
 	componentDidUpdate (nextProps, nextState) {
-		console.log('nextState', nextState);
+		//console.log('nextState', nextState);
 		this.initPlugins();
 	}
 
@@ -45,7 +45,7 @@ export class Parallax extends React.Component {
 	initPlugins() {
 		const _this = this;
 		if (_this.state.post.image) {
-			console.log('init paralax', _this.state.post.image);
+			//console.log('init paralax', _this.state.post.image);
 			$('.parallax-window').parallax({
 				imageSrc: _this.state.post.image
 			});

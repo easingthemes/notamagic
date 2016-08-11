@@ -22,10 +22,11 @@ export class CoreLayout extends React.Component {
 		helperScroll();
 	}
 	render () {
+		const path = this.props.location.pathname;
 		return (
 			<div style={{height: '100%'}}>
 				<GoToTop />
-				<Navbar />
+				<Navbar path={path} />
 				{this.props.children}
 				<Footer />
 			</div>

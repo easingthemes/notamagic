@@ -31,7 +31,7 @@ export class Gallery extends React.Component {
 		});
 		data.isLoading = false;
 		data.filters = filters;
-		console.log('data', data);
+		//console.log('data', data);
 		this.setState(data);
 	}
 
@@ -119,7 +119,7 @@ export class Gallery extends React.Component {
 			</div>
 		);
 	}
-	
+
 	render () {
 		return (
 			<div id="portfolioGrid">
