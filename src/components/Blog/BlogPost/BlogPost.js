@@ -2,7 +2,8 @@ import React from 'react';
 import { Link } from 'react-router';
 import Loader from 'components/Loader';
 import TopRow from 'components/TopRow';
-
+import BlogAuthor from '../BlogAuthor';
+import CommentsForm from '../../CommentsForm';
 /**
  * React component implementation.
  *
@@ -16,7 +17,18 @@ export class BlogPost extends React.Component {
 	//------------------------------------------------------------------------------------------------------------------
 	// React methods
 	//------------------------------------------------------------------------------------------------------------------
-
+	/**
+	 *
+	 * Set the initial state
+	 *
+	 * @private
+	 */
+	constructor(props) {
+		super(props);
+		this.state = {
+			openId: false
+		};
+	}
 	//------------------------------------------------------------------------------------------------------------------
 	// Render methods
 	//------------------------------------------------------------------------------------------------------------------
@@ -35,8 +47,16 @@ export class BlogPost extends React.Component {
 			);
 		});
 	}
+	showCommentForm (commentId, event) {
+		event.preventDefault();
+		this.setState({
+			openId: commentId
+		});
+	}
 	renderComment (comment) {
 		let avatar = '';
+		const _this = this;
+		const post = this.props.post || {};
 		const content = comment.content || {};
 		try {
 			avatar = comment.author_avatar_urls[96];
@@ -46,13 +66,19 @@ export class BlogPost extends React.Component {
 			<div>
 				<img src={avatar} className="img-circle" alt={comment.author_name} />
 				<span className="blog-post-comment-name">{comment.author_name}</span> {comment.date}
-				<a href="#" className="pull-right text-gray"><i className="fa fa-comment"></i> Reply</a>
+				<a href="#" onClick={this.showCommentForm.bind(this, comment.id)} className="pull-right text-gray"><i className="fa fa-comment"></i> Reply</a>
 				<div dangerouslySetInnerHTML={{__html:content.rendered}} />
+				{this.commentForm(post.id, comment.id, _this.state.openId)}
 			</div>
 		);
 	}
 	renderComments (comments) {
 		const _this = this;
+		if (!(comments instanceof Array)) {
+			return (
+				<span />
+			);
+		}
 		return comments.map(function(comment, index) {
 			return (
 				<div key={'comment-' + index} className="blog-post-comment">
@@ -75,24 +101,32 @@ export class BlogPost extends React.Component {
 			</div>
 		);
 	}
-	handleSendComment(postId, event) {
+	handleSubmit (postId, parent, event, data) {
 		event.preventDefault();
-		this.props.onSendComment(postId, 0);
+		const formData = $.extend({}, data, {
+			postId: postId,
+			parent: parent
+		});
+		console.log('formData', formData);
+		this.props.onSendComment(formData);
 	}
-	commentForm (postId) {
+	commentForm (postId, parent, openId) {
+		if (parent !== openId) {
+			return (
+				<span />
+			);
+		}
 		return (
 			<div className="blog-post-leave-comment">
 				<h5><i className="fa fa-comment mt25 mb25"></i> Leave Comment</h5>
-
-				<form>
-					<input type="text" name="name" className="blog-leave-comment-input" placeholder="name" required="" />
-					<input type="email" name="name" className="blog-leave-comment-input" placeholder="email" required="" />
-					<input type="url" name="name" className="blog-leave-comment-input" placeholder="website" />
-					<textarea name="message" className="blog-leave-comment-textarea"></textarea>
-					<button onClick={this.handleSendComment.bind(this, postId)} className="button button-pasific button-sm center-block mb25">Leave Comment</button>
-				</form>
-
+				<CommentsForm handleSubmit={this.handleSubmit.bind(this, postId, parent)} />
 			</div>
+		);
+	}
+
+	renderAuthor (author) {
+		return (
+			<BlogAuthor author={author} />
 		);
 	}
 	/**
@@ -109,15 +143,10 @@ export class BlogPost extends React.Component {
 		const commentsTotal = commentsData.total || '0';
 		const readMore = 'read more';
 		let commentsLabel = 'Comment';
-		let commentsNumber = 0;
 		if (!comments || comments.length === 0) {
 			commentsLabel = commentsLabel + 's';
 		}
-		if (comments && comments.length === 1) {
-			commentsNumber = comments.length;
-		}
 		if (comments && comments.length > 1) {
-			commentsNumber = comments.length;
 			commentsLabel = commentsLabel + 's';
 		}
 		if (this.props.isLoading) {
@@ -144,7 +173,7 @@ export class BlogPost extends React.Component {
 										<Link
 											to={'/blog/' + post.id}
 										>
-											{commentsNumber} {commentsLabel}
+											{commentsTotal} {commentsLabel}
 										</Link>
 									</div> |
 									<div>
@@ -171,8 +200,9 @@ export class BlogPost extends React.Component {
 									<a href="#"> Tutorial </a>
 								</div>
 							</div>
+							{this.renderAuthor(post.author)}
 							{this.renderCommentsRow(comments, commentsTotal)}
-							{this.commentForm(post.id)}
+							{this.commentForm(post.id, 0, 0)}
 						</div>
 					</div>
 				</div>

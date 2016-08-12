@@ -28,7 +28,8 @@ export class BlogItem extends React.Component {
 	 */
 	render () {
 		const post = this.props.post || {};
-		const comments = post.comments;
+		const commentsData = post.comments || [];
+		const comments = commentsData[0] || [];
 		const readMore = 'read more';
 		let commentsLabel = 'Comment';
 		let commentsNumber = 0;
