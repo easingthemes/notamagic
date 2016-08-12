@@ -48,7 +48,15 @@ function Navigation() {
 					</li>
 				</ul>
 			</li>
-
+			<li>
+				<Link
+					to='/blog'
+					activeClassName="active"
+					className="color-light"
+				>
+					Blog
+				</Link>
+			</li>
 			<li>
 				<Link
 					to='/contact'
