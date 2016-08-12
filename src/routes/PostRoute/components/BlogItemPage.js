@@ -11,7 +11,7 @@ export const BlogItemPage = React.createClass({
 	render () {
 		const post = this.props.post || {};
 		return (
-			<div>
+			<div id="blog">
 				<BlogPost post={post} isLoading={this.props.isLoading} onSendComment={this.props.sendComment} />
 			</div>
 		);

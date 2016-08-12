@@ -18,6 +18,9 @@ const mapComments = (embeddedComments) => {
 	if (embeddedComments && embeddedComments instanceof Array && embeddedComments.length > 0) {
 		comments = embeddedComments[0];
 	}
+	if (!(comments instanceof Array)) {
+		comments = [];
+	}
 	comments.map(function(comment) {
 		const id = comment.id;
 		const parent = comment.parent;
@@ -72,16 +75,22 @@ const mapData = (post) => {
 		comments: comments,
 		author: {
 			avatar: avatarUrl,
-			name: author.name
+			name: author.name,
+			url: author.url,
+			description: author.description
 		},
 		imageMedium: imageMedium
 	};
 };
 // 2. Use only part of global state data
-const mapStateToProps = (state) => ({
-	post: mapData(state.blog.post.post),
-	isLoading: state.blog.post.fetching,
-	all: state
-});
+const mapStateToProps = (state) => {
+	return ({
+		post: mapData(state.blog.getPost.post),
+		isLoading: state.blog.getPost.fetching,
+		all: state
+	});
+}
+
+
 // 3. Make it Smart with connect
 export default connect(mapStateToProps, mapActionCreators)(BlogItemPage)
