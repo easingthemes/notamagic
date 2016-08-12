@@ -1,24 +1,14 @@
-import { combineReducers } from 'redux';
-
+import {requestPost, receivePost, failPost} from './actionCreators';
+//import {reducer as formReducer} from 'redux-form';
 // ------------------------------------
 // Constants
 // ------------------------------------
+// imported from separate file - actionTypes
 
 // ------------------------------------
 // Helpers
 // ------------------------------------
-
-function requestPost() {
-	return { type: 'REQUEST_POST' }
-}
-
-function receivePost(post) {
-	return { type: 'RECEIVE_POST', post };
-}
-
-function failPost(xhr) {
-	return { type: 'FAIL_POST', xhr };
-}
+// imported from separate file - actionCreators
 
 // ------------------------------------
 // Actions
@@ -38,7 +28,7 @@ export function fetchBlogItem(id) {
 		});
 	};
 }
-export function sendComment(post, parent) {
+export function sendComment(data) {
 	return dispatch => {
 		//dispatch(requestPost());
 		$.ajax({
@@ -47,15 +37,15 @@ export function sendComment(post, parent) {
 			crossDomain: true,
 			data: {
 				author: 0,
-				author_email: 'df@df.com',
-				author_name: 'Df fffd',
-				author_url: '',
-				content: 'tst post cmmt',
-				date: '2016-08-10T21:46:15',
+				author_email: data.email,
+				author_name: data.firstName,
+				author_url: data.url,
+				content: data.message,
+				//date: new Date(),
 				//date_gmt: '',
 				karma: 0,
-				parent: parent,
-				post: post,
+				parent: data.parent,
+				post: data.postId,
 				//status: 'approve',
 				type: 'comment'
 			}
@@ -78,40 +68,5 @@ export function sendComment(post, parent) {
 // ------------------------------------
 // Reducer
 // ------------------------------------
-const initialState = {
-	fetching: false,
-	post: {}
-};
-
-function post(state = initialState, action) {
-	switch (action.type) {
-		case 'REQUEST_POST':
-			return Object.assign({}, state, {
-				fetching: true
-			});
-		case 'RECEIVE_POST':
-			return Object.assign({}, state, {
-				fetching: false,
-				post: action.post
-			});
-		case 'FAIL_POST':
-			return Object.assign({}, state, {
-				fetching: false,
-				error: action.xhr
-			});
-	}
-
-	return state;
-}
-
-function auth(state = initialState, action) {
-	return state;
-}
-
-const rootReducer = combineReducers({
-	post,
-	auth
-});
-
-export default rootReducer;
+// moved to separate file - reducers/index.js
 
