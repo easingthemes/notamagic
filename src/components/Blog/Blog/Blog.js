@@ -1,7 +1,6 @@
 import React from 'react';
 import data from '../data';
 import BlogItem from '../BlogItem/BlogItem';
-import getPostsData from '../../../utils/getPostsData';
 
 /**
  * React component implementation.
@@ -17,54 +16,16 @@ export class Blog extends React.Component {
 	// React methods
 	//------------------------------------------------------------------------------------------------------------------
 
-	/**
-	 *
-	 * Set the initial state
-	 *
-	 * @private
-	 */
-	constructor(props) {
-		super(props);
-		this.state = {
-			posts: [],
-			isLoading: true
-		};
-	}
-
-	/**
-	 * When component is mounted add the Change event listeners and get initial data
-	 *
-	 * @method componentDidMount
-	 * @returns void
-	 * @public
-	 */
-	componentDidMount () {
-		const _this = this;
-		getPostsData('Blog', _this.successCallback.bind(_this), _this.errorCallback.bind(_this), _this.props.number);
-	}
-
-	successCallback (data) {
-		this.setState({
-			posts: data,
-			isLoading: false
-		});
-	}
-
-	errorCallback () {
-		this.setState({
-			isLoading: false
-		});
-	}
-
 	//------------------------------------------------------------------------------------------------------------------
 	// Render methods
 	//------------------------------------------------------------------------------------------------------------------
 	renderItems () {
-		const posts = this.state.posts || [];
+		//const posts = this.state.posts || [];
+		const posts = this.props.posts || [];
 		const items = data.items || [];
 
 		//const posts = $.merge(true, items, wpposts);
-		if (this.state.isLoading) {
+		if (this.props.isLoading) {
 			return (
 				<span />
 			);
