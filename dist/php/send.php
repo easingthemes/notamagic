@@ -33,7 +33,7 @@ if( $human == true ) {
 
 		$subject = EMAIL_SUBJECT . ": " . $senderName . " - " . $senderEmail;
 
-      $success = mail( $recipient, EMAIL_SUBJECT, $message);
+      $success = mail( $recipient, $subject, $message);
     }
 }
 
