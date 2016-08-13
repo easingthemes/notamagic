@@ -21,7 +21,11 @@ $human = ($humanCheck == $humanA + $humanB) ? true : false;
 if( $human == true ) {
     if ( $senderName && $senderEmail && $message) {
       $recipient = RECIPIENT_NAME . " <" . RECIPIENT_EMAIL . ">";
-      $headers = "From: " . $senderName . " <" . $senderEmail . ">";
+		// compose headers
+		$headers = "From: ". $senderEmail ."\r\n";
+		$headers .= "Reply-To: " . $senderEmail . "\r\n";
+		$headers .= "X-Mailer: PHP/".phpversion();
+      //$headers = "From: " . $senderName . " <" . $senderEmail . ">";
       $success = mail( $recipient, EMAIL_SUBJECT, $message, $headers);
     }
 }
