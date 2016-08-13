@@ -22,13 +22,13 @@ if( $human == true ) {
     if ( $senderName && $senderEmail && $message) {
       $recipient = RECIPIENT_NAME . " <" . RECIPIENT_EMAIL . ">";
       $headers = "From: " . $senderName . " <" . $senderEmail . ">";
-      $success = mail( RECIPIENT_EMAIL, EMAIL_SUBJECT, $message, $headers );
+      $success = mail( $recipient, EMAIL_SUBJECT, $message, $headers );
     }
 }
 
 // Return an appropriate response to the browser
 if ( isset($_GET["ajax"]) ) {
-  echo $success ? $recipient : "error";
+  echo $success ? "suc" : "error";
 } else {
 ?>
 <html>

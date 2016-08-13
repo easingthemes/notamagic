@@ -28,7 +28,7 @@ if( $human == true ) {
 
 // Return an appropriate response to the browser
 if ( isset($_GET["ajax"]) ) {
-  echo $success ? "success" : "error";
+  echo $success ? $senderEmail : "error";
 } else {
 ?>
 <html>
