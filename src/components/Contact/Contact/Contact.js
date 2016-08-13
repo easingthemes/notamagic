@@ -1,5 +1,4 @@
 import React from 'react';
-import data from '../data';
 
 /**
  * React component implementation.
@@ -14,19 +13,6 @@ export class Contact extends React.Component {
 	//------------------------------------------------------------------------------------------------------------------
 	// React methods
 	//------------------------------------------------------------------------------------------------------------------
-
-	/**
-	 *
-	 * Set the initial state
-	 *
-	 * @private
-	 */
-	constructor(props) {
-		super(props);
-		this.state = {
-			isLoading: true
-		};
-	}
 
 	/**
 	 * When component is mounted add the Change event listeners and get initial data
@@ -142,38 +128,46 @@ export class Contact extends React.Component {
 								<div className="col-md-12 mb50">
 									<h1 className="font-size-normal color-light">
 										<small className="color-light">
-											Contact Us
+											Contact Me
 										</small>
-										Drop Us a Message
+										Drop me a Message
 									</h1>
 									<h5 className="color-light">
-										Please feel free to say anything to us. Our staff will reply any message
+										Please feel free to ask anything. I will reply any message
 										<br />as soon as possible.
 									</h5>
 								</div>
 
 								<div className="col-md-3 col-sm-3 col-xs-12">
-									<span className="fa-map-o color-light fa fs-75"></span>
+									<span className="fa-map-o color-light fa fs-55"></span>
 									<h5 className="color-light">
 										<strong>Address</strong>
 									</h5>
-									<p className="color-light">Address Business 123 London, UK.</p>
+									<p className="color-light">G. Jevremova 11000 Belgrade</p>
 								</div>
 
 								<div className="col-md-3 col-sm-3 col-xs-6">
-									<span className="fa-phone color-light fa fs-75"></span>
+									<span className="fa-phone color-light fa fs-55"></span>
 									<h5 className="color-light">
 										<strong>Phone</strong>
 									</h5>
-									<p className="color-light">123-456-789</p>
+									<p className="color-light">
+										<a href="tel:+381605582422" className="color-light">
+										+381 60 558 24 22
+										</a>
+									</p>
 								</div>
 
 								<div className="col-md-3 col-sm-3 col-xs-6">
-									<span className="fa-envelope-o color-light fa fs-75"></span>
+									<span className="fa-envelope-o color-light fa fs-55"></span>
 									<h5 className="color-light">
 										<strong>Email</strong>
 									</h5>
-									<p className="color-light">email@domain.com</p>
+									<p className="color-light">
+										<a href="mailto:info@frontenddot.com" className="color-light">
+										info@frontenddot.com
+										</a>
+									</p>
 								</div>
 
 							</div>
@@ -185,7 +179,7 @@ export class Contact extends React.Component {
 									<h4 className="pb25 bb-solid-1 text-uppercase">
 										Get in Touch
 										<small className="text-lowercase">
-											Please complete the form and we will get back to you.
+											If you like web forms :)
 										</small>
 									</h4>
 								</div>
@@ -242,11 +236,5 @@ export class Contact extends React.Component {
 		);
 	}
 }
-
-Contact.propTypes = {
-};
-
-Contact.defaultProps = {
-};
 
 export default Contact;

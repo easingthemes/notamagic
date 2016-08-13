@@ -1,7 +1,5 @@
 import React from 'react';
-
-//import A from 'components/atoms/A';
-//import styles from './styles.css';
+import { IndexLink, Link } from 'react-router';
 
 function Footer() {
 	return (
@@ -9,47 +7,56 @@ function Footer() {
       <div className="container">
         <div className="row">
 
-          <div className="col-md-2 col-xs-12 mb25">
-            <div className="navbar-brand-footer center-block">Pasific</div>
-            <div className="copyright center-block">&copy; 2016. All rights reserved.</div>
+          <div className="col-md-3 col-xs-12 mb25">
+            <div className="navbar-brand-footer">Dragan Filipovic</div>
+            <div className="copyright">&copy; 2016. All rights reserved.</div>
           </div>
 
-          <div className="col-md-8 col-xs-12 text-center">
+          <div className="col-md-6 col-xs-12 text-center">
             <div className="row">
               <div className="col-sm-12">
                 <ul className=" bb-solid-1">
-                  <li><a href="">Home</a></li>
-                  <li><a href="">About</a></li>
-                  <li><a href="">Service</a></li>
-                  <li><a href="">Price</a></li>
-                  <li><a href="">Feature</a></li>
-                  <li><a href="">Works</a></li>
-                  <li><a href="">Shop</a></li>
-                  <li><a href="">Blog</a></li>
-                  <li><a href="">Contact</a></li>
-                </ul>
-              </div>
+					<li>
+						<IndexLink to='/'>
+							Home
+						</IndexLink>
+					</li>
 
-              <div className="col-sm-12 mt25">
-                <ul>
-                  <li><a href="">Help Center</a></li>
-                  <li><a href="">Knowledgebase</a></li>
-                  <li><a href="">Term of Service</a></li>
-                  <li><a href="">Privacy Policy</a></li>
-                  <li><a href="">FAQs</a></li>
-                </ul>
+					<li>
+						<Link
+							to='/portfolio'
+						>
+							Portfolio
+						</Link>
+					</li>
+
+					<li>
+						<Link
+							to='/blog'
+						>
+							Blog
+						</Link>
+					</li>
+					<li>
+						<Link
+							to='/contact'
+						>
+							Contact
+						</Link>
+					</li>
+
+				</ul>
               </div>
             </div>
           </div>
 
-          <div className="col-md-2 col-xs-12">
+          <div className="col-md-3 col-xs-12">
             <div className="social-container">
-              <ul className="footer-social text-center">
-                <li><a href=""><i className="fa fa-facebook"></i></a></li>
-                <li><a href=""><i className="fa fa-twitter"></i></a></li>
-                <li><a href=""><i className="fa fa-google-plus"></i></a></li>
-                <li><a href=""><i className="fa fa-github"></i></a></li>
-                <li><a href=""><i className="fa fa-linkedin"></i></a></li>
+              <ul className="footer-social text-right">
+                <li><a href="http://facebook.com/filipovic.dragan" target="_blank"><i className="fa fa-facebook"></i></a></li>
+                <li><a href="http://twitter.com/frontenddot" target="_blank"><i className="fa fa-twitter"></i></a></li>
+                <li><a href="http://github.com/easingthemes" target="_blank"><i className="fa fa-github"></i></a></li>
+                <li><a href="http://linkedin.com/in/draganfilipovic" target="_blank"><i className="fa fa-linkedin"></i></a></li>
               </ul>
             </div>
           </div>
