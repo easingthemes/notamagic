@@ -38,20 +38,6 @@ class Navbar extends React.Component {
 		}
 
 		/* --------------------------------------------------------
-		 ANIMATED SCROLL PAGE WITH ACTIVE MENU - BOOTSTRAP SROLLSPY
-		 ----------------------------------------------------------- */
-		$('.navbar-op ul li a, .navbar-op a.navbar-brand, .intro-direction a, a.go-to-top').on('click', function(event) {
-			event.preventDefault();
-			var hash = this.hash;
-
-			$('html, body').animate({
-				scrollTop: $(hash).offset().top
-			}, 900, function(){
-				window.location.hash = hash;
-			});
-		});
-
-		/* --------------------------------------------------------
 		 NAVBAR FIXED TOP ON SCROLL
 		 ----------------------------------------------------------- */
 		const toggleNav = function() {
@@ -64,11 +50,10 @@ class Navbar extends React.Component {
 
 		if(this.props.path !== '/' && this.props.path !== '/portfolio') {
 			$('.navbar-pasific').addClass('top-nav-collapse');
-			console.log('off');
 			$(window).off('scroll', toggleNav);
 		} else {
 			toggleNav();
-			console.log('on');
+			//console.log('on');
 			$(window).on('scroll', toggleNav);
 		}
 
@@ -91,7 +76,7 @@ class Navbar extends React.Component {
 	render() {
 		const path = this.props.path === '/' ? '' : 'navbar-standart';
 		const style = path + ' ';
-		console.log('style', this.props.path);
+		//console.log('style', this.props.path);
 		return (
 			<nav className={style + ' navbar navbar-pasific navbar-fixed-top navbar-mp megamenu'}>
 				<div className="container-fluid">

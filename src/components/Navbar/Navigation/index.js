@@ -21,14 +21,14 @@ function Navigation() {
 			</li>
 
 			<li className="dropdown">
-				<Link
-					to='#'
+				<IndexLink
+					to='/portfolio'
 					activeClassName="active"
 					className="dropdown-toggle color-light"
 					data-toggle="dropdown"
 				>
 					Portfolio
-				</Link>
+				</IndexLink>
 				<ul className="dropdown-menu" role="menu">
 					<li>
 						<a
@@ -58,13 +58,13 @@ function Navigation() {
 				</Link>
 			</li>
 			<li>
-				<Link
+				<IndexLink
 					to='/contact'
 					activeClassName="active"
 					className="color-light"
 				>
 					Contact
-				  </Link>
+				  </IndexLink>
 			</li>
 
 		</ul>

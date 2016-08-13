@@ -32,6 +32,7 @@
 		float: left;
 		margin-right: 10px;
 		margin-top: -5px;
+		max-width: 30px;
 	}
 	.navbar-pasific .container-fluid .navbar-brand img {
 		margin-left: 20px;
@@ -132,6 +133,9 @@
 			top: 0;
 			border-width: 0 0 1px;
 		}
+		.navbar-fixed-top {
+			-webkit-backface-visibility: hidden;
+		}
 		.navbar-op .navbar-collapse.collapse {
 			display: none!important;
 		}
@@ -199,6 +203,7 @@
 		.navbar-mp .navbar-nav > li > a:hover {
 			color: rgba(255,255,255,1) !important;
 		}
+
 	}
 	@media (max-width: 766px) {
 		.navbar-mp {
@@ -234,6 +239,12 @@
 			-webkit-border-radius: 4px;
 			-moz-border-radius: 4px;
 			border-radius: 4px;
+		}
+		.navbar-pasific .navbar-nav > li > a {
+			color: rgba(255,255,255,1);
+		}
+		.navbar-pasific .navbar-nav > li > a:hover {
+			color: rgba(255,255,255,1);
 		}
 	}
 

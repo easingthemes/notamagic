@@ -55,7 +55,6 @@ blockquote,
 blockquote.blockquote-reverse,
 blockquote.blockquote-pasific,
 blockquote.blockquote-pasific-reverse,
-.navbar-pasific .navbar-toggle,
 .nav-tabs-vertical li a:hover,
 .nav-tabs-vertical li.active,
 .nav-tabs-vertical li.active a,
@@ -73,7 +72,9 @@ input[type=checkbox]:checked + label:before,
 .copyright a:hover {
     border-color: $c-red-1;
 }
-
+.navbar-pasific .navbar-toggle {
+	border-color: $c-grey-2;
+}
 
 /*  --------------------------------------------------------
 TEXT COLOR
