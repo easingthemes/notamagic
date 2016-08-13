@@ -69,7 +69,8 @@ final class WP_API_CORS {
 	 */
 	public static function send_cors_headers( $headers ) {
 
-		$headers['Access-Control-Allow-Origin']      = 'http://www.develop.notamagic.com';//get_http_origin(); // Can't use wildcard origin for credentials requests, instead set it to the requesting origin
+		$headers['Access-Control-Allow-Origin']      = 'https?://.*\.notamagic.com(:[0-9]+)?';//get_http_origin(); // Can't use wildcard origin for credentials requests, instead set it to the requesting origin
+
 		$headers['Access-Control-Allow-Credentials'] = 'true';
 
 		// Access-Control headers are received during OPTIONS requests

@@ -1,10 +1,12 @@
 import actionType from '../constants/actionTypes';
 import {combineReducers} from 'redux';
-import {reducer as formReducer} from 'redux-form';
 
 const initialState = {
 	fetching: false,
-	post: {}
+	sending: false,
+	sent: false,
+	post: {},
+	comment: {}
 };
 
 function getPost(state = initialState, action) {
@@ -28,9 +30,32 @@ function getPost(state = initialState, action) {
 	}
 }
 
+function postComment(state = initialState, action) {
+	switch (action.type) {
+		case 'SEND_COMMENT':
+			return Object.assign({}, state, {
+				sending: true
+			});
+		case 'SAVE_COMMENT':
+			return Object.assign({}, state, {
+				sending: false,
+				sent: true,
+				comment: action.comment
+			});
+		case 'FAIL_COMMENT':
+			return Object.assign({}, state, {
+				sending: false,
+				sent: false,
+				error: action.xhr
+			});
+		default:
+			return state;
+	}
+}
+
 const reducers = {
 	getPost,
-	form: formReducer
+	postComment
 };
 
 const postReducer = combineReducers(reducers);

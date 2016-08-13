@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { fetchBlogItem, sendComment } from '../actions/index';
+import { fetchBlogItem, postComment } from '../actions/index';
 
 
 // 1. Import Component: Smart
@@ -8,7 +8,7 @@ import BlogItemPage from '../components/BlogItemPage';
 
 const mapActionCreators = {
 	fetchBlogItem,
-	sendComment
+	postComment
 };
 
 const mapComments = (embeddedComments) => {
@@ -87,6 +87,9 @@ const mapStateToProps = (state) => {
 	return ({
 		post: mapData(state.blog.getPost.post),
 		isLoading: state.blog.getPost.fetching,
+		isSending: state.blog.postComment.sending,
+		isSent: state.blog.postComment.sent,
+		comment: state.blog.postComment.comment,
 		all: state
 	});
 }

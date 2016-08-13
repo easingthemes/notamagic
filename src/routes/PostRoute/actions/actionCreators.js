@@ -11,3 +11,15 @@ export const failPost = (xhr) => ({
 	type: actionType.FAIL_POST,
 	xhr
 });
+
+export const sendComment = () => ({
+	type: 'SEND_COMMENT'
+});
+export const saveComment = (comment) => ({
+	type: 'SAVE_COMMENT',
+	comment
+});
+export const failComment = (xhr) => ({
+	type: 'FAIL_COMMENT',
+	xhr
+});

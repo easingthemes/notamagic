@@ -40,7 +40,7 @@ export class Blog extends React.Component {
 	 */
 	componentDidMount () {
 		const _this = this;
-		getPostsData('Blog', _this.successCallback.bind(_this), _this.errorCallback.bind(_this));
+		getPostsData('Blog', _this.successCallback.bind(_this), _this.errorCallback.bind(_this), _this.props.number);
 	}
 
 	successCallback (data) {

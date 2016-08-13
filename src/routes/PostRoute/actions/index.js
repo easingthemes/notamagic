@@ -1,4 +1,5 @@
-import {requestPost, receivePost, failPost} from './actionCreators';
+import {requestPost, receivePost, failPost, sendComment, saveComment, failComment} from './actionCreators';
+import getIp from '../../../utils/getIp';
 //import {reducer as formReducer} from 'redux-form';
 // ------------------------------------
 // Constants
@@ -28,9 +29,9 @@ export function fetchBlogItem(id) {
 		});
 	};
 }
-export function sendComment(data) {
+export function postComment(data) {
 	return dispatch => {
-		//dispatch(requestPost());
+		dispatch(sendComment());
 		$.ajax({
 			url: Constants.apiUrl + 'comments',
 			type: 'POST',
@@ -41,6 +42,7 @@ export function sendComment(data) {
 				author_name: data.firstName,
 				author_url: data.url,
 				content: data.message,
+				author_ip: getIp,
 				//date: new Date(),
 				//date_gmt: '',
 				karma: 0,
@@ -51,12 +53,10 @@ export function sendComment(data) {
 			}
 		})
 		.done(function(data) {
-			console.log('data com', data);
-			//dispatch(receivePost(data));
+			dispatch(saveComment(data));
 		})
 		.fail(function(xhr) {
-			console.log('xhr com', xhr);
-			//dispatch(failPost(xhr));
+			dispatch(failComment(xhr));
 		});
 	};
 }

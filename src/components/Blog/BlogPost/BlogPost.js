@@ -107,8 +107,21 @@ export class BlogPost extends React.Component {
 			postId: postId,
 			parent: parent
 		});
-		console.log('formData', formData);
+		//console.log('formData', formData);
 		this.props.onSendComment(formData);
+	}
+	renderStatus () {
+		if (!this.props.isSent) {
+			return (
+				<span />
+			);
+		}
+		return (
+			<div className="alert alert-success fade in">
+				<a href="#" className="close" data-dismiss="alert" aria-label="close" title="close">×</a>
+				<strong>Thank you for your comment.</strong> Your comment is awaiting moderation.
+			</div>
+		);
 	}
 	commentForm (postId, parent, openId) {
 		if (parent !== openId) {
@@ -118,6 +131,7 @@ export class BlogPost extends React.Component {
 		}
 		return (
 			<div className="blog-post-leave-comment">
+				{this.renderStatus()}
 				<h5><i className="fa fa-comment mt25 mb25"></i> Leave Comment</h5>
 				<CommentsForm handleSubmit={this.handleSubmit.bind(this, postId, parent)} />
 			</div>

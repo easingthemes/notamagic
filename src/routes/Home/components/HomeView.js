@@ -20,7 +20,7 @@ export const HomeView = () => (
 		<Fact />
 		<Achievement />
 		<InfoArea />
-		<Blog />
+		<Blog number={3}/>
 		<Contact />
 	</span>
 )

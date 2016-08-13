@@ -5,6 +5,7 @@ import { useRouterHistory } from 'react-router'
 import { syncHistoryWithStore } from 'react-router-redux'
 import createStore from './store/createStore'
 import AppContainer from './containers/AppContainer'
+import setIp from './utils/setIp';
 
 // ========================================================
 // Browser History Setup
@@ -73,6 +74,8 @@ if (__DEV__ && module.hot) {
   module.hot.accept(['./routes/index'], () => render())
 }
 
+// Set Ip
+setIp();
 // ========================================================
 // Go!
 // ========================================================

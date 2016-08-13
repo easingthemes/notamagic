@@ -10,9 +10,10 @@ export const BlogItemPage = React.createClass({
 
 	render () {
 		const post = this.props.post || {};
+		const comment = this.props.comment || {};
 		return (
 			<div id="blog">
-				<BlogPost post={post} isLoading={this.props.isLoading} onSendComment={this.props.sendComment} />
+				<BlogPost post={post} comment={comment} isSent={this.props.isSent} isSending={this.props.isSending} isLoading={this.props.isLoading} onSendComment={this.props.postComment} />
 			</div>
 		);
 	}
