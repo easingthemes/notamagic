@@ -22,17 +22,18 @@ if( $human == true ) {
     if ( $senderName && $senderEmail && $message) {
       $recipient = RECIPIENT_NAME . " <" . RECIPIENT_EMAIL . ">";
 		// compose headers
+		//$headers = "From: " . $senderName . " <" . $senderEmail . ">";
 		$headers = "From: ". $senderEmail ."\r\n";
 		$headers .= "Reply-To: " . $senderEmail . "\r\n";
 		$headers .= "X-Mailer: PHP/".phpversion();
-      //$headers = "From: " . $senderName . " <" . $senderEmail . ">";
+
       $success = mail( $recipient, EMAIL_SUBJECT, $message, $headers);
     }
 }
 
 // Return an appropriate response to the browser
 if ( isset($_GET["ajax"]) ) {
-  echo $success ? $senderEmail : "error";
+  echo $success ? "success" : "error";
 } else {
 ?>
 <html>
