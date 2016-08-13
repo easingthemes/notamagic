@@ -1,7 +1,30 @@
 <?php
-//sending email with the php mail()
-$success = mail('info@notamagic.com', 'Subject Line Here', 'Body of Message Here');
 
+// Define some constants
+define( "RECIPIENT_NAME", "Dragan Filipovic" );
+define( "RECIPIENT_EMAIL", "info@notamagic.com" );
+define( "EMAIL_SUBJECT", "Visitor Message" );
+
+// Read the form values
+$success = false;
+$senderName = isset( $_POST['senderName'] ) ? preg_replace( "/[^\.\-\' a-zA-Z0-9]/", "", $_POST['senderName'] ) : "";
+$senderEmail = isset( $_POST['senderEmail'] ) ? preg_replace( "/[^\.\-\_\@a-zA-Z0-9]/", "", $_POST['senderEmail'] ) : "";
+$message = isset( $_POST['message'] ) ? preg_replace( "/(From:|To:|BCC:|CC:|Subject:|Content-Type:)/", "", $_POST['message'] ) : "";
+
+$humanA     = $_POST['checkHuman_a'];
+$humanB     = $_POST['checkHuman_b'];
+$humanCheck = $_POST['senderHuman'];
+
+$human = ($humanCheck == $humanA + $humanB) ? true : false;
+
+// If all values exist, send the email
+if( $human == true ) {
+    if ( $senderName && $senderEmail && $message) {
+      $recipient = RECIPIENT_NAME . " <" . RECIPIENT_EMAIL . ">";
+      $headers = "From: " . $senderName . " <" . $senderEmail . ">";
+      $success = mail( RECIPIENT_EMAIL, EMAIL_SUBJECT, $message);
+    }
+}
 
 // Return an appropriate response to the browser
 if ( isset($_GET["ajax"]) ) {
