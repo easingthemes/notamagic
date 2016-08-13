@@ -2,7 +2,7 @@
 
 // Define some constants
 define( "RECIPIENT_NAME", "Dragan Filipovic" );
-define( "RECIPIENT_EMAIL", "vebkurs@gmail.com" );
+define( "RECIPIENT_EMAIL", "info@notamagic.com" );
 define( "EMAIL_SUBJECT", "Visitor Message" );
 
 // Read the form values
