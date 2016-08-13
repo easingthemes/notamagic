@@ -6,13 +6,17 @@ import { syncHistoryWithStore } from 'react-router-redux'
 import createStore from './store/createStore'
 import AppContainer from './containers/AppContainer'
 import setIp from './utils/setIp';
+import withScroll from 'scroll-behavior';
 
 // ========================================================
 // Browser History Setup
 // ========================================================
-const browserHistory = useRouterHistory(createBrowserHistory)({
-  basename: __BASENAME__
-})
+// const browserHistory = useRouterHistory(createBrowserHistory)({
+//   basename: __BASENAME__
+// });
+const browserHistory = withScroll(useRouterHistory(createBrowserHistory)({  //use withScroll
+	basename: __BASENAME__
+}));
 
 // ========================================================
 // Store and History Instantiation
