@@ -22,7 +22,7 @@ if( $human == true ) {
     if ( $senderName && $senderEmail && $message) {
       $recipient = RECIPIENT_NAME . " <" . RECIPIENT_EMAIL . ">";
       $headers = "From: " . $senderName . " <" . $senderEmail . ">";
-      $success = mail( $recipient, EMAIL_SUBJECT, $message, $headers );
+      $success = mail( RECIPIENT_EMAIL, EMAIL_SUBJECT, $message, $headers );
     }
 }
 
