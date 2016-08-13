@@ -9,7 +9,7 @@ import './styles.scss';
 
 import A from 'components/atoms/A';
 import Img from 'components/atoms/Img';
-import LogoImg from './images/logo-default.png';
+import LogoImg from './images/logo-easingthemes.png';
 
 function Logo() {
 	return (
@@ -18,8 +18,8 @@ function Logo() {
 				<i className="fa fa-bars"></i>
 			</button>
 			<A className="navbar-brand page-scroll" href="#page-top">
-				<Img src={LogoImg} alt="Notamagic - Logo" />
-				NotAMagic
+				<Img src={LogoImg} alt="Dragan Filipovic - Logo" />
+				<span className="hidden-xs">Dragan Filipovic</span>
 			</A>
 		</div>
 	);
