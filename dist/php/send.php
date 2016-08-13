@@ -1,5 +1,9 @@
 <?php
-
+//if (!isset($_POST['submit'])) {
+//	echo "<h1>Error</h1>\n
+//      <p>Accessing this page directly is not allowed.</p>";
+//	exit;
+//}
 // Define some constants
 define( "RECIPIENT_NAME", "Dragan Filipovic" );
 define( "RECIPIENT_EMAIL", "info@notamagic.com" );
@@ -23,11 +27,13 @@ if( $human == true ) {
       $recipient = RECIPIENT_NAME . " <" . RECIPIENT_EMAIL . ">";
 		// compose headers
 		//$headers = "From: " . $senderName . " <" . $senderEmail . ">";
-		$headers = "From: ". $senderEmail ."\r\n";
-		$headers .= "Reply-To: " . $senderEmail . "\r\n";
-		$headers .= "X-Mailer: PHP/".phpversion();
+//		$headers = "From: ". $senderEmail ."\r\n";
+//		$headers .= "Reply-To: " . $senderEmail . "\r\n";
+//		$headers .= "X-Mailer: PHP/".phpversion();
 
-      $success = mail( $recipient, EMAIL_SUBJECT, $message, $headers);
+		$subject = EMAIL_SUBJECT . ": " . $senderName . " - " . $senderEmail;
+
+      $success = mail( $recipient, EMAIL_SUBJECT, $message);
     }
 }
 
