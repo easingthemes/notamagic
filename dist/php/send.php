@@ -23,8 +23,8 @@ $human = ($humanCheck == $humanA + $humanB) ? true : false;
 
 // If all values exist, send the email
 if( $human == true ) {
-    if ( $senderName && $senderEmail && $message) {
-      $recipient = RECIPIENT_NAME . " <" . RECIPIENT_EMAIL . ">";
+	if ( $senderName && $senderEmail && $message) {
+		$recipient = RECIPIENT_NAME . " <" . RECIPIENT_EMAIL . ">";
 		// compose headers
 		//$headers = "From: " . $senderName . " <" . $senderEmail . ">";
 //		$headers = "From: ". $senderEmail ."\r\n";
@@ -33,26 +33,26 @@ if( $human == true ) {
 
 		$subject = EMAIL_SUBJECT . ": " . $senderName . " - " . $senderEmail;
 
-      $success = mail( $recipient, $subject, $message);
-    }
+		$success = mail( $recipient, $subject, $message);
+	}
 }
 
 // Return an appropriate response to the browser
 if ( isset($_GET["ajax"]) ) {
-  echo $success ? "success" : "error";
+	echo $success ? "success" : "error";
 } else {
-?>
-<html>
-  <head>
-    <title>Thanks!</title>
-  </head>
-  <body>
-  <?php if ( $success ) echo "<p>Thanks for sending your message! We'll get back to you shortly.</p>" ?>
-  <?php if ( !$success ) echo "<p>There was a problem sending your message. Please try again.</p>" ?>
-  <p>Click your browser's Back button to return to the page.</p>
-  </body>
-</html>
-<?php
+	?>
+	<html>
+	<head>
+		<title>Thanks!</title>
+	</head>
+	<body>
+	<?php if ( $success ) echo "<p>Thanks for sending your message! We'll get back to you shortly.</p>" ?>
+	<?php if ( !$success ) echo "<p>There was a problem sending your message. Please try again.</p>" ?>
+	<p>Click your browser's Back button to return to the page.</p>
+	</body>
+	</html>
+	<?php
 }
 ?>
 
