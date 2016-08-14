@@ -7,22 +7,28 @@ export class SlideCaption extends React.Component {
 			isVisible: false
 		};
 	}
-
+	_isSlideMounted = false;
 	setVisibility (isVisible) {
 		var _this = this,
 			animationDelay = this.props.animationDelay;
 
 		setTimeout(function(){
-			_this.setState({
-				isVisible: isVisible
-			});
+			if (_this._isSlideMounted) {
+				_this.setState({
+					isVisible: isVisible
+				});
+			}
 		}, animationDelay);
 	}
 
 	componentDidMount () {
-		this.setVisibility(this.props.initialSlideIndex === this.props.index);
+		const _this = this;
+		this._isSlideMounted = true;
+		this.setVisibility(_this.props.initialSlideIndex === _this.props.index);
 	}
-
+	componentWillUnmount () {
+		this._isSlideMounted = false;
+	}
 	componentWillReceiveProps (nextProps) {
 		this.setVisibility(nextProps.activeSlideIndex === this.props.index);
 	}
