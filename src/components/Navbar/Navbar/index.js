@@ -11,12 +11,31 @@ import Logo from 'components/navbar/Logo';
 import Navigation from 'components/navbar/Navigation';
 
 class Navbar extends React.Component {
+	//------------------------------------------------------------------------------------------------------------------
+	// React methods
+	//------------------------------------------------------------------------------------------------------------------
+	/**
+	 *
+	 * Set the initial state
+	 *
+	 * @private
+	 */
+	constructor(props) {
+		super(props);
+		this.state = {
+			pluginsInit: false
+		};
+	}
 	componentDidUpdate (nextProps, nextState) {
 		//console.log('nextState', nextState);
 		//console.log('Navbar did update: ', this.props.path);
-		this.initPlugins();
+
+			this.initPlugins();
+
+
 	}
 	componentDidMount() {
+
 		//console.log('Navbar did mount: ', this.props.path);
 	}
 
@@ -42,14 +61,14 @@ class Navbar extends React.Component {
 		 ----------------------------------------------------------- */
 		const toggleNav = function() {
 			if ($('.navbar').offset().top > 10)  {
-				$('.navbar-pasific').addClass('top-nav-collapse');
+				$('.navbar-pasific-toggle').addClass('top-nav-collapse');
 			} else {
-				$('.navbar-pasific').removeClass('top-nav-collapse');
+				$('.navbar-pasific-toggle').removeClass('top-nav-collapse');
 			}
-		}
+		};
 
-		if(this.props.path !== '/' && this.props.path !== '/portfolio') {
-			$('.navbar-pasific').addClass('top-nav-collapse');
+		if (this.props.path !== '/' && this.props.path !== '/portfolio' && this.props.path !== '/contact') {
+			$('.navbar-pasific-toggle').addClass('top-nav-collapse');
 			$(window).off('scroll', toggleNav);
 		} else {
 			toggleNav();
@@ -74,8 +93,14 @@ class Navbar extends React.Component {
 	}
 
 	render() {
-		const path = this.props.path === '/' ? '' : 'navbar-standart';
-		const style = path + ' ';
+		let navBg = '';
+		if (this.props.path !== '/' && this.props.path !== '/portfolio' && this.props.path !== '/contact') {
+			navBg = 'navbar-standart top-nav-collapse';
+		} else {
+			navBg = 'navbar-pasific-toggle';
+		}
+		//const path = this.props.path === '/' ? '' : 'navbar-standart'; //bg-white
+		const style = navBg + ' ';
 		//console.log('style', this.props.path);
 		return (
 			<nav className={style + ' navbar navbar-pasific navbar-fixed-top navbar-mp megamenu'}>
