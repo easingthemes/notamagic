@@ -64,6 +64,7 @@ function Footer() {
         </div>
 
       </div>
+		<div className="text-center">v.1.0.1</div>
     </footer>
   );
 }

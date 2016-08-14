@@ -1,6 +1,5 @@
 import React from 'react';
-import data from '../data';
-import classes from './InfoArea.scss';
+import { Link } from 'react-router';
 
 /**
  * React component implementation.
@@ -55,9 +54,11 @@ export class InfoArea extends React.Component {
 				<div className="container">
 					<div className="row">
 						<div className="col-md-8 col-md-offset-2 text-center pb35">
-							<h4>We are here to help you reach success</h4>
-							<a className="button button-md button-blue hover-ripple-out mr10">Purchase Now</a>
-							<a className="button button-md button-pasific hover-ripple-out">Start Project</a>
+							<h4>Want to find out more?</h4>
+							<Link to="/contact" className="button button-md button-blue hover-ripple-out mr10">Contact me</Link>
+							<a href='/portfolio.pdf'
+							   download="Dragan-Filipovic_FrontendDeveloper.pdf"
+							   className="button button-md button-pasific hover-ripple-out">Download PDF CV</a>
 						</div>
 					</div>
 				</div>

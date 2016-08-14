@@ -1,6 +1,6 @@
 export const data = {
-	leadTitle: 'Our Blog',
-	title: 'We Have Freebies, News, Tutorial, etc.',
+	leadTitle: 'Blog',
+	title: 'ReactJS, Webpack, Unit testing, Grunt, Npm, Sass, CSS, Git',
 	items: [
 		{
 			date: 'FEB. 14 2016',

@@ -18,7 +18,7 @@ export class Service extends React.Component {
 
 	componentDidMount () {
 		const _this = this;
-		getPageData('posts', 43, _this.successCallback.bind(_this), _this.errorCallback.bind(_this));
+		getPageData('posts', 96, _this.successCallback.bind(_this), _this.errorCallback.bind(_this));
 	}
 
 	successCallback (data) {
@@ -38,7 +38,7 @@ export class Service extends React.Component {
 		return (
 			<div id="service" className="pt75 pb25">
 				<div className="container">
-					<TextRow data={this.state.post} align="left" col1="12" col2="8" offset2="2" />
+					<TextRow data={this.state.post} align="center" col1="12" col2="8" offset2="2" />
 				</div>
 			</div>
 		);

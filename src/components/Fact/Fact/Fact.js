@@ -2,6 +2,7 @@ import React from 'react';
 import data from '../data';
 import FactItem from '../FactItem/FactItem';
 import getPageData from '../../../utils/getPageData';
+import { Link } from 'react-router';
 
 /**
  * React component implementation.
@@ -85,6 +86,9 @@ export class Fact extends React.Component {
 		<div className="row">
 			<div className="col-sm-8 col-sm-push-2 text-center">
 				<div dangerouslySetInnerHTML={{__html:content}} />
+				<Link to="blog/63" className="button button-md button-gray hover-ripple-out">
+					<span className="color-primary">Project details</span>
+				</Link>
 			</div>
 		</div>
 	)
