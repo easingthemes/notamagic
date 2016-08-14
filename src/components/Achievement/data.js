@@ -1,9 +1,10 @@
 export const data = {
 	name: 'Achievement',
-	image: '/img/bg/bg-wood.jpg',
-	icons: '/img/other/img-other-6.png',
-	title: 'The Best Web &amp; App Developer 2016',
-	text: 'Every day, We makes thousands of customers happy.'
+	bg: '/img/bg/bg-wood.jpg',
+	image: '/img/brand/sunrise.png',
+	icons: ['/img/brand/react.png', '/img/brand/hybris.png', '/img/brand/aem.png'],
+	title: 'Project in focus: <a href="http://sunrise.ch" target="_blank">Sunrise.ch</a>',
+	text: 'React App :: Hybris rest Api :: Adobe Experience Manager'
 };
 
 export default data;

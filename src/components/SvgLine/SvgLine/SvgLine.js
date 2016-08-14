@@ -1,6 +1,4 @@
 import React from 'react';
-import data from '../data';
-import classes from './SvgLine.scss';
 
 /**
  * React component implementation.
@@ -77,20 +75,20 @@ export class SvgLine extends React.Component {
 				>
 				</polyline>
 
-				<text x="170" y="20" fill="#8b949b" style="font-size: 120%; font-weight: 400;">Lines of Code</text>
-				<text x="170" y="60" fill="#5cb85c" style="font-size: 250%; font-weight: 300;">120K</text>
+				<text x="170" y="20" fill="#8b949b" style="font-size: 120%; font-weight: 400;">Days on the project</text>
+				<text x="170" y="60" fill="#5cb85c" style="font-size: 250%; font-weight: 300;">279</text>
 
-				<text x="510" y="60" fill="#8b949b" style="font-size: 120%; font-weight: 400;">Shortcodes</text>
-				<text x="520" y="100" fill="#5f6467" style="font-size: 250%; font-weight: 300;">750</text>
+				<text x="510" y="60" fill="#8b949b" style="font-size: 120%; font-weight: 400;">Components (Wrappers)</text>
+				<text x="520" y="100" fill="#5f6467" style="font-size: 250%; font-weight: 300;">27</text>
 
-				<text x="760" y="0" fill="#8b949b" style="font-size: 120%; font-weight: 400;">Icons Included</text>
-				<text x="760" y="40" fill="#b2cc71" style="font-size: 250%; font-weight: 300;">2000+</text>
+				<text x="760" y="0" fill="#8b949b" style="font-size: 120%; font-weight: 400;">Commits</text>
+				<text x="760" y="40" fill="#b2cc71" style="font-size: 250%; font-weight: 300;">1 183</text>
 
-				<text x="1060" y="70" fill="#8b949b" style="font-size: 120%; font-weight: 400;">Happy Clients</text>
-				<text x="1060" y="110" fill="#3c88c6" style="font-size: 250%; font-weight: 300;">950</text>
+				<text x="1060" y="70" fill="#8b949b" style="font-size: 120%; font-weight: 400;">Lines of code</text>
+				<text x="1060" y="110" fill="#3c88c6" style="font-size: 250%; font-weight: 300;">288 952</text>
 
-				<text x="1350" y="30" fill="#8b949b" style="font-size: 120%; font-weight: 400;">Item Sales</text>
-				<text x="1350" y="70" fill="#1abc9c" style="font-size: 250%; font-weight: 300;">5,780</text>
+				<text x="1350" y="30" fill="#8b949b" style="font-size: 120%; font-weight: 400;">Juniors OnBoarded</text>
+				<text x="1350" y="70" fill="#1abc9c" style="font-size: 250%; font-weight: 300;">2</text>
 
 				<text x="1650" y="90" fill="#333333" style="font-size: 140%; font-weight: 300; font-family: 'Pacifico', cursive;">Counting..</text>
 

@@ -41,7 +41,13 @@ export class Achievement extends React.Component {
 	//------------------------------------------------------------------------------------------------------------------
 	// Render methods
 	//------------------------------------------------------------------------------------------------------------------
-
+	renderIcons(icons) {
+		return icons.map(function(icon, index) {
+			return (
+				<img key={index} src={icon} style={{display: 'inline-block', maxWidth: '50px'}}/>
+			);
+		})
+	}
 	/**
 	 * Renders the component
 	 *
@@ -53,7 +59,7 @@ export class Achievement extends React.Component {
 		return (
 			<div>
 				<SvgLine />
-				<div className="pt50" style={{background: 'url(' + data.image + ') 100% 100% repeat-x #e8f3f5'}}>
+				<div className="pt50" style={{background: 'url(' + data.bg + ') 100% 100% repeat-x #e8f3f5'}}>
 					<div className="container">
 
 						<div className="row">
@@ -62,25 +68,22 @@ export class Achievement extends React.Component {
 									<small className="heading heading-icon heading-icon-rounded bg-grad-stellar center-block">
 										<i className="fa fa-trophy color-light"></i>
 									</small>
-									{data.title}
-									<small className="heading-desc text-lowercase color-dark">
-										{data.text}
-									</small>
+									<div className="mb20" dangerouslySetInnerHTML={{__html: data.title}} />
+									<p>
+										<span dangerouslySetInnerHTML={{__html: data.text}} />
+									</p>
 								</h2>
 							</div>
 						</div>
 
 						<div className="row mb50 text-center">
-							<div className="col-sm-12">
-								<i className="fa fa-android fa-3x mr20 color-green"></i>
-								<i className="fa fa-apple fa-4x mr20 color-dark"></i>
-								<i className="fa fa-amazon fa-4x mr20 color-red"></i>
-								<i className="fa fa-windows fa-3x color-purple"></i>
+							<div className="col-sm-12 text-center">
+								{this.renderIcons(data.icons)}
 							</div>
 						</div>
 
 						<div className="col-md-12">
-							<img src={data.icons} alt="device" className="img-responsive center-block" />
+							<img src={data.image} alt="device" className="img-responsive center-block" />
 						</div>
 
 					</div>
