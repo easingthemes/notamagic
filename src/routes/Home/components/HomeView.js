@@ -10,19 +10,36 @@ import InfoArea from 'components/InfoArea';
 import Blog from 'components/Blog';
 import Contact from 'components/Contact';
 
-export const HomeView = () => (
-	<span>
-		<Carousel name="HomeCarousel" />
-		<Welcome />
-		<Gallery />
-		<Service />
-		<Paralax  mt={75} />
-		<Fact />
-		<Achievement />
-		<InfoArea />
-		<Blog number={3}/>
-		<Contact />
-	</span>
-)
+//import BlogRoute from '../../BlogRoute/index'
+
+export const HomeView = React.createClass({
+	componentWillMount () {
+		const category = 'Blog';
+		if (typeof this.props.fetchBlogItems === 'function') {
+			this.props.fetchBlogItems(category, 3);
+		}
+
+	},
+	componentDidMount () {
+		//const store = getState();
+		//console.log('BlogRoute', BlogRoute());
+	},
+	render () {
+		return (
+			<span>
+				<Carousel name="HomeCarousel" />
+				<Welcome />
+				<Gallery />
+				<Service />
+				<Paralax  mt={75} />
+				<Fact />
+				<Achievement />
+				<InfoArea />
+				<Blog posts={this.props.posts} />
+				<Contact />
+			</span>
+		);
+	}
+});
 
 export default HomeView

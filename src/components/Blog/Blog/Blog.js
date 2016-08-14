@@ -69,9 +69,12 @@ export class Blog extends React.Component {
 }
 
 Blog.propTypes = {
+	posts: React.PropTypes.array,
+	number: React.PropTypes.number
 };
 
 Blog.defaultProps = {
+	posts: []
 };
 
 export default Blog;
