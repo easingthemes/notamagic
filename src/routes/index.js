@@ -4,6 +4,9 @@ import Home from './Home';
 import ContactRoute from './ContactRoute';
 import PortfolioRoute from './PortfolioRoute';
 import BlogRoute from './BlogRoute';
+
+//import { injectReducer } from '../store/reducers';
+
 //import PostRoute from './PostRoute';
 
 /*  Note: Instead of using JSX, we recommend using react-router
@@ -12,7 +15,7 @@ import BlogRoute from './BlogRoute';
 export const createRoutes = (store) => ({
 	path: '/',
 	component: CoreLayout,
-	indexRoute: Home,
+	indexRoute: Home(store),
 	childRoutes: [
 		ContactRoute(store),
 		PortfolioRoute(store),

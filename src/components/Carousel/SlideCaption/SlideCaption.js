@@ -11,14 +11,15 @@ export class SlideCaption extends React.Component {
 	setVisibility (isVisible) {
 		var _this = this,
 			animationDelay = this.props.animationDelay;
-
-		setTimeout(function(){
-			if (_this._isSlideMounted) {
-				_this.setState({
-					isVisible: isVisible
-				});
-			}
-		}, animationDelay);
+		if (_this._isSlideMounted) {
+			setTimeout(function () {
+				if (_this._isSlideMounted) {
+					_this.setState({
+						isVisible: isVisible
+					});
+				}
+			}, animationDelay);
+		}
 	}
 
 	componentDidMount () {
