@@ -4,12 +4,13 @@ const getGalleryData = (type, id, successCallback, errorCallback) => {
 		crossDomain: true
 	})
 	.done(function(data) {
-		//console.log('data gallery', data);
 		const gallery = data.gallery;
 		let full = [];
 		let src = [];
 		let alt = [];
+		let idsArr = [];
 		if (gallery) {
+			idsArr = gallery.ids.split(',') || [];
 			full = gallery.full;
 			src = gallery.src;
 			alt = gallery.alt;
@@ -17,7 +18,8 @@ const getGalleryData = (type, id, successCallback, errorCallback) => {
 		successCallback({
 			full: full,
 			src: src,
-			alt: alt
+			alt: alt,
+			ids: idsArr
 		});
 	})
 	.fail(function(xhr) {

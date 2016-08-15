@@ -1,19 +1,23 @@
-const getPostsData = (category, successCallback, errorCallback) => {
+const getMediaData = (id, successCallback, errorCallback) => {
 	$.ajax({
-		url: Constants.apiUrl + 'media',
+		url: Constants.apiUrl + 'media/' + id,
 		crossDomain: true
 	})
 		.done(function(data) {
-			//console.log('medias', data);
-			let medias = [];
-			data.map(function(media) {
-				medias.push(media);
-			});
-			successCallback(medias);
+			const alt = data.alt_text || '';
+			const title = data.title || {};
+			const media = {
+				title: title.rendered,
+				description: data.description,
+				platform: data.caption,
+				tags: alt.split(','),
+				src: data.source_url
+			};
+			successCallback(media);
 		})
 		.fail(function(xhr) {
 			errorCallback(xhr);
 		});
 };
 
-export default getPostsData;
+export default getMediaData;

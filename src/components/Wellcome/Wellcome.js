@@ -39,7 +39,7 @@ export class Wellcome extends React.Component {
 			);
 		}
 		return (
-			<section id="welcome" className="pt50">
+			<section id="welcome" className="pt50 pb25">
 				<div className="container">
 					<TextRow data={textData} />
 				</div>

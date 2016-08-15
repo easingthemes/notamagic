@@ -3,7 +3,6 @@ import Slide from '../Slide/Slide';
 import SlideSvg from '../SlideSvg/SlideSvg';
 import data from '../data';
 import getPostsData from '../../../utils/getPostsData';
-import getMediaData from '../../../utils/getMediaData';
 
 export class Carousel extends React.Component {
 
@@ -31,8 +30,6 @@ export class Carousel extends React.Component {
 	componentDidMount () {
 		let _this = this;
 		getPostsData('Carousel', _this.successCallback.bind(_this), _this.errorCallback.bind(_this));
-		//getMediaData('Carousel', _this.successCallback.bind(_this), _this.errorCallback.bind(_this));
-		//getPostsData('Carousel', null, null);
 		$(this._carousel).on('slide.bs.carousel', function (e) {
 
 			var prev = $(e.target).find('.carousel-inner > .item.active').index(),

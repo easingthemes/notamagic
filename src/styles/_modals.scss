@@ -32,3 +32,53 @@
 	outline: none;
 	font-size: 30px;
 }
+.media-wrapper {
+	position: relative;
+	width: 80%;
+	margin: 50px auto;
+}
+.mfp-close-btn-in .media-wrapper {
+	.mfp-close {
+		color: #fff;
+	}
+}
+.media-image {
+	width: 100%;
+	max-height: 80%;
+}
+
+.media-content {
+	background: rgba(0,0,0,0.6);
+	position: absolute;
+	left: 40%; right: 0px;
+	top: 0px; bottom: 0px;
+	color: #fff;
+	overflow: scroll;
+	padding: 0 30px;
+	h2, h4, p, ol, ul {
+		color: #fff
+	}
+}
+@media (max-width: 1200px) {
+	.media-content {
+		left: 20%;
+	}
+}
+.overIn {
+	overflow: hidden;
+}
+@media (max-width: 787px) {
+	.media-content {
+		background: rgba(0,0,0,0.95);
+		left: 0;
+		padding: 0 60px;
+	}
+	.media-wrapper {
+		position: relative;
+		width: 100%;
+		margin: 0px auto;
+	}
+	.mfp-bg {
+		opacity: 1;
+	}
+}

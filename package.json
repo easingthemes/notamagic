@@ -102,6 +102,7 @@
     "ip": "^1.1.2",
     "isotope-layout": "^3.0.1",
     "json-loader": "^0.5.4",
+    "jsx-to-string": "^0.2.15",
     "koa": "^2.0.0-alpha.3",
     "koa-connect-history-api-fallback": "^0.3.0",
     "koa-convert": "^1.2.0",
