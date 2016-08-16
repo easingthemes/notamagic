@@ -1,5 +1,6 @@
 import React from 'react';
 import SlideCaption from '../SlideCaption/SlideCaption';
+import FeIcons from 'components/FeIcons';
 
 export const Slide = (props) => {
 
@@ -9,6 +10,9 @@ export const Slide = (props) => {
 	}
 	return (
 	<div className={style} style={{'backgroundImage': 'url(' + props.image + ')'}}>
+		<div className="slide-top">
+			<FeIcons color={false} opacity={0.6} fade={true} />
+		</div>
 		<div className="container">
 			<SlideCaption {...props} />
 		</div>

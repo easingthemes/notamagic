@@ -3,6 +3,7 @@ import TextRow from '../TextRow';
 import Loader from '../Loader';
 import data from './data';
 import getPageData from '../../utils/getPageData';
+import FeIcons from '../FeIcons/FeIcons/FeIcons';
 
 export class Wellcome extends React.Component {
 	constructor(props) {
@@ -39,8 +40,9 @@ export class Wellcome extends React.Component {
 			);
 		}
 		return (
-			<section id="welcome" className="pt50 pb25">
+			<section id="welcome" className="pb25">
 				<div className="container">
+					<FeIcons color={true} />
 					<TextRow data={textData} />
 				</div>
 			</section>
