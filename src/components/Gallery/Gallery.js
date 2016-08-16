@@ -27,7 +27,7 @@ export class Gallery extends React.Component {
 		//var magnificPopup = $.magnificPopup.instance; // save instance in magnificPopup variable
 		//magnificPopup.close(); // Close popup that is currently opened
 		const magnificPopup = $.magnificPopup.instance;
-		console.log('magnificPopup', magnificPopup);
+		//console.log('magnificPopup', magnificPopup);
 
 		getGalleryData('posts', 29, _this.successCallback.bind(_this), _this.errorCallback.bind(_this));
 	}
