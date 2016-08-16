@@ -5,9 +5,8 @@
  */
 
 import React from 'react';
+import { IndexLink, Link } from 'react-router';
 import './styles.scss';
-
-import A from 'components/atoms/A';
 import Img from 'components/atoms/Img';
 import LogoImg from './images/logo-easingthemes.png';
 
@@ -17,10 +16,10 @@ function Logo() {
 			<button type="button" className="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
 				<i className="fa fa-bars"></i>
 			</button>
-			<A className="navbar-brand page-scroll" href="#page-top">
+			<Link to="/" className="navbar-brand page-scroll">
 				<Img src={LogoImg} alt="Dragan Filipovic - Logo" />
 				<span className="hidden-xs">Dragan Filipovic</span>
-			</A>
+			</Link>
 		</div>
 	);
 }
