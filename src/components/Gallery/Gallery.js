@@ -93,11 +93,11 @@ export class Gallery extends React.Component {
 				});
 			});
 
-			$('.filters li a').on('click', function() {
+			$(document).on('click', '.filters li a', function() {
 				var filterValue = $(this).attr('data-filter');
 				$portfolio.isotope({ filter: filterValue });
 			});
-			$('.filters li a').on('click', function(){
+			$(document).on('click', '.filters li a', function(){
 				$('.filters li a').removeClass('active');
 				$(this).addClass('active');
 			});
