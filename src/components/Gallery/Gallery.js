@@ -165,7 +165,7 @@ export class Gallery extends React.Component {
 		return srcs.map(function(src, index) {
 			let image = {
 				thumbUrl: src,
-				largeUrl: _this.state.full[index],
+				largeUrl: _this.state.full[index] || '/img/portfolio/preview/img-portfolio-preview-1.jpg',
 				alt: _this.state.alt[index],
 				id: ids[index]
 			};
