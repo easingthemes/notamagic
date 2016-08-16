@@ -952,6 +952,12 @@ table th.bg-pasific {
         height: 500px;
     }
 }
+@media(max-height: 400px) {
+	.svg-container-bottom {
+		display: none;
+	}
+}
+
 @media (max-width: 768px) {
     .svg-container {
         position: absolute;
@@ -960,6 +966,9 @@ table th.bg-pasific {
         height: 300px;
         z-index: 1;
     }
+	.svg-container-bottom {
+		display: none;
+	}
 }
 
 
