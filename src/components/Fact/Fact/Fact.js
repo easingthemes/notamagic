@@ -86,9 +86,9 @@ export class Fact extends React.Component {
 		<div className="row">
 			<div className="col-sm-8 col-sm-push-2 text-center">
 				<div dangerouslySetInnerHTML={{__html:content}} />
-				<Link to="blog/63" className="button button-md button-gray hover-ripple-out">
-					<span className="color-primary">Project details</span>
-				</Link>
+				<a target="_blank" href="https://github.com/easingthemes/notamagic" className="button button-md button-gray hover-ripple-out">
+					<span className="color-primary">View it on GitHub <i className="fa fa-github"></i></span>
+				</a>
 			</div>
 		</div>
 	)
