@@ -1,0 +1,34 @@
+:global {
+	.slide-top {
+		position: absolute;
+		top: 60px;
+		left: 0;
+		right: 0;
+		text-align: center;
+	}
+	.fe-icons {
+		margin: 10px auto;
+		padding: 0;
+		text-align: center;
+		li {
+			display: inline-block;
+			padding: 10px 20px;
+		}
+		img {
+			max-height: 40px;
+			width: auto;
+		}
+	}
+	.desaturate{
+		-webkit-filter: grayscale(1);
+		-webkit-filter: grayscale(100%);
+		filter: grayscale(100%);
+	}
+	@media all and (max-width: 1200px) {
+		.slide-top {
+			height: 70px;
+			overflow: hidden;
+		}
+	}
+}
+
