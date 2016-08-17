@@ -48,15 +48,32 @@
 }
 
 .media-content {
-	background: rgba(0,0,0,0.6);
+	background: rgba(0,0,0,0.9);
 	position: absolute;
-	left: 40%; right: 0px;
+	left: 60%; right: 0px;
 	top: 0px; bottom: 0px;
 	color: #fff;
 	overflow: scroll;
 	padding: 0 30px;
-	h2, h4, p, ol, ul {
+	h2, h4, p, ol, ul, a {
 		color: #fff
+	}
+	a {
+		padding: 20px 0;
+	}
+	p {
+		margin-top: 25px;
+	}
+	h4 {
+		span {
+
+		}
+	}
+	ul {
+		padding-left: 30px;
+	}
+	.media-text {
+		padding-bottom: 20px;
 	}
 }
 @media (max-width: 1200px) {
