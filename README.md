@@ -1,19 +1,25 @@
+
+This project uses React, Redux, React router, WordPress API, Webpack, Grunt, Sass, Karma, Eslint, GitHub, Dreamhost.
+
+WordPress RestAPI can provide everything that one simple React App needs. For custom routes and data, basic PHP is enough. Since we are in the middle of 2016th, ES6 is essential ingredient
+
+This project also uses jQuery !? (But why!?) and Bootstrap. Every enterprise (6 figure budget, users etc.) project that I’ve been working till now had jQuery in it. And making jQuery and plugins to work seamlessly with React and Webpack is adventure on its own.
+
 -------------------------------------------
 # Plan:
 ___________________________________________
 
 1. React JS
-2. Grunt
+2. Grunt / Todo
 3. Bower
 4. Webpack
 5. jQuery
 6. Component based
 7. Sass
-8. CommonJS
 9. Data from API
 10. Karma
 11. Phantom
-12. lodash
+12. Lodash
 13. FontAwesome
 14. Localization
 
@@ -21,12 +27,6 @@ ___________________________________________
 -------------------------------------------
 # Steps:
 ___________________________________________
-
-1. Plugins: Bower: Install bower plugins
-2. Sass: 2 parts: App & Components
-3. JS: 2 parts: App (CommonJS) & Components
-4. Assets: Images, Fonts
-5. Data from API: Setup mock server
 
 
 -------------------------------------------
