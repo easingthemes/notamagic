@@ -1785,6 +1785,7 @@ canvas {
     border-bottom: 1px dashed #ddd;
     padding-bottom: 20px;
     margin-bottom: 15px;
+	font-size: 13px;
 }
 .blog-one .blog-one-body .blog-title {
     font-size: 15px;
@@ -1894,7 +1895,7 @@ ul.breadcrumb li a:hover {
     margin-top: 30px;
     margin-bottom: 40px;
 }
-#blog blockquote {
+#blog blockquote:not(.twitter-tweet) {
     background-color: #323a45;
     border: 0;
     color: #f1f1f1;
