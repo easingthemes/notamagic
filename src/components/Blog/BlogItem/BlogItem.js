@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
+import moment from 'moment';
 
 /**
  * React component implementation.
@@ -43,6 +44,8 @@ export class BlogItem extends React.Component {
 			commentsNumber = comments.length;
 			commentsLabel = commentsLabel + 's';
 		}
+		const date = post.date || '';
+		const dateFormatted = moment(date).format('DD.MM.YYYY');
 		return (
 			<div className="blog-one">
 				<div className="blog-one-header">
@@ -55,7 +58,7 @@ export class BlogItem extends React.Component {
 				<div className="blog-one-attrib">
 					<img src={post.author.avatar} alt={post.author.name} className="blog-author-photo" />
 						<span className="blog-author-name">{post.author.name}</span>
-						<span className="blog-date">{post.date}</span>
+						<span className="blog-date">{dateFormatted}</span>
 				</div>
 				<div className="blog-one-body">
 					<h4 className="blog-title">
@@ -65,9 +68,7 @@ export class BlogItem extends React.Component {
 							{post.title}
 						</Link>
 					</h4>
-					<p className="">
-						{post.leadText}
-					</p>
+					<div dangerouslySetInnerHTML={{__html:post.leadText}} />
 				</div>
 				<div className="blog-one-footer">
 					<Link
