@@ -1,5 +1,5 @@
 import {requestPost, receivePost, failPost, sendComment, saveComment, failComment} from './actionCreators';
-import getIp from '../../../utils/getIp';
+//import getIp from '../../../utils/getIp';
 //import {reducer as formReducer} from 'redux-form';
 // ------------------------------------
 // Constants
@@ -42,7 +42,7 @@ export function postComment(data) {
 				author_name: data.firstName,
 				author_url: data.url,
 				content: data.message,
-				author_ip: getIp,
+				//author_ip: getIp,
 				//date: new Date(),
 				//date_gmt: '',
 				karma: 0,

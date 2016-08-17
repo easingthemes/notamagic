@@ -5,7 +5,7 @@ import { useRouterHistory } from 'react-router'
 import { syncHistoryWithStore } from 'react-router-redux'
 import createStore from './store/createStore'
 import AppContainer from './containers/AppContainer'
-import setIp from './utils/setIp';
+//import setIp from './utils/setIp';
 import withScroll from 'scroll-behavior';
 
 // ========================================================
@@ -79,7 +79,7 @@ if (__DEV__ && module.hot) {
 }
 
 // Set Ip
-setIp();
+//setIp();
 // ========================================================
 // Go!
 // ========================================================
