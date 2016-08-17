@@ -17,6 +17,7 @@ export class CoreLayout extends React.Component {
 		this.setState({
 			isLoaded: true
 		});
+		// Remove page loader
 		$(".loader-item").delay(700).fadeOut();
 		$("#pageloader").delay(800).fadeOut("slow");
 		helperScroll();
@@ -38,4 +39,4 @@ CoreLayout.propTypes = {
 	children: React.PropTypes.element.isRequired
 };
 
-export default CoreLayout
+export default CoreLayout;

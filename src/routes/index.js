@@ -5,10 +5,6 @@ import ContactRoute from './ContactRoute';
 import PortfolioRoute from './PortfolioRoute';
 import BlogRoute from './BlogRoute';
 
-//import { injectReducer } from '../store/reducers';
-
-//import PostRoute from './PostRoute';
-
 /*  Note: Instead of using JSX, we recommend using react-router
     PlainRoute objects to build route definitions.   */
 
@@ -41,4 +37,4 @@ export const createRoutes = (store) => ({
     when the route exists and matches.
 */
 
-export default createRoutes
+export default createRoutes;
