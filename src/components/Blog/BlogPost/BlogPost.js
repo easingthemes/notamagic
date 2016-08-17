@@ -202,16 +202,14 @@ export class BlogPost extends React.Component {
 									<img src={post.image} alt={post.title} className="img-responsive" />
 								</div>
 								<div className="blog-one-body">
-									<div>
-										{post.content}
-									</div>
+									<div dangerouslySetInnerHTML={{__html:post.content}} />
 								</div>
 								<div className="blog-post-read-tag mt50">
 									<i className="fa fa-tags"></i> Tags:
-									<a href="#"> Javascript</a>,
-									<a href="#"> HTML</a>,
-									<a href="#"> Wordpress</a>,
-									<a href="#"> Tutorial </a>
+									<a href=""> Javascript</a>,
+									<a href=""> HTML</a>,
+									<a href=""> Wordpress</a>,
+									<a href=""> Tutorial </a>
 								</div>
 							</div>
 							{this.renderAuthor(post.author)}
