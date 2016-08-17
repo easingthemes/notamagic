@@ -39,7 +39,7 @@ const mapPostsData = (data) => {
 				avatar: avatar_urls[96],
 				name: author.name
 			},
-			imageMedium: imageMedium
+			imageMedium: imageMedium || ''
 		});
 	});
 	return posts;
