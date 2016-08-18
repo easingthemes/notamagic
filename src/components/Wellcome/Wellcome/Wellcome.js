@@ -1,9 +1,9 @@
 import React from 'react';
-import TextRow from '../TextRow';
-import Loader from '../Loader';
-import data from './data';
-import getPageData from '../../utils/getPageData';
-import FeIcons from '../FeIcons/FeIcons/FeIcons';
+import TextRow from 'components/TextRow';
+import Loader from 'components/Loader';
+import data from '../data';
+import getPageData from '../../../utils/getPageData';
+import FeIcons from 'components/FeIcons';
 
 export class Wellcome extends React.Component {
 	constructor(props) {

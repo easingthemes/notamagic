@@ -1,6 +1,6 @@
 import React from 'react';
-import TextRow from '../TextRow';
-import getPageData from '../../utils/getPageData';
+import TextRow from 'components/TextRow';
+import getPageData from '../../../utils/getPageData';
 
 export class Service extends React.Component {
 	constructor(props) {

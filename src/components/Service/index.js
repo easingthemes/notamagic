@@ -1,3 +1,3 @@
-import Service from './Service'
+import Service from './Services/Service'
 
 export default Service

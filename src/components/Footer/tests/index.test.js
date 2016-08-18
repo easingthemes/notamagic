@@ -3,26 +3,14 @@ import { shallow } from 'enzyme';
 import React from 'react';
 
 import Footer from '../index';
-import A from 'components/atoms/A';
 
 describe('<Footer />', () => {
 	it('should render the copyright notice', () => {
-  	const renderedComponent = shallow(
-      <Footer />
-    );
-  	expect(renderedComponent.contains(
-      <section>
-        <p>This project is licensed under the MIT license.</p>
-      </section>
-    )).toEqual(true);
+		const renderedComponent = shallow(
+			<Footer />
+		);
+		expect(renderedComponent.contains(
+			<div className="navbar-brand-footer">Dragan Filipovic</div>
+		)).toEqual(true);
 	});
-
-	it('should render the credits', () => {
-  	const renderedComponent = shallow(<Footer />);
-  	expect(renderedComponent.contains(
-      <section>
-        <p>Made with love by <A href="https://twitter.com/mxstbr">Max Stoiber</A>.</p>
-      </section>
-    )).toEqual(true);
-  		});
 });

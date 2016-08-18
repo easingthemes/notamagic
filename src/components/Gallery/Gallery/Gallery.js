@@ -1,7 +1,7 @@
 import React from 'react';
 import Isotope from 'isotope-layout';
-import getGalleryData from '../../utils/getGalleryData';
-import getMediaData from '../../utils/getMediaData';
+import getGalleryData from '../../../utils/getGalleryData';
+import getMediaData from '../../../utils/getMediaData';
 
 export class Gallery extends React.Component {
 

@@ -1,3 +1,3 @@
-import TextRow from './TextRow'
+import TextRow from './TextRow/TextRow'
 
 export default TextRow

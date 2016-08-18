@@ -1,4 +1,4 @@
-import { injectReducer } from '../../store/reducers'
+import { injectReducer } from '../../store/reducers';
 
 export default (store) => ({
   path: 'contact',
@@ -9,14 +9,14 @@ export default (store) => ({
     require.ensure([], (require) => {
       /*  Webpack - use require callback to define
           dependencies for bundling   */
-      const ContactRoute = require('./containers/ContactRouteContainer').default
-      const reducer = require('./modules/ContactRoute').default
+      const ContactRoute = require('./containers/ContactRouteContainer').default;
+      const reducer = require('./modules/ContactRoute').default;
 
       /*  Add the reducer to the store on key 'counter'  */
-      injectReducer(store, { key: 'ContactRoute', reducer })
+      injectReducer(store, { key: 'ContactRoute', reducer });
 
       /*  Return getComponent   */
-      cb(null, ContactRoute)
+      cb(null, ContactRoute);
 
     /* Webpack named bundle   */
     }, 'ContactRoute')
