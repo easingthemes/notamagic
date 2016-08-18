@@ -53,7 +53,6 @@ const config = {
 	'jquery-bridget',
 	'imagesloaded',
 	'magnific-popup',
-	'parallax.js',
 	  'jquery-countTo'
   ],
   compiler_npm : [

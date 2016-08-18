@@ -116,6 +116,7 @@
     "react": "^15.3.0",
     "react-dom": "^15.0.0",
     "react-img-preload": "^2.0.0",
+    "react-parallax": "^0.4.3",
     "react-redux": "^4.0.0",
     "react-router": "^2.2.0",
     "react-router-redux": "^4.0.0",

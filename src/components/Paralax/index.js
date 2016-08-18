@@ -1,3 +1,3 @@
-import Paralax from './Paralax'
+import Paralax from './Paralax/Paralax'
 
 export default Paralax

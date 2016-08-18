@@ -23,7 +23,6 @@
     "jquery-bridget": "^2.0.1",
     "imagesloaded": "^4.1.0",
     "magnific-popup": "^1.1.0",
-    "parallax.js": "^1.4.2",
     "jquery-countTo": "^1.2.0"
   }
 }
