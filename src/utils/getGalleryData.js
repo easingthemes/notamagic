@@ -3,7 +3,7 @@ const getGalleryData = (type, id, successCallback, errorCallback) => {
 		url: Constants.apiUrl + type + '/' + id,
 		crossDomain: true
 	})
-	.done(function(data) {
+	.done(function (data) {
 		const gallery = data.gallery;
 		let full = [];
 		let src = [];
@@ -22,7 +22,7 @@ const getGalleryData = (type, id, successCallback, errorCallback) => {
 			ids: idsArr
 		});
 	})
-	.fail(function(xhr) {
+	.fail(function (xhr) {
 		errorCallback(xhr);
 	});
 };

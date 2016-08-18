@@ -14,24 +14,24 @@ import CommentsForm from '../../CommentsForm';
  */
 export class BlogPost extends React.Component {
 
-	//------------------------------------------------------------------------------------------------------------------
-	// React methods
-	//------------------------------------------------------------------------------------------------------------------
+	// ------------------------------------------------------------------------------------------------------------------
+	//  React methods
+	// ------------------------------------------------------------------------------------------------------------------
 	/**
 	 *
 	 * Set the initial state
 	 *
 	 * @private
 	 */
-	constructor(props) {
+	constructor (props) {
 		super(props);
 		this.state = {
 			openId: false
 		};
 	}
-	//------------------------------------------------------------------------------------------------------------------
-	// Render methods
-	//------------------------------------------------------------------------------------------------------------------
+	// ------------------------------------------------------------------------------------------------------------------
+	//  Render methods
+	// ------------------------------------------------------------------------------------------------------------------
 	renderReplies (replies) {
 		const _this = this;
 		if (replies.length === 0) {
@@ -39,7 +39,7 @@ export class BlogPost extends React.Component {
 				<span />
 			);
 		}
-		return replies.map(function(reply, index){
+		return replies.map(function (reply, index){
 			return (
 				<div key={reply.id + '-reply-' + index} className={'blog-post-comment-reply'}>
 					{_this.renderComment(reply)}
@@ -79,7 +79,7 @@ export class BlogPost extends React.Component {
 				<span />
 			);
 		}
-		return comments.map(function(comment, index) {
+		return comments.map(function (comment, index) {
 			return (
 				<div key={'comment-' + index} className="blog-post-comment">
 					{_this.renderComment(comment)}
@@ -107,7 +107,7 @@ export class BlogPost extends React.Component {
 			postId: postId,
 			parent: parent
 		});
-		//console.log('formData', formData);
+		// console.log('formData', formData);
 		this.props.onSendComment(formData);
 	}
 	renderStatus () {

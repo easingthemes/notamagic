@@ -10,9 +10,9 @@ import React from 'react';
  */
 export class Contact extends React.Component {
 
-	//------------------------------------------------------------------------------------------------------------------
-	// React methods
-	//------------------------------------------------------------------------------------------------------------------
+	// ------------------------------------------------------------------------------------------------------------------
+	//  React methods
+	// ------------------------------------------------------------------------------------------------------------------
 
 	/**
 	 * When component is mounted add the Change event listeners and get initial data
@@ -44,21 +44,21 @@ export class Contact extends React.Component {
 			$('#contactForm').show().submit( submitForm ).addClass( 'positioned' );
 		}
 
-		// Submit the form via Ajax
+		//  Submit the form via Ajax
 		function submitForm() {
 			var contactForm = $(this);
 
-			// Are all the fields filled in?
+			//  Are all the fields filled in?
 
 			if ( !$('#senderName').val() || !$('#senderEmail').val() || !$('#message').val() ) {
 
-				// No; display a warning message and return to the form
+				//  No; display a warning message and return to the form
 				$('#incompleteMessage').fadeIn().delay(messageDelay).fadeOut();
 				contactForm.fadeOut().delay(messageDelay).fadeIn();
 
 			} else {
 
-				// Yes; submit the form to the PHP script via Ajax
+				//  Yes; submit the form to the PHP script via Ajax
 
 				$('#sendingMessage').fadeIn();
 				contactForm.show();
@@ -71,22 +71,22 @@ export class Contact extends React.Component {
 				} );
 			}
 
-			// Prevent the default form submission occurring
+			//  Prevent the default form submission occurring
 			return false;
 		}
 
 
-		// Handle the Ajax response
+		//  Handle the Ajax response
 		function submitFinished( response ) {
 			response = $.trim( response );
 			$('#sendingMessage').fadeOut();
 
 			if ( response == "success" ) {
 
-				// Form submitted successfully:
-				// 1. Display the success message
-				// 2. Clear the form fields
-				// 3. Fade the content back in
+				//  Form submitted successfully:
+				//  1. Display the success message
+				//  2. Clear the form fields
+				//  3. Fade the content back in
 
 				$('#successMessage').fadeIn().delay(messageDelay).fadeOut();
 				$('#senderName').val( "" );
@@ -97,17 +97,17 @@ export class Contact extends React.Component {
 
 			} else {
 
-				// Form submission failed: Display the failure message,
-				// then redisplay the form
+				//  Form submission failed: Display the failure message,
+				//  then redisplay the form
 				$('#failureMessage').fadeIn().delay(messageDelay).fadeOut();
 				$('#contactForm').delay(messageDelay+500).fadeIn();
 			}
 		}
 	}
 
-	//------------------------------------------------------------------------------------------------------------------
-	// Render methods
-	//------------------------------------------------------------------------------------------------------------------
+	// ------------------------------------------------------------------------------------------------------------------
+	//  Render methods
+	// ------------------------------------------------------------------------------------------------------------------
 
 	/**
 	 * Renders the component

@@ -11,9 +11,9 @@ import OnScreen from 'onscreen';
  */
 export class Counter extends React.Component {
 
-	//------------------------------------------------------------------------------------------------------------------
-	// React methods
-	//------------------------------------------------------------------------------------------------------------------
+	// ------------------------------------------------------------------------------------------------------------------
+	//  React methods
+	// ------------------------------------------------------------------------------------------------------------------
 
 	/**
 	 *
@@ -21,7 +21,7 @@ export class Counter extends React.Component {
 	 *
 	 * @private
 	 */
-	constructor(props) {
+	constructor (props) {
 		super(props);
 		this.state = {
 			initialCount: true,
@@ -55,9 +55,9 @@ export class Counter extends React.Component {
 			to: _this.props.to,
 			speed: _this.props.speed,
 			refreshInterval: 50,
-			onComplete: function() {
+			onComplete: function () {
 				if (!_this.state.initialCount) {
-					setTimeout(function() {
+					setTimeout(function () {
 						_this.setState({
 							counterStarted: false
 						});
@@ -80,9 +80,9 @@ export class Counter extends React.Component {
 	componentWillUnmount () {
 		this.state.os.destroy();
 	}
-	//------------------------------------------------------------------------------------------------------------------
-	// Render methods
-	//------------------------------------------------------------------------------------------------------------------
+	// ------------------------------------------------------------------------------------------------------------------
+	//  Render methods
+	// ------------------------------------------------------------------------------------------------------------------
 
 	/**
 	 * Renders the component

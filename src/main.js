@@ -6,8 +6,7 @@ import { syncHistoryWithStore } from 'react-router-redux';
 import withScroll from 'scroll-behavior';
 import createStore from './store/createStore';
 import AppContainer from './containers/AppContainer';
-//import setIp from './utils/setIp';
-
+// import setIp from './utils/setIp';
 
 // ========================================================
 // Browser History Setup
@@ -15,7 +14,7 @@ import AppContainer from './containers/AppContainer';
 // const browserHistory = useRouterHistory(createBrowserHistory)({
 //   basename: __BASENAME__
 // });
-const browserHistory = withScroll(useRouterHistory(createBrowserHistory)({  //use withScroll
+const browserHistory = withScroll(useRouterHistory(createBrowserHistory)({  // use withScroll
 	basename: __BASENAME__
 }));
 
@@ -57,7 +56,7 @@ let render = (routerKey = null) => {
 			routerKey={routerKey}
 		/>,
 		MOUNT_NODE
-	)
+	);
 };
 
 // Enable HMR and catch runtime errors in RedBox
@@ -80,7 +79,7 @@ if (__DEV__ && module.hot) {
 }
 
 // Set Ip
-//setIp();
+// setIp();
 // ========================================================
 // Go!
 // ========================================================

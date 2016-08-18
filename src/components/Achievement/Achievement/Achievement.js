@@ -1,6 +1,6 @@
 import React from 'react';
-import data from '../data';
 import SvgLine from 'components/SvgLine';
+import data from '../data';
 
 /**
  * React component implementation.
@@ -12,41 +12,31 @@ import SvgLine from 'components/SvgLine';
  */
 export class Achievement extends React.Component {
 
-	//------------------------------------------------------------------------------------------------------------------
-	// React methods
-	//------------------------------------------------------------------------------------------------------------------
+	// ------------------------------------------------------------------------------------------------------------------
+	//  React methods
+	// ------------------------------------------------------------------------------------------------------------------
 
 	/**
 	 *
 	 * Set the initial state
 	 *
 	 * @private
+	 * @param {object} props props
 	 */
-	constructor(props) {
+	constructor (props) {
 		super(props);
 		this.state = {};
 	}
 
-	/**
-	 * When component is mounted add the Change event listeners and get initial data
-	 *
-	 * @method componentDidMount
-	 * @returns void
-	 * @public
-	 */
-	componentDidMount () {
-
-	}
-
-	//------------------------------------------------------------------------------------------------------------------
-	// Render methods
-	//------------------------------------------------------------------------------------------------------------------
-	renderIcons(icons) {
-		return icons.map(function(icon, index) {
+	// ------------------------------------------------------------------------------------------------------------------
+	//  Render methods
+	// ------------------------------------------------------------------------------------------------------------------
+	renderIcons (icons) {
+		return icons.map(function (icon, index) {
 			return (
-				<img key={index} src={icon} style={{display: 'inline-block', maxWidth: '50px'}}/>
+				<img key={index} src={icon} style={{display: 'inline-block', maxWidth: '50px'}} />
 			);
-		})
+		});
 	}
 	/**
 	 * Renders the component

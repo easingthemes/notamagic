@@ -1,5 +1,5 @@
 const animateScroll = () => {
-	$(document).on('click', '.navbar-op ul li a, .navbar-op a.navbar-brand, .intro-direction a, a.go-to-top', function(event) {
+	$(document).on('click', '.navbar-op ul li a, .navbar-op a.navbar-brand, .intro-direction a, a.go-to-top', function (event) {
 		event.preventDefault();
 		var hash = this.hash;
 

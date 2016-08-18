@@ -21,7 +21,7 @@ const mapComments = (embeddedComments) => {
 	if (!(comments instanceof Array)) {
 		comments = [];
 	}
-	comments.map(function(comment) {
+	comments.map(function (comment) {
 		const id = comment.id;
 		const parent = comment.parent;
 		if (parent === 0) {

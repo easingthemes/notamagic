@@ -3,7 +3,7 @@ const getPageData = (type, id, successCallback, errorCallback) => {
 		url: Constants.apiUrl + type + '/' + id,
 		crossDomain: true
 	})
-	.done(function(data) {
+	.done(function (data) {
 		const content = data.content.rendered;
 		let text = data.content.rendered;
 		let leadText = '';
@@ -23,7 +23,7 @@ const getPageData = (type, id, successCallback, errorCallback) => {
 			content: content
 		});
 	})
-	.fail(function(xhr) {
+	.fail(function (xhr) {
 		errorCallback(xhr);
 	});
 };

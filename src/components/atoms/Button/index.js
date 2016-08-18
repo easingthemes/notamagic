@@ -10,15 +10,15 @@ import React, { PropTypes } from 'react';
 
 import styles from './styles.css';
 
-function Button(props) {
+function Button (props) {
 	const className = props.className ? props.className : styles.button;
 
-  // Render an anchor tag
+  //  Render an anchor tag
 	let button = (
     <a className={className} href={props.href} onClick={props.onClick}>{props.children}</a>
   );
 
-  // If the Button has a handleRoute prop, we want to render a button
+  //  If the Button has a handleRoute prop, we want to render a button
 	if (props.handleRoute) {
   																					button = (
       <button className={className} onClick={props.handleRoute} >{props.children}</button>

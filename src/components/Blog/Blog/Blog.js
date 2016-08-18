@@ -12,19 +12,19 @@ import BlogItem from '../BlogItem/BlogItem';
  */
 export class Blog extends React.Component {
 
-	//------------------------------------------------------------------------------------------------------------------
-	// React methods
-	//------------------------------------------------------------------------------------------------------------------
+	// ------------------------------------------------------------------------------------------------------------------
+	//  React methods
+	// ------------------------------------------------------------------------------------------------------------------
 
-	//------------------------------------------------------------------------------------------------------------------
-	// Render methods
-	//------------------------------------------------------------------------------------------------------------------
+	// ------------------------------------------------------------------------------------------------------------------
+	//  Render methods
+	// ------------------------------------------------------------------------------------------------------------------
 	renderItems () {
-		//const posts = this.state.posts || [];
+		// const posts = this.state.posts || [];
 		const posts = this.props.posts || [];
 		const items = data.items || [];
 
-		//const posts = $.merge(true, items, wpposts);
+		// const posts = $.merge(true, items, wpposts);
 		if (this.props.isLoading) {
 			return (
 				<span />
@@ -70,7 +70,8 @@ export class Blog extends React.Component {
 
 Blog.propTypes = {
 	posts: React.PropTypes.array,
-	number: React.PropTypes.number
+	number: React.PropTypes.number,
+	isLoading: React.PropTypes.bool
 };
 
 Blog.defaultProps = {

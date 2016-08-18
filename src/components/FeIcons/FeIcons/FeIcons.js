@@ -13,9 +13,9 @@ import getRandom from '../../../utils/getRandom';
  */
 export class FeIcons extends React.Component {
 
-	//------------------------------------------------------------------------------------------------------------------
-	// React methods
-	//------------------------------------------------------------------------------------------------------------------
+	// ------------------------------------------------------------------------------------------------------------------
+	//  React methods
+	// ------------------------------------------------------------------------------------------------------------------
 
 	/**
 	 *
@@ -23,7 +23,7 @@ export class FeIcons extends React.Component {
 	 *
 	 * @private
 	 */
-	constructor(props) {
+	constructor (props) {
 		super(props);
 		this.state = {
 			isLoading: true
@@ -41,8 +41,8 @@ export class FeIcons extends React.Component {
 		const icons = data.icons || [];
 		const _this = this;
 		if (this.props.fade) {
-			icons.map(function(icon, index) {
-				setTimeout(function() {
+			icons.map(function (icon, index) {
+				setTimeout(function () {
 					$(_this['_icon' + index]).animate({
 						opacity: 0
 					}, getRandom(1000, 5000));
@@ -52,14 +52,14 @@ export class FeIcons extends React.Component {
 
 	}
 
-	//------------------------------------------------------------------------------------------------------------------
-	// Render methods
-	//------------------------------------------------------------------------------------------------------------------
+	// ------------------------------------------------------------------------------------------------------------------
+	//  Render methods
+	// ------------------------------------------------------------------------------------------------------------------
 	renderIcons(icons) {
 		const color = this.props.color ? '' : 'desaturate';
 		const opacity = this.props.opacity || 1;
 		const _this = this;
-		return icons.map(function(icon, index) {
+		return icons.map(function (icon, index) {
 			return (
 				<li key={index}>
 					<img ref={(c) => _this['_icon' + index] = c} className={color} style={{opacity: opacity}} src={icon.url} />

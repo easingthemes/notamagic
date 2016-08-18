@@ -1,28 +1,33 @@
 {
-  "parser"  : "babel-eslint",
-  "extends" : [
-    "standard",
-    "standard-react"
-  ],
-  "plugins": [
-    "babel"
-  ],
-  "env"     : {
-    "browser" : true
-  },
-  "globals" : {
-    "__DEV__"      : false,
-    "__PROD__"     : false,
-    "__DEBUG__"    : false,
-    "__COVERAGE__" : false,
-    "__BASENAME__" : false,
-	  "Constants"  : false
-  },
-  "rules": {
-    "semi" : [2, "always"],
-    "max-len": [2, 120, 2],
-    "generator-star-spacing": 0,
-    "babel/generator-star-spacing": 1,
-    "jsx-quotes": [2, "prefer-single"],
-  }
+	"parser"  : "babel-eslint",
+	"extends" : [
+		"@namics/eslint-config/configurations/es6-react",
+		"standard"
+	],
+	"plugins": [
+		"babel"
+	],
+	"env"     : {
+		"browser" : true,
+		"jquery": true
+	},
+	"globals" : {
+		"__DEV__"      : false,
+		"__PROD__"     : false,
+		"__DEBUG__"    : false,
+		"__COVERAGE__" : false,
+		"__BASENAME__" : false,
+		"Constants"  : false
+	},
+	"rules": {
+		"semi" : [2, "always"],
+		"max-len": [1, 120, 2],
+		"generator-star-spacing": 0,
+		"babel/generator-star-spacing": 1,
+		"jsx-quotes": [2, "prefer-double"],
+		"indent": ["error", "tab"],
+		"react/jsx-indent": [1, "tab"],
+		"react/jsx-indent-props": [2, "tab"],
+		"id-blacklist": [2, "callback"]
+	}
 }

@@ -13,10 +13,10 @@ export function fetchBlogItems(category, number) {
 			url: Constants.apiUrl + 'posts?filter[category_name]=' + category + filterNumber + '&_embed=1',
 			crossDomain: true
 		})
-		.done(function(data) {
+		.done(function (data) {
 			dispatch(receivePosts(data));
 		})
-		.fail(function(xhr) {
+		.fail(function (xhr) {
 			dispatch(failPosts(xhr));
 		});
 	};

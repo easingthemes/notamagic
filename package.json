@@ -134,6 +134,7 @@
     "yargs": "^4.0.0"
   },
   "devDependencies": {
+    "@namics/eslint-config": "^1.0.0",
     "babel-eslint": "^6.0.0-beta.6",
     "babel-preset-react": "^6.11.1",
     "babel-preset-react-optimize": "^1.0.1",

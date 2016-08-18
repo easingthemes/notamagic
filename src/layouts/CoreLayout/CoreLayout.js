@@ -7,7 +7,7 @@ import '../../styles/core.scss';
 import helperScroll from '../../utils/animateScroll';
 
 export class CoreLayout extends React.Component {
-	constructor(props) {
+	constructor (props) {
 		super(props);
 		this.state = {
 			isLoaded: false
@@ -18,8 +18,8 @@ export class CoreLayout extends React.Component {
 			isLoaded: true
 		});
 		// Remove page loader
-		$(".loader-item").delay(700).fadeOut();
-		$("#pageloader").delay(800).fadeOut("slow");
+		$('.loader-item').delay(700).fadeOut();
+		$('#pageloader').delay(800).fadeOut('slow');
 		helperScroll();
 	}
 	render () {
@@ -36,7 +36,8 @@ export class CoreLayout extends React.Component {
 }
 
 CoreLayout.propTypes = {
-	children: React.PropTypes.element.isRequired
+	children: React.PropTypes.element.isRequired,
+	location: React.PropTyes.object
 };
 
 export default CoreLayout;

@@ -5,7 +5,7 @@ import getMediaData from '../../../utils/getMediaData';
 
 export class Gallery extends React.Component {
 
-	constructor(props) {
+	constructor (props) {
 		super(props);
 		this.state = {
 			pluginsInit: false,
@@ -28,9 +28,9 @@ export class Gallery extends React.Component {
 
 	successCallback (data) {
 		const alt = data.alt || [];
-		//alt.unshift('All');
+		// alt.unshift('All');
 
-		let filters = alt.filter(function(filter, index) {
+		let filters = alt.filter(function (filter, index) {
 			return alt.indexOf(filter) === index;
 		});
 
@@ -54,7 +54,7 @@ export class Gallery extends React.Component {
 		const _portfolio = this._portfolio;
 		if (_portfolio) {
 			var iso = new Isotope( _portfolio, {
-				// options
+				//  options
 				itemSelector: '.portfolio-item',
 				masonry: {
 					rowHeight: 280
@@ -70,13 +70,13 @@ export class Gallery extends React.Component {
 		$('.magnific-popup-inline').magnificPopup({
 			type: 'inline',
 			callbacks: {
-				open: function() {
+				open: function () {
 					$('body').addClass('overIn');
 				},
-				close: function() {
+				close: function () {
 					$('body').removeClass('overIn');
 				},
-				change: function() {
+				change: function () {
 					const id = this.content.data('id');
 					_this.getMedia(id);
 				}
@@ -99,8 +99,8 @@ export class Gallery extends React.Component {
 		const iso = _this.state.isotope;
 		if (iso) {
 			iso.arrange({
-				// item element provided as argument
-				filter: function( index, itemElem ) {
+				//  item element provided as argument
+				filter: function ( index, itemElem ) {
 					const filters = itemElem.dataset.filters;
 					return filters.indexOf(filterId) > -1;
 				}
@@ -172,7 +172,7 @@ export class Gallery extends React.Component {
 		const srcs = this.state.src || [];
 		const _this = this;
 		const ids = _this.state.ids || [];
-		return srcs.map(function(src, index) {
+		return srcs.map(function (src, index) {
 			let image = {
 				thumbUrl: src,
 				largeUrl: _this.state.full[index] || '/img/portfolio/preview/img-portfolio-preview-1.jpg',
@@ -184,7 +184,7 @@ export class Gallery extends React.Component {
 		});
 	}
 	renderPlatforms(platforms) {
-		return platforms.map(function(platform, index) {
+		return platforms.map(function (platform, index) {
 			return (
 				<span key={index} className="button-o button-xs button-square button-yellow mr15">{platform}</span>
 			);
@@ -197,7 +197,7 @@ export class Gallery extends React.Component {
 		if (typeof alt === 'string') {
 			altArr = alt.split(',');
 		}
-		altArr.map(function(altItem) {
+		altArr.map(function (altItem) {
 			const altClass = altItem.replace(' ', '-').toLowerCase();
 			filters.push(altClass);
 		});

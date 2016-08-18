@@ -3,7 +3,7 @@ const getMediaData = (id, successCallback, errorCallback) => {
 		url: Constants.apiUrl + 'media/' + id,
 		crossDomain: true
 	})
-		.done(function(data) {
+		.done(function (data) {
 			const alt = data.alt_text || '';
 			const title = data.title || {};
 			const media = {
@@ -15,7 +15,7 @@ const getMediaData = (id, successCallback, errorCallback) => {
 			};
 			successCallback(media);
 		})
-		.fail(function(xhr) {
+		.fail(function (xhr) {
 			errorCallback(xhr);
 		});
 };

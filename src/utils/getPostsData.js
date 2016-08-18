@@ -8,11 +8,11 @@ const getPostsData = (category, successCallback, errorCallback, number) => {
 		url: Constants.apiUrl + 'posts?filter[category_name]=' + category + filterNumber + '&_embed=1',
 		crossDomain: true
 	})
-		.done(function(data) {
+		.done(function (data) {
 			const posts = mapPostsData(data);
 			successCallback(posts);
 		})
-		.fail(function(xhr) {
+		.fail(function (xhr) {
 			errorCallback(xhr);
 		});
 };

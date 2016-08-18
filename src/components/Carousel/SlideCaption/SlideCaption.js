@@ -1,7 +1,7 @@
 import React from 'react';
 
 export class SlideCaption extends React.Component {
-	constructor(props) {
+	constructor (props) {
 		super(props);
 		this.state = {
 			isVisible: false

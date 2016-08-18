@@ -21,10 +21,10 @@ export function fetchBlogItem(id) {
 			url: Constants.apiUrl + 'posts/' + id + '?_embed=1',
 			crossDomain: true
 		})
-		.done(function(data) {
+		.done(function (data) {
 			dispatch(receivePost(data));
 		})
-		.fail(function(xhr) {
+		.fail(function (xhr) {
 			dispatch(failPost(xhr));
 		});
 	};
@@ -52,10 +52,10 @@ export function postComment(data) {
 				type: 'comment'
 			}
 		})
-		.done(function(data) {
+		.done(function (data) {
 			dispatch(saveComment(data));
 		})
-		.fail(function(xhr) {
+		.fail(function (xhr) {
 			dispatch(failComment(xhr));
 		});
 	};

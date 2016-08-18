@@ -6,7 +6,7 @@ import getPostsData from '../../../utils/getPostsData';
 
 export class Carousel extends React.Component {
 
-	constructor(props) {
+	constructor (props) {
 		super(props);
 		this.state = {
 			activeSlideIndex: 0,

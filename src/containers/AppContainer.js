@@ -19,7 +19,7 @@ class AppContainer extends React.Component {
 					<Router history={history} children={routes} key={routerKey} />
 				</div>
 			</Provider>
-		)
+		);
 	}
 }
 

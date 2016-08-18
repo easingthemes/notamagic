@@ -14,7 +14,7 @@ const mapData = (data) => {
 	if (!data || !(data instanceof Array)) {
 		return [];
 	}
-	data.map(function(post) {
+	data.map(function (post) {
 		const content = post.content.rendered;
 		let text = post.content.rendered;
 		let leadText = '';

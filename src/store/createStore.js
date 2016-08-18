@@ -41,4 +41,4 @@ export default (initialState = {}, history) => {
 	}
 
 	return store;
-}
+};

@@ -1,7 +1,7 @@
 const mapPostsData = (data) => {
 	let posts = [];
-	//console.log('data category', data);
-	data.map(function(post) {
+	// console.log('data category', data);
+	data.map(function (post) {
 		const contentObj = post.content || {};
 		const content = contentObj.rendered;
 		let text = contentObj.rendered;
@@ -17,7 +17,7 @@ const mapPostsData = (data) => {
 		const _embedded = post._embedded || {};
 		const authors = _embedded.author || [];
 		const author = authors[0] || {};
-		const avatar_urls = author.avatar_urls || {};
+		const avatarUrls = author.avatar_urls || {};
 		let imageMedium = post.featured_image_url;
 		try {
 			imageMedium = _embedded['wp:featuredmedia'][0].media_details.sizes.medium.source_url;
@@ -36,7 +36,7 @@ const mapPostsData = (data) => {
 			id: post.id,
 			comments: _embedded.replies,
 			author: {
-				avatar: avatar_urls[96],
+				avatar: avatarUrls[96],
 				name: author.name
 			},
 			imageMedium: imageMedium || ''

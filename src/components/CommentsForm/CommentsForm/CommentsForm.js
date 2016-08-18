@@ -10,9 +10,9 @@ import React from 'react';
  */
 export class CommentsForm extends React.Component {
 
-	//------------------------------------------------------------------------------------------------------------------
-	// React methods
-	//------------------------------------------------------------------------------------------------------------------
+	// ------------------------------------------------------------------------------------------------------------------
+	//  React methods
+	// ------------------------------------------------------------------------------------------------------------------
 
 	/**
 	 *
@@ -20,7 +20,7 @@ export class CommentsForm extends React.Component {
 	 *
 	 * @private
 	 */
-	constructor(props) {
+	constructor (props) {
 		super(props);
 		this.state = {
 			firstName: '',
@@ -37,9 +37,9 @@ export class CommentsForm extends React.Component {
 	_handleSubmit (event) {
 		this.props.handleSubmit(event, this.state);
 	}
-	//------------------------------------------------------------------------------------------------------------------
-	// Render methods
-	//------------------------------------------------------------------------------------------------------------------
+	// ------------------------------------------------------------------------------------------------------------------
+	//  Render methods
+	// ------------------------------------------------------------------------------------------------------------------
 
 	/**
 	 * Renders the component
@@ -51,9 +51,9 @@ export class CommentsForm extends React.Component {
 	render () {
 		return (
 			<form onSubmit={this._handleSubmit.bind(this)}>
-				<input className="blog-leave-comment-input" onChange={this._onChange.bind(this)} name="firstName" type="text" placeholder="Name"/>
-				<input className="blog-leave-comment-input" onChange={this._onChange.bind(this)} name="email" type="email" placeholder="Email"/>
-				<input className="blog-leave-comment-input" onChange={this._onChange.bind(this)} name="url" type="text" placeholder="Website"/>
+				<input className="blog-leave-comment-input" onChange={this._onChange.bind(this)} name="firstName" type="text" placeholder="Name" />
+				<input className="blog-leave-comment-input" onChange={this._onChange.bind(this)} name="email" type="email" placeholder="Email" />
+				<input className="blog-leave-comment-input" onChange={this._onChange.bind(this)} name="url" type="text" placeholder="Website" />
 				<textarea className="blog-leave-comment-textarea" onChange={this._onChange.bind(this)} name="message" />
 				<button type="submit"  className="button button-pasific button-sm center-block mb25">
 					Submit

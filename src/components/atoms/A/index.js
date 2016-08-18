@@ -4,7 +4,7 @@
 
 import React, {PropTypes} from 'react';
 
-function A(props) {
+function A (props) {
 	return (
 		<a
 			className={props.className}
