@@ -52,16 +52,18 @@ export class Gallery extends React.Component {
 	}
 	initGallery () {
 		const _portfolio = this._portfolio;
-		var iso = new Isotope( _portfolio, {
-			// options
-			itemSelector: '.portfolio-item',
-			masonry: {
-				rowHeight: 280
-			}
-		});
-		this.setState({
-			isotope: iso
-		});
+		if (_portfolio) {
+			var iso = new Isotope( _portfolio, {
+				// options
+				itemSelector: '.portfolio-item',
+				masonry: {
+					rowHeight: 280
+				}
+			});
+			this.setState({
+				isotope: iso
+			});
+		}
 	}
 	initModal () {
 		const _this = this;
@@ -94,14 +96,16 @@ export class Gallery extends React.Component {
 	}
 	filterGallery(_this, filterId, index, e) {
 		e.preventDefault();
-		const iso = _this.state.isotope || {};
-		iso.arrange({
-			// item element provided as argument
-			filter: function( index, itemElem ) {
-				const filters = itemElem.dataset.filters;
-				return filters.indexOf(filterId) > -1;
-			}
-		});
+		const iso = _this.state.isotope;
+		if (iso) {
+			iso.arrange({
+				// item element provided as argument
+				filter: function( index, itemElem ) {
+					const filters = itemElem.dataset.filters;
+					return filters.indexOf(filterId) > -1;
+				}
+			});
+		}
 		$('.filters li a').removeClass('active');
 		$(_this['_filter'+index]).addClass('active');
 	}
