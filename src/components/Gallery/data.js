@@ -1,4 +1,4 @@
-var data = {
+const data = {
 	filters: [
 		'HTML',
 		'WordPress',

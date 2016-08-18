@@ -9,7 +9,6 @@ import React from 'react';
  * @extends ReactApp
  */
 export class Contact extends React.Component {
-
 	// ------------------------------------------------------------------------------------------------------------------
 	//  React methods
 	// ------------------------------------------------------------------------------------------------------------------
@@ -22,44 +21,38 @@ export class Contact extends React.Component {
 	 * @public
 	 */
 	componentDidMount () {
-
 		/* --------------------------------------------
 		 SECURITY CHECK HUMAN
 		 -------------------------------------------- */
-		if($("#senderHuman").length > 0 ) {
-			var a = Math.ceil(Math.random() * 10) + 1;
-			var b = Math.ceil(Math.random() * 10) + 1;
-			document.getElementById("senderHuman").placeholder = a +" + "+ b +" = ?";
-			document.getElementById("checkHuman_a").value = a;
-			document.getElementById("checkHuman_b").value = b;
+		if($('#senderHuman').length > 0 ) {
+			const a = Math.ceil(Math.random() * 10) + 1;
+			const b = Math.ceil(Math.random() * 10) + 1;
+			document.getElementById('senderHuman').placeholder = a + ' + ' + b + ' = ?';
+			document.getElementById('checkHuman_a').value = a;
+			document.getElementById('checkHuman_b').value = b;
 		}
-
 		/* --------------------------------------------
 		 CONTACT FORM
 		 -------------------------------------------- */
-		var messageDelay = 2000;
+		const messageDelay = 2000;
 		$(init);
 
-		function init() {
+		function init () {
 			$('#contactForm').show().submit( submitForm ).addClass( 'positioned' );
 		}
 
 		//  Submit the form via Ajax
-		function submitForm() {
-			var contactForm = $(this);
+		function submitForm () {
+			const contactForm = $(this);
 
 			//  Are all the fields filled in?
 
 			if ( !$('#senderName').val() || !$('#senderEmail').val() || !$('#message').val() ) {
-
 				//  No; display a warning message and return to the form
 				$('#incompleteMessage').fadeIn().delay(messageDelay).fadeOut();
 				contactForm.fadeOut().delay(messageDelay).fadeIn();
-
 			} else {
-
 				//  Yes; submit the form to the PHP script via Ajax
-
 				$('#sendingMessage').fadeIn();
 				contactForm.show();
 
@@ -183,32 +176,61 @@ export class Contact extends React.Component {
 										</small>
 									</h4>
 								</div>
-								<form name="contactform" id="contactForm" method="post" action="/php/send.php">
+								<form
+									name="contactform" id="contactForm" method="post"
+									action="/php/send.php"
+								>
 
 									<div className="form-group col-md-6 col-sm-6 col-xs-12">
-										<input type="text" name="senderName" id="senderName" className="input-md input-rounded form-control" placeholder="fullname" maxLength="100" required="" />
+										<input
+											type="text" name="senderName" id="senderName"
+											className="input-md input-rounded form-control"
+											placeholder="fullname" maxLength="100" required=""
+										/>
 									</div>
 
 									<div className="form-group col-md-6 col-sm-6 col-xs-12">
-										<input type="email" name="senderEmail" id="senderEmail" className="input-md input-rounded form-control" placeholder="email address" maxLength="100" required="" />
+										<input
+											type="email" name="senderEmail" id="senderEmail"
+											className="input-md input-rounded form-control"
+											placeholder="email address" maxLength="100" required=""
+										/>
 									</div>
 
 									<div className="form-group col-md-6 col-sm-6 col-xs-12">
-										<input type="url" name="senderWebsite" id="senderWebsite" className="input-md input-rounded form-control" placeholder="http://" maxLength="100" />
+										<input
+											type="url" name="senderWebsite" id="senderWebsite"
+											className="input-md input-rounded form-control"
+											placeholder="http://" maxLength="100"
+										/>
 									</div>
 
 									<div className="form-group col-md-6 col-sm-6 col-xs-12">
-										<input type="text" name="senderHuman" id="senderHuman" className="input-md input-rounded form-control" placeholder="" required="" />
-										<input type="hidden" name="checkHuman_a" id="checkHuman_a" />
-										<input type="hidden" name="checkHuman_b" id="checkHuman_b" />
+										<input
+											type="text" name="senderHuman" id="senderHuman"
+											className="input-md input-rounded form-control"
+											placeholder="" required=""
+										/>
+										<input
+											type="hidden" name="checkHuman_a" id="checkHuman_a"
+										/>
+										<input
+											type="hidden" name="checkHuman_b" id="checkHuman_b"
+										/>
 									</div>
 
 									<div className="form-group col-md-12 col-sm-12 col-xs-12">
-										<textarea className="form-control" name="message" id="message" rows="7" required=""></textarea>
+										<textarea
+											className="form-control" name="message" id="message"
+											rows="7" required=""
+										></textarea>
 									</div>
 
 									<div className="form-group col-md-12 col-sm-12 col-xs-12">
-										<button type="submit" name="sendMessage" id="sendMessage" className="button button-md button-block button-grad-stellar">
+										<button
+											type="submit" name="sendMessage" id="sendMessage"
+											className="button button-md button-block button-grad-stellar"
+										>
 											Send Message
 										</button>
 									</div>

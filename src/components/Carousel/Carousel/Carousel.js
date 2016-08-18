@@ -14,6 +14,24 @@ export class Carousel extends React.Component {
 		};
 	}
 
+	componentDidMount () {
+		const _this = this;
+		getPostsData('Carousel', _this.successCallback.bind(_this), _this.errorCallback.bind(_this));
+		$(this._carousel).on('slide.bs.carousel', (e) => {
+			const prev = $(e.target).find('.carousel-inner > .item.active').index();
+			const active = $(e.relatedTarget).index();
+
+			_this.setState({
+				prevSlideIndex: prev,
+				activeSlideIndex: active
+			});
+		});
+	}
+
+	componentWillUnmount () {
+		$(this._carousel).off('slide.bs.carousel');
+	}
+
 	successCallback (posts) {
 		this.setState({
 			data: posts,
@@ -27,31 +45,12 @@ export class Carousel extends React.Component {
 		});
 	}
 
-	componentDidMount () {
-		let _this = this;
-		getPostsData('Carousel', _this.successCallback.bind(_this), _this.errorCallback.bind(_this));
-		$(this._carousel).on('slide.bs.carousel', function (e) {
-
-			var prev = $(e.target).find('.carousel-inner > .item.active').index(),
-				active = $(e.relatedTarget).index();
-
-			_this.setState({
-				prevSlideIndex: prev,
-				activeSlideIndex: active
-			});
-		})
-	}
-
-	componentWillUnmount () {
-		$(this._carousel).off('slide.bs.carousel');
-	}
-
 	renderSlides (slides, initialSlideIndex) {
-		let _this = this;
+		const _this = this;
 		const config = data.slides || [];
 
-		return slides.map(function (wpslide, index) {
-			let slide = $.extend(true, config[index], wpslide);
+		return slides.map((wpslide, index) => {
+			const slide = $.extend(true, config[index], wpslide);
 			return (
 				<Slide
 					key={'slide-' + index}
@@ -73,35 +72,44 @@ export class Carousel extends React.Component {
 	}
 
 	renderArrow (direction) {
-		var style = direction + ' carousel-control',
-			icon = 'glyphicon glyphicon-chevron-' + direction,
-			type = 'next';
+		const style = direction + ' carousel-control';
+		const icon = 'glyphicon glyphicon-chevron-' + direction;
+		let type = 'next';
 		if (direction === 'left') {
 			type = 'prev';
 		}
 		return (
-			<a key={'arrow-' + direction} className={style} href={'#' + this.props.name} data-slide={type}>
+			<a
+				key={'arrow-' + direction}
+				className={style}
+				href={'#' + this.props.name}
+				data-slide={type}
+			>
 				<span className={icon}></span>
 			</a>
 		);
 	}
 
 	renderNavigation () {
-		var navigation = [
+		return [
 			this.renderArrow('left'),
 			this.renderArrow('right')
 		];
-		return navigation;
 	}
 
 	renderDots (numberOfSlides, initialSlideIndex) {
-		var style,
-			dots = [];
+		let style;
+		let	dots = [];
 
-		for (var i = 0; i < numberOfSlides; i++) {
+		for (let i = 0; i < numberOfSlides; i++) {
 			style = i === initialSlideIndex ? 'active' : '';
 			dots.push(
-				<li key={'dot-' + i} data-target={'#' + this.props.name} data-slide-to={i} className={style}></li>
+				<li
+					key={'dot-' + i}
+					data-target={'#' + this.props.name}
+					data-slide-to={i}
+					className={style}
+				></li>
 			);
 		}
 
@@ -113,13 +121,17 @@ export class Carousel extends React.Component {
 	}
 
 	render () {
-
-		var slides = this.state.data || [],
-			numberOfSlides = slides.length,
-			initialSlideIndex = this.props.initialSlideIndex;
+		const slides = this.state.data || [];
+		const numberOfSlides = slides.length;
+		const initialSlideIndex = this.props.initialSlideIndex;
 
 		return (
-			<div ref={(c) => this._carousel = c} id={this.props.name} className="carousel slide" data-ride="carousel">
+			<div
+				ref={(c) => (this._carousel = c)}
+				id={this.props.name}
+				className="carousel slide"
+				data-ride="carousel"
+			>
 				{this.renderDots(numberOfSlides, initialSlideIndex)}
 				<div className="carousel-inner">
 					{this.renderSlides(slides, initialSlideIndex)}
@@ -127,7 +139,7 @@ export class Carousel extends React.Component {
 				{this.renderNavigation()}
 				<SlideSvg />
 			</div>
-		)
+		);
 	}
 }
 

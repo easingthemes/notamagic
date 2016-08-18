@@ -7,12 +7,26 @@ export class SlideCaption extends React.Component {
 			isVisible: false
 		};
 	}
-	_isSlideMounted = false;
+
+	componentDidMount () {
+		const _this = this;
+		this._isSlideMounted = true;
+		this.setVisibility(_this.props.initialSlideIndex === _this.props.index);
+	}
+
+	componentWillReceiveProps (nextProps) {
+		this.setVisibility(nextProps.activeSlideIndex === this.props.index);
+	}
+
+	componentWillUnmount () {
+		this._isSlideMounted = false;
+	}
+
 	setVisibility (isVisible) {
-		var _this = this,
-			animationDelay = this.props.animationDelay;
+		const _this = this;
+		const animationDelay = this.props.animationDelay;
 		if (_this._isSlideMounted) {
-			setTimeout(function () {
+			setTimeout(() => {
 				if (_this._isSlideMounted) {
 					_this.setState({
 						isVisible: isVisible
@@ -22,22 +36,10 @@ export class SlideCaption extends React.Component {
 		}
 	}
 
-	componentDidMount () {
-		const _this = this;
-		this._isSlideMounted = true;
-		this.setVisibility(_this.props.initialSlideIndex === _this.props.index);
-	}
-	componentWillUnmount () {
-		this._isSlideMounted = false;
-	}
-	componentWillReceiveProps (nextProps) {
-		this.setVisibility(nextProps.activeSlideIndex === this.props.index);
-	}
-
 	getStyle () {
-		var marginTop = this.props.marginTop ? ('mt' + this.props.marginTop) : '',
-			baseStyle = marginTop + ' carousel-caption animated ',
-			animatedStyle = '';
+		const marginTop = this.props.marginTop ? ('mt' + this.props.marginTop) : '';
+		const baseStyle = marginTop + ' carousel-caption animated ';
+		let animatedStyle = '';
 
 		if (this.state.isVisible) {
 			animatedStyle = (this.props.animationType || 'bounceInLeft') + ' visible';
@@ -47,15 +49,15 @@ export class SlideCaption extends React.Component {
 	}
 
 	getTextStyle () {
-		var textAlign = 'text-' + this.props.textAlign,
-			textColor = 'color-' + this.props.textColor;
+		const textAlign = 'text-' + this.props.textAlign;
+		const textColor = 'color-' + this.props.textColor;
 
 		return textAlign + ' ' + textColor;
 	}
+	_isSlideMounted = false;
 
 	renderTitle () {
-
-		var style = this.getTextStyle() + ' font-pacifico text-capitalize mt-25';
+		const style = this.getTextStyle() + ' font-pacifico text-capitalize mt-25';
 
 		if (!this.props.title) {
 			return (
@@ -71,8 +73,7 @@ export class SlideCaption extends React.Component {
 	}
 
 	renderSubtitle () {
-
-		var style = this.getTextStyle() + ' mt25';
+		const style = this.getTextStyle() + ' mt25';
 
 		if (!this.props.subtitle) {
 			return (
@@ -88,7 +89,7 @@ export class SlideCaption extends React.Component {
 	}
 
 	render () {
-		var style = this.getStyle();
+		const style = this.getStyle();
 
 		if (!this.props.title && !this.props.subtitle) {
 			return (

@@ -5,7 +5,7 @@
  */
 
 import React from 'react';
-import { IndexLink, Link } from 'react-router';
+import { Link } from 'react-router';
 import './styles.scss';
 import Img from 'components/atoms/Img';
 import LogoImg from './images/logo-easingthemes.png';

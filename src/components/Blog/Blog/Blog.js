@@ -31,7 +31,7 @@ export class Blog extends React.Component {
 			);
 		}
 
-		return posts.map(function (post, index) {
+		return posts.map((post, index) => {
 			return (
 				<div key={index} className="col-md-4 col-sm-6 col-xs-12 mb50">
 					<BlogItem data={items[index]} post={post} />

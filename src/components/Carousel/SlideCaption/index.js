@@ -1,3 +1,3 @@
-import SlideCaption from './SlideCaption'
+import SlideCaption from './SlideCaption';
 
-export default SlideCaption
+export default SlideCaption;

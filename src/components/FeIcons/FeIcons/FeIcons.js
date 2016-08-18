@@ -42,7 +42,7 @@ export class FeIcons extends React.Component {
 		const _this = this;
 		if (this.props.fade) {
 			icons.map(function (icon, index) {
-				setTimeout(function () {
+				setTimeout(() => {
 					$(_this['_icon' + index]).animate({
 						opacity: 0
 					}, getRandom(1000, 5000));

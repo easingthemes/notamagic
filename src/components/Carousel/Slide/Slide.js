@@ -1,23 +1,23 @@
 import React from 'react';
-import SlideCaption from '../SlideCaption/SlideCaption';
 import FeIcons from 'components/FeIcons';
+import SlideCaption from '../SlideCaption/SlideCaption';
 
 export const Slide = (props) => {
-
-	var style = ' item carousel-img ';
+	let style = ' item carousel-img ';
 	if (props.index === props.initialSlideIndex) {
 		style = 'active ' + style;
 	}
 	return (
-	<div className={style} style={{'backgroundImage': 'url(' + props.image + ')'}}>
-		<div className="slide-top">
-			<FeIcons color={false} opacity={0.6} fade={true} />
+		<div className={style} style={{'backgroundImage': 'url(' + props.image + ')'}}>
+			<div className="slide-top">
+				<FeIcons opacity={0.6} fade />
+			</div>
+			<div className="container">
+				<SlideCaption {...props} />
+			</div>
 		</div>
-		<div className="container">
-			<SlideCaption {...props} />
-		</div>
-	</div>
-)};
+	);
+};
 
 Slide.propTypes = {
 	index: React.PropTypes.number,

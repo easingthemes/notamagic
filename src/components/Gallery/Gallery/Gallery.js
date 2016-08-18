@@ -89,7 +89,7 @@ export class Gallery extends React.Component {
 	}
 	initPlugins () {
 		const _this = this;
-		setTimeout(function () {
+		setTimeout(() => {
 			_this.initModal();
 			_this.initGallery();
 		}, 1000);

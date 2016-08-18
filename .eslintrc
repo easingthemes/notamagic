@@ -21,13 +21,24 @@
 	},
 	"rules": {
 		"semi" : [2, "always"],
-		"max-len": [1, 120, 2],
+		"max-len": [0, 120, 2],
 		"generator-star-spacing": 0,
 		"babel/generator-star-spacing": 1,
 		"jsx-quotes": [2, "prefer-double"],
 		"indent": ["error", "tab"],
-		"react/jsx-indent": [1, "tab"],
+		"react/jsx-indent": [0, "tab"],
 		"react/jsx-indent-props": [2, "tab"],
-		"id-blacklist": [2, "callback"]
+		"id-blacklist": [2, "callback"],
+		"require-jsdoc": 0,
+		"valid-jsdoc": 0,
+		"react/jsx-sort-props": 0,
+		"react/sort-prop-types": 0,
+		"prefer-template": 0,
+		"object-curly-spacing": 0,
+		"import/no-unresolved": 0,
+		"react/jsx-max-props-per-line": [2, { "maximum": 3 }],
+		"object-shorthand": 0,
+		"react/jsx-no-bind": 0,
+		"no-empty": [2, { "allowEmptyCatch": true }]
 	}
 }

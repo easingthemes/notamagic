@@ -32,9 +32,14 @@ export class Achievement extends React.Component {
 	//  Render methods
 	// ------------------------------------------------------------------------------------------------------------------
 	renderIcons (icons) {
-		return icons.map(function (icon, index) {
+		return icons.map((icon, index) => {
 			return (
-				<img key={index} src={icon} style={{display: 'inline-block', maxWidth: '50px'}} />
+				<img
+					key={index}
+					src={icon}
+					alt="Project platforms"
+					style={{ display: 'inline-block', maxWidth: '50px' }}
+				/>
 			);
 		});
 	}
@@ -55,7 +60,9 @@ export class Achievement extends React.Component {
 						<div className="row">
 							<div className="col-md-12">
 								<h2 className="font-source-sans-pro text-center mb50">
-									<small className="heading heading-icon heading-icon-rounded bg-grad-stellar center-block">
+									<small
+										className="heading heading-icon heading-icon-rounded bg-grad-stellar center-block"
+									>
 										<i className="fa fa-trophy color-light"></i>
 									</small>
 									<div className="mb20" dangerouslySetInnerHTML={{__html: data.title}} />
@@ -73,7 +80,11 @@ export class Achievement extends React.Component {
 						</div>
 
 						<div className="col-md-12">
-							<img src={data.image} alt="device" className="img-responsive center-block" />
+							<img
+								src={data.image}
+								alt="device"
+								className="img-responsive center-block"
+							/>
 						</div>
 
 					</div>

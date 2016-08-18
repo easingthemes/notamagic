@@ -1,3 +1,3 @@
-import PageLoader from './PageLoader';
+import PageLoader from './PageLoader/PageLoader';
 
 export default PageLoader;

@@ -1,5 +1,5 @@
 import React from 'react';
-import LoaderImage from './images/puff.svg';
+import LoaderImage from '../images/puff.svg';
 import style from './style.global.scss';
 
 export class PageLoader extends React.Component {
