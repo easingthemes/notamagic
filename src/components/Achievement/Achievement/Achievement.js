@@ -21,7 +21,7 @@ export class Achievement extends React.Component {
 	 * Set the initial state
 	 *
 	 * @private
-	 * @param {object} props props
+	 * @param {Object} props props
 	 */
 	constructor (props) {
 		super(props);
