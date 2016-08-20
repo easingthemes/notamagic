@@ -15,5 +15,5 @@ const getCom = (store) => {
 		}
 	});
 
-}
+};
 export default getCom;
