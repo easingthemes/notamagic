@@ -1,5 +1,6 @@
 import webpack from 'webpack';
 import cssnano from 'cssnano';
+//import uncss from 'postcss-uncss';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import CompressionPlugin from 'compression-webpack-plugin';
@@ -261,21 +262,24 @@ webpackConfig.sassLoader = {
 };
 
 webpackConfig.postcss = [
-  cssnano({
-    autoprefixer: {
-      add: true,
-      remove: true,
-      browsers: ['last 2 versions']
-    },
-    discardComments: {
-      removeAll: true
-    },
-    discardUnused: false,
-    mergeIdents: false,
-    reduceIdents: false,
-    safe: true,
-    sourcemap: true
-  })
+	// uncss({
+	// 	html: paths.client('index.html')
+	// }),
+	cssnano({
+	autoprefixer: {
+		add: true,
+		remove: true,
+		browsers: ['last 2 versions']
+	},
+	discardComments: {
+		removeAll: true
+	},
+	discardUnused: false,
+	mergeIdents: false,
+	reduceIdents: false,
+	safe: true,
+	sourcemap: true
+	})
 ];
 
 // File loaders
@@ -314,11 +318,11 @@ if (!__DEV__) {
     Reflect.deleteProperty(loader, 'loaders')
   });
 
-  webpackConfig.plugins.push(
-    new ExtractTextPlugin('[name].[contenthash].css', {
-      allChunks: true
-    })
-  );
+	webpackConfig.plugins.push(
+		new ExtractTextPlugin('[name].[contenthash].css', {
+			allChunks: true
+		})
+	);
 	webpackConfig.plugins.push(
 		new CompressionPlugin({
 			asset: "[path].gz[query]",
@@ -327,7 +331,7 @@ if (!__DEV__) {
 			threshold: 10240,
 			minRatio: 0.8
 		})
-	)
+	);
 }
 
 export default webpackConfig
