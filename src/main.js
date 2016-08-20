@@ -14,7 +14,8 @@ import AppContainer from './containers/AppContainer';
 // const browserHistory = useRouterHistory(createBrowserHistory)({
 //   basename: __BASENAME__
 // });
-const browserHistory = withScroll(useRouterHistory(createBrowserHistory)({  // use withScroll
+const browserHistory = withScroll(useRouterHistory(createBrowserHistory)({
+	// use withScroll
 	basename: __BASENAME__
 }));
 

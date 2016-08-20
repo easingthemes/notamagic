@@ -9,20 +9,19 @@ import { IndexLink, Link } from 'react-router';
 
 import './styles.scss';
 
-function Navigation() {
-	return (
+const Navigation = () => (
 	<div className="navbar-collapse collapse navbar-main-collapse">
 		<ul className="nav navbar-nav">
 
 			<li>
-				<IndexLink to='/' activeClassName="active">
+				<IndexLink to="/" activeClassName="active">
 					Home
 				</IndexLink>
 			</li>
 
 			<li className="dropdown">
 				<IndexLink
-					to='/portfolio'
+					to="/portfolio"
 					activeClassName="active"
 					className="dropdown-toggle color-light"
 					data-toggle="dropdown"
@@ -32,7 +31,7 @@ function Navigation() {
 				<ul className="dropdown-menu" role="menu">
 					<li>
 						<a
-							href='/portfolio.pdf'
+							href="/portfolio.pdf"
 							download="Dragan-Filipovic_FrontendDeveloper.pdf"
 						>
 							PDF download
@@ -40,7 +39,7 @@ function Navigation() {
 					</li>
 					<li>
 						<Link
-							to='/portfolio'
+							to="/portfolio"
 							activeClassName="active"
 						>
 							Web version
@@ -50,7 +49,7 @@ function Navigation() {
 			</li>
 			<li>
 				<Link
-					to='/blog'
+					to="/blog"
 					activeClassName="active"
 					className="color-light"
 				>
@@ -59,17 +58,16 @@ function Navigation() {
 			</li>
 			<li>
 				<IndexLink
-					to='/contact'
+					to="/contact"
 					activeClassName="active"
 					className="color-light"
 				>
 					Contact
-				  </IndexLink>
+				</IndexLink>
 			</li>
 
 		</ul>
 	</div>
-	);
-}
+);
 
 export default Navigation;

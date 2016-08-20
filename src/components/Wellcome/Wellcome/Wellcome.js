@@ -1,12 +1,12 @@
 import React from 'react';
 import TextRow from 'components/TextRow';
 import Loader from 'components/Loader';
+import FeIcons from 'components/FeIcons';
 import data from '../data';
 import getPageData from '../../../utils/getPageData';
-import FeIcons from 'components/FeIcons';
 
 export class Wellcome extends React.Component {
-	constructor(props) {
+	constructor (props) {
 		super(props);
 		this.state = {
 			data: null,
@@ -14,9 +14,14 @@ export class Wellcome extends React.Component {
 		};
 	}
 
-	successCallback (data) {
+	componentDidMount () {
+		const _this = this;
+		getPageData('pages', 9, _this.successCallback.bind(_this), _this.errorCallback.bind(_this));
+	}
+
+	successCallback (page) {
 		this.setState({
-			data: data,
+			data: page,
 			isLoading: false
 		});
 	}
@@ -25,11 +30,6 @@ export class Wellcome extends React.Component {
 		this.setState({
 			isLoading: false
 		});
-	}
-
-	componentDidMount () {
-		const _this = this;
-		getPageData('pages', 9, _this.successCallback.bind(_this), _this.errorCallback.bind(_this));
 	}
 
 	render () {
@@ -42,14 +42,12 @@ export class Wellcome extends React.Component {
 		return (
 			<section id="welcome" className="pb25">
 				<div className="container">
-					<FeIcons color={true} />
+					<FeIcons color />
 					<TextRow data={textData} />
 				</div>
 			</section>
 		);
 	}
 }
-
-
 
 export default Wellcome;

@@ -5,10 +5,11 @@
 */
 
 import React from 'react';
-import styles from './styles.global.scss';
-
 import Logo from 'components/navbar/Logo';
 import Navigation from 'components/navbar/Navigation';
+/* eslint-disable no-unused-vars */
+import styles from './styles.global.scss';
+/* eslint-enable no-unused-vars */
 
 class Navbar extends React.Component {
 	// ------------------------------------------------------------------------------------------------------------------
@@ -27,31 +28,22 @@ class Navbar extends React.Component {
 		};
 	}
 	componentDidUpdate (nextProps, nextState) {
-		// console.log('nextState', nextState);
-		// console.log('Navbar did update: ', this.props.path);
-
-			this.initPlugins();
-
-
-	}
-	componentDidMount() {
-
-		// console.log('Navbar did mount: ', this.props.path);
+		this.initPlugins();
 	}
 
 	initPlugins () {
 		/* --------------------------------------------
 		 CLOSE COLLAPSE MENU ON MOBILE VIEW EXCEPT DROPDOWN
 		 -------------------------------------------- */
-		$('.navbar-collapse ul li a:not(.dropdown-toggle)').on('click',function (event) {
+		$('.navbar-collapse ul li a:not(.dropdown-toggle)').on('click', () => {
 			$('.navbar-toggle:visible').click();
 		});
 		/* --------------------------------------------
 		 STICKY SETTING
 		 -------------------------------------------- */
-		if( $('.navbar-sticky').length > 0){
+		if ($('.navbar-sticky').length > 0) {
 			// $('.navbar-sticky').sticky({ topSpacing: 0 });
-			$('.navbar-sticky').css('z-index','100');
+			$('.navbar-sticky').css('z-index', '100');
 			$('.navbar-sticky').addClass('bg-light');
 			$('.navbar-sticky').addClass('top-nav-collapse');
 		}
@@ -59,8 +51,8 @@ class Navbar extends React.Component {
 		/* --------------------------------------------------------
 		 NAVBAR FIXED TOP ON SCROLL
 		 ----------------------------------------------------------- */
-		const toggleNav = function () {
-			if ($('.navbar').offset().top > 10)  {
+		const toggleNav = () => {
+			if ($('.navbar').offset().top > 10) {
 				$('.navbar-pasific-toggle').addClass('top-nav-collapse');
 			} else {
 				$('.navbar-pasific-toggle').removeClass('top-nav-collapse');
@@ -80,11 +72,10 @@ class Navbar extends React.Component {
 		 NAVBAR-INVERSE FIXED TOP ON SCROLL
 		 ----------------------------------------------------------- */
 
-		if( $('.navbar-pasific-inverse').length > 0 ){
-			$(window).scroll(function () {
-				if ($('.navbar').offset().top > 10)  {
+		if ($('.navbar-pasific-inverse').length > 0) {
+			$(window).scroll(() => {
+				if ($('.navbar').offset().top > 10) {
 					$('.navbar-pasific').addClass('top-nav-collapse-inverse');
-
 				} else {
 					$('.navbar-pasific').removeClass('top-nav-collapse-inverse');
 				}
@@ -92,7 +83,7 @@ class Navbar extends React.Component {
 		}
 	}
 
-	render() {
+	render () {
 		let navBg = '';
 		if (this.props.path !== '/' && this.props.path !== '/portfolio' && this.props.path !== '/contact') {
 			navBg = 'navbar-standart top-nav-collapse';
@@ -112,5 +103,9 @@ class Navbar extends React.Component {
 		);
 	}
 }
+
+Navbar.propTypes = {
+	path: React.PropTypes.string
+};
 
 export default Navbar;

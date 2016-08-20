@@ -13,7 +13,7 @@ export class CoreLayout extends React.Component {
 			isLoaded: false
 		};
 	}
-	
+	/* eslint-disable react/no-did-mount-set-state */
 	componentDidMount () {
 		this.setState({
 			isLoaded: true
@@ -23,7 +23,7 @@ export class CoreLayout extends React.Component {
 		$('#pageloader').delay(800).fadeOut('slow');
 		helperScroll();
 	}
-
+	/* eslint-enable react/no-did-mount-set-state */
 	render () {
 		const path = this.props.location.pathname;
 		return (

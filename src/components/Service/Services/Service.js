@@ -3,7 +3,7 @@ import TextRow from 'components/TextRow';
 import getPageData from '../../../utils/getPageData';
 
 export class Service extends React.Component {
-	constructor(props) {
+	constructor (props) {
 		super(props);
 		this.state = {
 			post: {
@@ -38,7 +38,12 @@ export class Service extends React.Component {
 		return (
 			<div id="service" className="pt75 pb25">
 				<div className="container">
-					<TextRow data={this.state.post} align="center" col1="12" col2="8" offset2="2" />
+					<TextRow
+						data={this.state.post}
+						align="center"
+						col1="12" col2="8"
+						offset2="2"
+					/>
 				</div>
 			</div>
 		);

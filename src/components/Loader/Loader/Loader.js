@@ -1,6 +1,7 @@
 import React from 'react';
-import data from '../data';
+/* eslint-disable no-unused-vars */
 import classes from './Loader.scss';
+/* eslint-enable no-unused-vars */
 
 /**
  * React component implementation.
@@ -10,71 +11,17 @@ import classes from './Loader.scss';
  * @class Loader
  * @extends ReactApp
  */
-export class Loader extends React.Component {
+const Loader = (props) => {
+	const divStyle = {
+		minHeight: props.height + 'px'
+	};
 
-	// ------------------------------------------------------------------------------------------------------------------
-	//  React methods
-	// ------------------------------------------------------------------------------------------------------------------
-
-	/**
-	 *
-	 * Set the initial state
-	 *
-	 * @private
-	 */
-	constructor (props) {
-		super(props);
-		this.state = {
-			isLoading: true
-		};
-	}
-
-	/**
-	 * When component is mounted add the Change event listeners and get initial data
-	 *
-	 * @method componentDidMount
-	 * @returns void
-	 * @public
-	 */
-	componentDidMount () {
-
-	}
-
-	// ------------------------------------------------------------------------------------------------------------------
-	//  Render methods
-	// ------------------------------------------------------------------------------------------------------------------
-
-	/*
-	* @method renderLoader
-	* @returns {XML}
-	* @public
-	*/
-	renderLoader () {
-
-		var divStyle = {
-				minHeight: this.props.height + 'px'
-			};
-
-		return (
-			<div ref="loaderInner" className="Loader" style={divStyle}>
-				<i className="fa fa-spinner fa-spin" aria-hidden="true"></i>
-			</div>
-		);
-	}
-
-	/**
-	 * Renders the component
-	 *
-	 * @method render
-	 * @returns {XML}
-	 * @public
-	 */
-	render () {
-		return (
-			this.renderLoader()
-		);
-	}
-}
+	return (
+		<div className="Loader" style={divStyle}>
+			<i className="fa fa-spinner fa-spin" aria-hidden="true"></i>
+		</div>
+	);
+};
 
 Loader.propTypes = {
 	height: React.PropTypes.number

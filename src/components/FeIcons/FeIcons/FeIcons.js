@@ -1,6 +1,8 @@
 import React from 'react';
 import data from '../data';
+/* eslint-disable no-unused-vars */
 import classes from './FeIcons.scss';
+/* eslint-enable no-unused-vars */
 import getRandom from '../../../utils/getRandom';
 
 /**

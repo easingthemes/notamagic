@@ -32,7 +32,7 @@ export class Gallery extends React.Component {
 		}
 		this.getMedia(id);
 	}
-	
+
 	getMedia (id) {
 		const medias = this.state.medias || {};
 		const _this = this;

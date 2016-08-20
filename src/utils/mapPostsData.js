@@ -1,28 +1,24 @@
 const mapContent = (post) => {
-	const contentObj = post.content || {};
-	const content = contentObj.rendered;
-	const contentArr = content.split('<!--more-->');
-
 	const acf = post.acf || {};
-	const title = post.title || {};
-
-	let text,
+	let contentArr,
+		text,
 		leadText;
-	if (contentArr instanceof Array && contentArr.length > 0) {
+	try {
+		contentArr = post.content.rendered.split('<!--more-->');
 		leadText = contentArr[0];
 		text = contentArr[1];
-	} else {
-		text = contentObj.rendered;
+	} catch (err) {
+		text = post.content.rendered;
 		leadText = '';
 	}
 
 	return {
-		subtitle: contentObj.rendered,
+		subtitle: post.content.rendered,
 		leadTitle: acf.subtitle || '',
-		title: title.rendered,
+		title: post.title.rendered,
 		leadText: leadText,
 		text: text,
-		content: contentObj.rendered
+		content: post.content.rendered
 	};
 };
 
