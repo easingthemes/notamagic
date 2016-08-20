@@ -1,6 +1,6 @@
 import React from 'react';
 import TestUtils from 'react-addons-test-utils';
-import FactItem from 'components/<%= pascalEntityName %>';
+import <%= pascalEntityName %> from 'components/<%= pascalEntityName %>';
 
 function shallowRender (component) {
 	const renderer = TestUtils.createRenderer();
