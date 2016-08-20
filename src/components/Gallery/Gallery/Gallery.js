@@ -26,6 +26,13 @@ export class Gallery extends React.Component {
 		getGalleryData('posts', 29, _this.successCallback.bind(_this), _this.errorCallback.bind(_this));
 	}
 
+	handleClick (id, event) {
+		if (event && typeof event.preventDeafult === 'function') {
+			event.preventDefault();
+		}
+		this.getMedia(id);
+	}
+	
 	getMedia (id) {
 		const medias = this.state.medias || {};
 		const _this = this;
@@ -140,13 +147,6 @@ export class Gallery extends React.Component {
 		}
 		$('.filters li a').removeClass('active');
 		$(_thisa['_filter' + index]).addClass('active');
-	}
-
-	handleClick (id, event) {
-		if (event && typeof event.preventDeafult === 'function') {
-			event.preventDefault();
-		}
-		this.getMedia(id);
 	}
 
 	renderFilter () {

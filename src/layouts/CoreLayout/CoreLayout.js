@@ -13,6 +13,7 @@ export class CoreLayout extends React.Component {
 			isLoaded: false
 		};
 	}
+	
 	componentDidMount () {
 		this.setState({
 			isLoaded: true
@@ -22,6 +23,7 @@ export class CoreLayout extends React.Component {
 		$('#pageloader').delay(800).fadeOut('slow');
 		helperScroll();
 	}
+
 	render () {
 		const path = this.props.location.pathname;
 		return (

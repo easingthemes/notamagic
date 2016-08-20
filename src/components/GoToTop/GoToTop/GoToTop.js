@@ -24,8 +24,8 @@ export class GoToTop extends React.Component {
 	componentDidMount () {
 		const $button = $(this._button);
 		$button.fadeOut();
-		$(window).scroll(function () {
-			if ($('.navbar').offset().top > 1200)  {
+		$(window).scroll(() => {
+			if ($('.navbar').offset().top > 1200) {
 				$button.fadeIn();
 			} else {
 				$button.fadeOut();
@@ -46,7 +46,7 @@ export class GoToTop extends React.Component {
 	 */
 	render () {
 		return (
-			<a ref={(c) => this._button = c} href="#page-top" className="go-to-top">
+			<a ref={(c) => (this._button = c)} href="#page-top" className="go-to-top">
 				<i className="fa fa-long-arrow-up"></i>
 			</a>
 		);
