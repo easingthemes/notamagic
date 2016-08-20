@@ -4,7 +4,7 @@ import { injectReducer } from '../../store/reducers'
 import PostRoute from './routes/PostRoute';
 
 export default (store) => ({
-  path: 'blog',
+	path: 'blog',
 	//component: CoreLayout,
 	//indexRoute: Blog,
 	childRoutes: [
