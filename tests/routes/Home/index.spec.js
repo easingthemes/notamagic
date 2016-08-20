@@ -1,14 +1,13 @@
-import HomeRoute from 'routes/Home'
+import HomeRoute from 'routes/Home';
 
 describe('(Route) Home', () => {
-  let _component
+	let _route;
 
-  beforeEach(() => {
-    _component = HomeRoute.component()
-  })
+	beforeEach(() => {
+		_route = HomeRoute({});
+	});
 
-  it('Should return a route configuration object', () => {
-    expect(typeof(HomeRoute)).to.equal('object')
-  })
-
-})
+	it('Should return a route configuration object', () => {
+		expect(typeof(_route)).to.equal('object')
+	});
+});
