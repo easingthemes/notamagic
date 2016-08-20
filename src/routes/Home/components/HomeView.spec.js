@@ -9,10 +9,10 @@ describe('(View) Home', () => {
 		_component = render(<HomeView />)
 	});
 
-	it('Should render as a <span>.', function () {
+	it('Should render as a <span>.', () => {
 		// expect(_component.type).to.equal('span')
 	});
-    //
+
 	// it('Renders a welcome message', () => {
 	// 	const welcome = _component.find('h4')
 	// 	expect(welcome).to.exist

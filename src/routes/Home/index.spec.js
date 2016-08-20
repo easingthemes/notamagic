@@ -8,6 +8,6 @@ describe('(Route) Home', () => {
 	});
 
 	it('Should return a route configuration object', () => {
-		expect(typeof(_route)).to.equal('object')
+		expect(typeof(_route)).to.equal('object');
 	});
 });
