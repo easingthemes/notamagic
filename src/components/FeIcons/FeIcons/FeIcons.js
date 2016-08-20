@@ -18,19 +18,6 @@ export class FeIcons extends React.Component {
 	// ------------------------------------------------------------------------------------------------------------------
 
 	/**
-	 *
-	 * Set the initial state
-	 *
-	 * @private
-	 */
-	constructor (props) {
-		super(props);
-		this.state = {
-			isLoading: true
-		};
-	}
-
-	/**
 	 * When component is mounted add the Change event listeners and get initial data
 	 *
 	 * @method componentDidMount
@@ -41,28 +28,33 @@ export class FeIcons extends React.Component {
 		const icons = data.icons || [];
 		const _this = this;
 		if (this.props.fade) {
-			icons.map(function (icon, index) {
+			for (let index = 0; index < icons.length; index++) {
 				setTimeout(() => {
 					$(_this['_icon' + index]).animate({
 						opacity: 0
 					}, getRandom(1000, 5000));
 				}, getRandom(1500, 4000));
-			});
+			}
 		}
-
 	}
 
 	// ------------------------------------------------------------------------------------------------------------------
 	//  Render methods
 	// ------------------------------------------------------------------------------------------------------------------
-	renderIcons(icons) {
+	renderIcons (icons) {
 		const color = this.props.color ? '' : 'desaturate';
 		const opacity = this.props.opacity || 1;
 		const _this = this;
-		return icons.map(function (icon, index) {
+		return icons.map((icon, index) => {
 			return (
 				<li key={index}>
-					<img ref={(c) => _this['_icon' + index] = c} className={color} style={{opacity: opacity}} src={icon.url} />
+					<img
+						ref={(c) => (_this['_icon' + index] = c)}
+						alt="skills icons"
+						className={color}
+						style={{opacity: opacity}}
+						src={icon.url}
+					/>
 				</li>
 			);
 		});
@@ -85,16 +77,9 @@ export class FeIcons extends React.Component {
 }
 
 FeIcons.propTypes = {
-	str: React.PropTypes.string,
-	oneof: React.PropTypes.oneOfType([
-		React.PropTypes.string,
-		React.PropTypes.number
-	])
-};
-
-FeIcons.defaultProps = {
-	str: 'string',
-	oneof: 0
+	color: React.PropTypes.bool,
+	opacity: React.PropTypes.number,
+	fade: React.PropTypes.bool
 };
 
 export default FeIcons;

@@ -9,22 +9,18 @@ import Counter from 'components/Counter';
  * @class FactItem
  * @extends ReactApp
  */
-export class FactItem extends React.Component {
-	render () {
-		return  (
-			<div className="fact">
-				<div className="fact-number timer">
+const FactItem = (props) => (
+	<div className="fact">
+		<div className="fact-number timer">
 			<span className="factor color-light">
-				<Counter id={'counter-' + this.props.id} to={this.props.number} />
+				<Counter id={'counter-' + props.id} to={props.number} />
 			</span>
-				</div>
+		</div>
 		<span className="fact-title color-light alpha7">
-			{this.props.name}
+			{props.name}
 		</span>
-			</div>
-		);
-	}
-}
+	</div>
+);
 
 FactItem.propTypes = {
 	id: React.PropTypes.number,

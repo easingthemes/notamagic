@@ -24,7 +24,7 @@ export class Contact extends React.Component {
 		/* --------------------------------------------
 		 SECURITY CHECK HUMAN
 		 -------------------------------------------- */
-		if($('#senderHuman').length > 0 ) {
+		if ($('#senderHuman').length > 0) {
 			const a = Math.ceil(Math.random() * 10) + 1;
 			const b = Math.ceil(Math.random() * 10) + 1;
 			document.getElementById('senderHuman').placeholder = a + ' + ' + b + ' = ?';
@@ -35,67 +35,77 @@ export class Contact extends React.Component {
 		 CONTACT FORM
 		 -------------------------------------------- */
 		const messageDelay = 2000;
-		$(init);
+		//  Handle the Ajax response
+		function submitFinished (response) {
+			response = $.trim(response);
+			$('#sendingMessage').fadeOut();
 
-		function init () {
-			$('#contactForm').show().submit( submitForm ).addClass( 'positioned' );
+			if (response === 'success') {
+				//  Form submitted successfully:
+				//  1. Display the success message
+				//  2. Clear the form fields
+				//  3. Fade the content back in
+
+				$('#successMessage')
+					.fadeIn()
+					.delay(messageDelay)
+					.fadeOut();
+				$('#senderName').val('');
+				$('#senderEmail').val('');
+				$('#message').val('');
+
+				$('#content')
+					.delay(messageDelay + 500)
+					.fadeTo('slow', 1);
+			} else {
+				//  Form submission failed: Display the failure message,
+				//  then redisplay the form
+				$('#failureMessage')
+					.fadeIn()
+					.delay(messageDelay)
+					.fadeOut();
+				$('#contactForm')
+					.delay(messageDelay + 500)
+					.fadeIn();
+			}
 		}
-
 		//  Submit the form via Ajax
 		function submitForm () {
 			const contactForm = $(this);
 
 			//  Are all the fields filled in?
 
-			if ( !$('#senderName').val() || !$('#senderEmail').val() || !$('#message').val() ) {
+			if (!$('#senderName').val() || !$('#senderEmail').val() || !$('#message').val()) {
 				//  No; display a warning message and return to the form
-				$('#incompleteMessage').fadeIn().delay(messageDelay).fadeOut();
-				contactForm.fadeOut().delay(messageDelay).fadeIn();
+				$('#incompleteMessage')
+					.fadeIn().delay(messageDelay)
+					.fadeOut();
+				contactForm
+					.fadeOut().delay(messageDelay)
+					.fadeIn();
 			} else {
 				//  Yes; submit the form to the PHP script via Ajax
 				$('#sendingMessage').fadeIn();
 				contactForm.show();
 
-				$.ajax( {
-					url: contactForm.attr( 'action' ) + "?ajax=true",
-					type: contactForm.attr( 'method' ),
+				$.ajax({
+					url: contactForm.attr('action') + '?ajax=true',
+					type: contactForm.attr('method'),
 					data: contactForm.serialize(),
 					success: submitFinished
-				} );
+				});
 			}
-
 			//  Prevent the default form submission occurring
 			return false;
 		}
 
-
-		//  Handle the Ajax response
-		function submitFinished( response ) {
-			response = $.trim( response );
-			$('#sendingMessage').fadeOut();
-
-			if ( response == "success" ) {
-
-				//  Form submitted successfully:
-				//  1. Display the success message
-				//  2. Clear the form fields
-				//  3. Fade the content back in
-
-				$('#successMessage').fadeIn().delay(messageDelay).fadeOut();
-				$('#senderName').val( "" );
-				$('#senderEmail').val( "" );
-				$('#message').val( "" );
-
-				$('#content').delay(messageDelay+500).fadeTo( 'slow', 1 );
-
-			} else {
-
-				//  Form submission failed: Display the failure message,
-				//  then redisplay the form
-				$('#failureMessage').fadeIn().delay(messageDelay).fadeOut();
-				$('#contactForm').delay(messageDelay+500).fadeIn();
-			}
+		function init () {
+			$('#contactForm')
+				.show()
+				.submit(submitForm)
+				.addClass('positioned');
 		}
+		$(init);
 	}
 
 	// ------------------------------------------------------------------------------------------------------------------

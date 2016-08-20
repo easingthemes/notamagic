@@ -57,7 +57,7 @@ export class Counter extends React.Component {
 			refreshInterval: 50,
 			onComplete: function () {
 				if (!_this.state.initialCount) {
-					setTimeout(function () {
+					setTimeout(() => {
 						_this.setState({
 							counterStarted: false
 						});
@@ -93,7 +93,7 @@ export class Counter extends React.Component {
 	 */
 	render () {
 		return (
-			<span ref={(c) => this._counter = c} className={this.props.id}>
+			<span ref={(c) => (this._counter = c)} className={this.props.id}>
 			</span>
 		);
 	}

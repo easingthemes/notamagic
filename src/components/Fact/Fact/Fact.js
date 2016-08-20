@@ -2,7 +2,6 @@ import React from 'react';
 import data from '../data';
 import FactItem from '../FactItem/FactItem';
 import getPageData from '../../../utils/getPageData';
-import { Link } from 'react-router';
 
 /**
  * React component implementation.
@@ -40,9 +39,9 @@ export class Fact extends React.Component {
 		getPageData('posts', 50, _this.successCallback.bind(_this), _this.errorCallback.bind(_this));
 	}
 
-	successCallback (data) {
+	successCallback (post) {
 		this.setState({
-			post: data,
+			post: post,
 			isLoading: false
 		});
 	}
@@ -85,8 +84,11 @@ export class Fact extends React.Component {
 	renderText = (content) => (
 		<div className="row">
 			<div className="col-sm-8 col-sm-push-2 text-center">
-				<div dangerouslySetInnerHTML={{__html:content}} />
-				<a target="_blank" href="https://github.com/easingthemes/notamagic" className="button button-md button-gray hover-ripple-out">
+				<div dangerouslySetInnerHTML={{__html: content}} />
+				<a
+					target="_blank" href="https://github.com/easingthemes/notamagic"
+					className="button button-md button-gray hover-ripple-out"
+				>
 					<span className="color-primary">View it on GitHub <i className="fa fa-github"></i></span>
 				</a>
 			</div>
