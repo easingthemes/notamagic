@@ -9,7 +9,8 @@
 	],
 	"env"     : {
 		"browser" : true,
-		"jquery": true
+		"jquery": true,
+		"mocha" : true
 	},
 	"globals" : {
 		"__DEV__"      : false,
@@ -17,7 +18,10 @@
 		"__DEBUG__"    : false,
 		"__COVERAGE__" : false,
 		"__BASENAME__" : false,
-		"Constants"  : false
+		"Constants"  : false,
+		"expect" : false,
+		"should" : false,
+		"sinon"  : false
 	},
 	"rules": {
 		"semi" : [2, "always"],
