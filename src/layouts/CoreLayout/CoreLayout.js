@@ -5,6 +5,9 @@ import Footer from '../../components/Footer';
 import '../../styles/vendor.scss';
 import '../../styles/core.scss';
 import helperScroll from '../../utils/animateScroll';
+import Perf from 'react-addons-perf';
+
+window.Perf = Perf;
 
 export class CoreLayout extends React.Component {
 	constructor (props) {
