@@ -1901,7 +1901,9 @@ ul.breadcrumb li a:hover {
     line-height: 30px;
 }
 @media (max-width: 768px) {
-    word-wrap: break-wordl
+    #blog div.blog-three-mini p {
+        word-wrap: break-word;
+    }   
 }
 #blog div.blog-three-mini .blog-three-attrib {
     margin-top: 30px;
