@@ -1597,7 +1597,11 @@ canvas {
     letter-spacing: 1px;
     text-transform: uppercase;
 }
-
+@media (max-width: 420px) {
+    #contact {
+        text-align: center;
+    } 
+}
 /*  --------------------------------------------------------
 22. CLIENTS
 -------------------------------------------------------- */
@@ -1895,6 +1899,9 @@ ul.breadcrumb li a:hover {
 #blog div.blog-three-mini p {
     font-size: 14px;
     line-height: 30px;
+}
+@media (max-width: 768px) {
+    word-wrap: break-wordl
 }
 #blog div.blog-three-mini .blog-three-attrib {
     margin-top: 30px;
