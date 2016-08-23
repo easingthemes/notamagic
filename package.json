@@ -108,6 +108,7 @@
     "koa-convert": "^1.2.0",
     "koa-proxy": "^0.6.0",
     "koa-static": "^3.0.0",
+    "lodash._baseclone": "^4.5.7",
     "moment": "^2.14.1",
     "node-sass": "^3.7.0",
     "normalize.css": "^4.1.1",
@@ -135,6 +136,7 @@
   },
   "devDependencies": {
     "@namics/eslint-config": "^1.0.0",
+    "babel-cli": "^6.11.4",
     "babel-eslint": "^6.0.0-beta.6",
     "babel-preset-react": "^6.11.1",
     "babel-preset-react-optimize": "^1.0.1",
@@ -166,6 +168,7 @@
     "postcss-uncss": "^0.14.0",
     "react-addons-test-utils": "^15.0.0",
     "redbox-react": "^1.2.10",
+    "redux-cli": "^1.8.0",
     "sinon": "^1.17.3",
     "sinon-chai": "^2.8.0",
     "uncss": "^0.14.1",
