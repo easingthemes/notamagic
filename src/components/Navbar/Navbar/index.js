@@ -5,8 +5,8 @@
 */
 
 import React from 'react';
-import Logo from 'components/navbar/Logo';
-import Navigation from 'components/navbar/Navigation';
+import Logo from 'components/Navbar/Logo';
+import Navigation from 'components/Navbar/Navigation';
 /* eslint-disable no-unused-vars */
 import styles from './styles.global.scss';
 /* eslint-enable no-unused-vars */

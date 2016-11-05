@@ -1402,7 +1402,7 @@ canvas {
 #portfolioMasonry ul li,
 #portfolioGrid ul li {
     list-style: none;
-    display: inline;
+    display: inline-block;
     margin: 0 20px;
 }
 #portfolioMasonry ul li a,
@@ -1584,6 +1584,11 @@ canvas {
     font-size: 80px;
     margin-bottom: 30px;
     font-weight: 200;
+}
+@media (max-width: 768px) {
+  .fact, .factor {
+        font-size: 40px;
+    }  
 }
 .fact-title {
     font-size: 11px;
