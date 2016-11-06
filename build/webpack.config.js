@@ -84,19 +84,7 @@ webpackConfig.plugins = [
 	}),
 	new webpack.ResolverPlugin(
 		[new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin(".bower.json", ["main"])]
-	),
-	new Purify({
-		basePath: __dirname,
-		paths: [
-			"*/src/index.html",
-			"*/dist/index.html"
-		],
-		resolveExtensions: ['.html'],
-		purifyOptions: {
-			minify: true,
-			rejected: true
-		}
-	})
+	)
 ];
 
 if (__DEV__) {
@@ -326,16 +314,35 @@ if (!__DEV__) {
   webpackConfig.module.loaders.filter((loader) =>
     loader.loaders && loader.loaders.find((name) => /css/.test(name.split('?')[0]))
   ).forEach((loader) => {
-    const [first, ...rest] = loader.loaders
+    const [first, ...rest] = loader.loaders;
     loader.loader = ExtractTextPlugin.extract(first, rest.join('!'));
-    Reflect.deleteProperty(loader, 'loaders')
+    Reflect.deleteProperty(loader, 'loaders');
   });
-
+	debug('Apply ExtractTextPlugin');
 	webpackConfig.plugins.push(
 		new ExtractTextPlugin('[name].[contenthash].css', {
 			allChunks: true
 		})
 	);
+
+	debug('Apply Purify');
+	webpackConfig.plugins.push(
+		new Purify({
+			basePath: __dirname + '/../',
+			paths: [
+				"src/index.html",
+				"src/**/*.js"
+			],
+			resolveExtensions: ['.html'],
+			purifyOptions: {
+				minify: true,
+				// rejected: true,
+				info: true
+			}
+		})
+	);
+
+	debug('Apply CompressionPlugin');
 	webpackConfig.plugins.push(
 		new CompressionPlugin({
 			asset: "[path].gz[query]",
@@ -347,4 +354,4 @@ if (!__DEV__) {
 	);
 }
 
-export default webpackConfig
+export default webpackConfig;

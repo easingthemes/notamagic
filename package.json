@@ -14,13 +14,13 @@
     "lint:fix": "npm run lint -- --fix",
     "start": "better-npm-run start",
     "start:dist": "better-npm-run start:dist",
-    "uncsscli": "uncss http://localhost:3000 > style.css",
     "uncss": "better-npm-run uncss",
     "dev": "better-npm-run dev",
     "dev:no-debug": "npm run dev -- --no_debug",
     "test": "better-npm-run test",
     "test:dev": "npm run test -- --watch",
     "deploy": "better-npm-run deploy",
+	  "deploy:un": "better-npm-run deploy:un",
     "deploy:dev": "better-npm-run deploy:dev",
     "deploy:prod": "better-npm-run deploy:prod",
     "codecov": "cat coverage/*/lcov.info | codecov"
@@ -45,6 +45,12 @@
         "DEBUG": "app:*"
       }
     },
+	"deploy:un": {
+		  "command": "npm run deploy:prod && npm run uncss",
+		  "env": {
+			  "DEBUG": "app:*"
+		  }
+	  },
     "deploy:dev": {
       "command": "npm run deploy",
       "env": {
@@ -75,7 +81,6 @@
     "uncss": {
       "command": "babel-node bin/uncss",
       "env": {
-        "NODE_ENV": "production",
         "DEBUG": "app:*"
       }
     },
@@ -186,6 +191,7 @@
     "nodemon": "^1.8.1",
     "phantomjs-prebuilt": "^2.1.3",
     "postcss-uncss": "^0.14.0",
+    "purify-css": "^1.1.9",
     "purifycss-webpack-plugin": "^2.0.3",
     "react-addons-test-utils": "^15.0.0",
     "redbox-react": "^1.2.10",

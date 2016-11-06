@@ -1,27 +1,37 @@
-import uncss from 'uncss';
+// import uncss from 'uncss';
+import purify from 'purify-css';
 import zlib from 'zlib';
 import fs from 'fs';
+// import path from 'path';
+import _debug from 'debug';
+// import config from '../config';
 
-const files   = ['http://localhost:3000/'];
-console.log('uncss start');
-uncss(files, function (error, output) {
-	fs.writeFile(__dirname + "/style.css", output, function(err3) {
-		if(err3) {
-			return console.log(err3);
-		}
-		console.log('written');
-	});
+const debug = _debug('app:bin:uncss');
+// const paths = config.utils_paths;
+const filename = 'style.css';
+const content = ['./dist/*.js', './dist/*.html'];
+const css = ['./dist/*.css'];
+const options = {
+	output: './dist/*.css',
+	minify: true,
+	// rejected: true,
+	info: true
+};
+
+debug('purify start');
+purify(content, css, options, (output) => {
+	debug('zlib start');
 	zlib.deflate(output, (err, buffer) => {
 		if (!err) {
-			console.log("gziped");
-			fs.writeFile(__dirname + "/style.css.gz", buffer, function(err2) {
+			debug('zlib end');
+			fs.writeFile(__dirname + '/../dist/' + filename + '.gz', buffer, function(err2) {
 				if(err2) {
-					return console.log(err2);
+					return debug('writeFile error', err2);
 				}
-				console.log('written');
+				debug('writeFile end');
 			});
 		} else {
-			console.log('err gzip');
+			debug('zlib error', err);
 		}
 	});
 });
