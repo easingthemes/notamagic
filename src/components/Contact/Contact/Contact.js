@@ -149,7 +149,7 @@ export class Contact extends React.Component {
 									<p className="color-light">G. Jevremova 11000 Belgrade</p>
 								</div>
 
-								<div className="col-md-3 col-sm-3 col-xs-6">
+								<div className="col-md-3 col-sm-3 col-xs-12">
 									<span className="fa-phone color-light fa fs-55"></span>
 									<h5 className="color-light">
 										<strong>Phone</strong>
@@ -161,7 +161,7 @@ export class Contact extends React.Component {
 									</p>
 								</div>
 
-								<div className="col-md-3 col-sm-3 col-xs-6">
+								<div className="col-md-3 col-sm-3 col-xs-12">
 									<span className="fa-envelope-o color-light fa fs-55"></span>
 									<h5 className="color-light">
 										<strong>Email</strong>
