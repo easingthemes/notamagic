@@ -815,78 +815,6 @@ table th.bg-pasific {
     background-repeat:no-repeat;
     background-size:cover;
 }
-.carousel .carousel-inner .carousel-img1 {
-    background-image:url(#{$img_path}bg/img-bg-17.jpg);
-    background-position: center top;
-}
-.carousel .carousel-inner .carousel-img2 {
-    background-image:url(#{$img_path}bg/img-bg-22.jpg);
-    background-position: center center;
-}
-.carousel .carousel-inner .carousel-img3 {
-    background-image:url(#{$img_path}bg/img-bg-21.jpg);
-    background-position: center bottom;
-}
-.carousel .carousel-inner .carousel-img4 {
-    background-image:url(#{$img_path}bg/img-bg-20.jpg);
-    background-position: center top;
-}
-.carousel .carousel-inner .carousel-img5 {
-    background-image:url(#{$img_path}bg/img-bg-18.jpg);
-    background-position: center center;
-}
-.carousel .carousel-inner .carousel-img6 {
-    background-image:url(#{$img_path}bg/img-bg-19.jpg);
-    background-position: center bottom;
-}
-.carousel .carousel-inner .carousel-img7 {
-    background-image:url(#{$img_path}bg/img-bg-23.jpg);
-    background-position: center top;
-}
-.carousel .carousel-inner .carousel-img8 {
-    background-image:url(#{$img_path}bg/img-bg-12.jpg);
-    background-position: center center;
-}
-.carousel .carousel-inner .carousel-img9 {
-    background-image:url(#{$img_path}bg/img-bg-16.jpg);
-    background-position: center bottom;
-}
-.carousel .carousel-inner .carousel-img10 {
-    background-image:url(#{$img_path}bg/img-bg-24.jpg);
-    background-position: center top;
-}
-.carousel .carousel-inner .carousel-img11 {
-    background-image:url(#{$img_path}bg/img-bg-13.jpg);
-    background-position: center center;
-}
-.carousel .carousel-inner .carousel-img12 {
-    background-image:url(#{$img_path}bg/img-bg-25.jpg);
-    background-position: center bottom;
-}
-.carousel .carousel-inner .carousel-img13 {
-    background-image:url(#{$img_path}bg/img-bg-6.jpg);
-    background-position: center bottom;
-}
-.carousel .carousel-inner .carousel-img14 {
-    background-image:url(#{$img_path}bg/img-bg-7.jpg);
-    background-position: center bottom;
-}
-.carousel .carousel-inner .carousel-img15 {
-    background-image:url(#{$img_path}bg/img-bg-8.jpg);
-    background-position: center bottom;
-}
-.carousel .carousel-inner .carousel-img16 {
-    background-image:url(#{$img_path}bg/img-bg-35.jpg);
-    background-position: center center;
-}
-.carousel .carousel-inner .carousel-img17 {
-    background-image:url(#{$img_path}bg/img-bg-36.jpg);
-    background-position: center center;
-}
-.carousel .carousel-inner .carousel-img18 {
-    background-image:url(#{$img_path}bg/img-bg-39.jpg);
-    background-position: center center;
-}
 .carousel-caption {
     position: absolute;
     top: 30%;
@@ -1588,7 +1516,7 @@ canvas {
 @media (max-width: 768px) {
   .fact, .factor {
         font-size: 40px;
-    }  
+    }
 }
 .fact-title {
     font-size: 11px;
@@ -2806,17 +2734,6 @@ ul.pagination.pagination-pasific li.active a {
     font-size: 13px;
     margin: 0 auto 25px auto;
     text-align: center;
-}
-
-.navbar-brand-footer {
-    background: url(#{$img_path}logo/logo-gray.png) 0 0 no-repeat;
-    display: block;
-    width: 200px;
-    height: 50px;
-    font-family: 'Pacifico', cursive;
-    font-size: 20px;
-    color: #8b949b;
-    padding-left: 40px;
 }
 #footer .copyright {
     font-family: $f-primary;
