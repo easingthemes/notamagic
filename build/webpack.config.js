@@ -3,6 +3,7 @@ import cssnano from 'cssnano';
 //import uncss from 'postcss-uncss';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
+import Purify from 'purifycss-webpack-plugin';
 import CompressionPlugin from 'compression-webpack-plugin';
 import config from '../config';
 import _debug from 'debug';
@@ -83,7 +84,19 @@ webpackConfig.plugins = [
 	}),
 	new webpack.ResolverPlugin(
 		[new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin(".bower.json", ["main"])]
-	)
+	),
+	new Purify({
+		basePath: __dirname,
+		paths: [
+			"*/src/index.html",
+			"*/dist/index.html"
+		],
+		resolveExtensions: ['.html'],
+		purifyOptions: {
+			minify: true,
+			rejected: true
+		}
+	})
 ];
 
 if (__DEV__) {
