@@ -2,6 +2,7 @@ import webpack from 'webpack';
 import cssnano from 'cssnano';
 //import uncss from 'postcss-uncss';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import ScriptExtHtmlWebpackPlugin from 'script-ext-html-webpack-plugin';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import Purify from 'purifycss-webpack-plugin';
 import CompressionPlugin from 'compression-webpack-plugin';
@@ -71,6 +72,9 @@ webpackConfig.plugins = [
 		minify: {
 			collapseWhitespace: true
 		}
+	}),
+	new ScriptExtHtmlWebpackPlugin({
+		defaultAttribute: 'defer'
 	}),
 	new webpack.ProvidePlugin({
 		$: "jquery",
