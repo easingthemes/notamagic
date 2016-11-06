@@ -13,6 +13,9 @@
     "lint": "eslint src tests server",
     "lint:fix": "npm run lint -- --fix",
     "start": "better-npm-run start",
+    "start:dist": "better-npm-run start:dist",
+    "uncsscli": "uncss http://localhost:3000 > style.css",
+    "uncss": "better-npm-run uncss",
     "dev": "better-npm-run dev",
     "dev:no-debug": "npm run dev -- --no_debug",
     "test": "better-npm-run test",
@@ -59,6 +62,20 @@
     "start": {
       "command": "babel-node bin/server",
       "env": {
+        "DEBUG": "app:*"
+      }
+    },
+    "start:dist": {
+      "command": "babel-node bin/server",
+      "env": {
+        "NODE_ENV": "production",
+        "DEBUG": "app:*"
+      }
+    },
+    "uncss": {
+      "command": "babel-node bin/uncss",
+      "env": {
+        "NODE_ENV": "production",
         "DEBUG": "app:*"
       }
     },
@@ -144,8 +161,10 @@
     "chai-as-promised": "^5.1.0",
     "chai-enzyme": "^0.5.0",
     "cheerio": "^0.20.0",
+    "clean-css": "^3.4.20",
     "codecov": "^1.0.1",
     "compression-webpack-plugin": "^0.3.1",
+    "connect-gzip": "^0.1.6",
     "enzyme": "^2.0.0",
     "eslint": "^3.0.1",
     "eslint-config-standard": "^5.1.0",
@@ -154,6 +173,7 @@
     "eslint-plugin-promise": "^2.0.0",
     "eslint-plugin-react": "^5.0.0",
     "eslint-plugin-standard": "^2.0.0",
+    "gzipme": "^0.1.0",
     "image-webpack-loader": "^2.0.0",
     "isparta-loader": "^2.0.0",
     "karma": "^1.0.0",
