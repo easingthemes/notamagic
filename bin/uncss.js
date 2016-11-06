@@ -12,7 +12,7 @@ const filename = 'style.css';
 const content = ['./dist/*.js', './dist/*.html'];
 const css = ['./dist/*.css'];
 const options = {
-	output: './dist/*.css',
+	output: './dist/' + filename,
 	minify: true,
 	// rejected: true,
 	info: true

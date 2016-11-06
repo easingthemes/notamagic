@@ -255,7 +255,7 @@ export class Gallery extends React.Component {
 					onClick={this.handleClick.bind(this, image.id)}
 					className="magnific-popup-inline external-media"
 				>
-					<span className="glyphicon glyphicon-search hover-bounce-out"></span>
+					<span className="fa fa-search hover-bounce-out"></span>
 				</a>
 				<img src={image.thumbUrl} alt={image.alt} className="img-responsive" />
 				{this.renderImageLarge(image)}

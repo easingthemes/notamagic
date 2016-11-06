@@ -805,6 +805,19 @@ table th.bg-pasific {
 .carousel-control {
     z-index: 0;
 }
+.carousel {
+	.carousel-control span {
+		width: 30px;
+		height: 30px;
+		font-size: 30px;
+		position: absolute;
+		top: 50%;
+		margin-top: -15px;
+		z-index: 5;
+		display: inline-block;
+	}
+}
+
 .carousel-caption {
     z-index: 10;
 }
@@ -1528,7 +1541,7 @@ canvas {
 @media (max-width: 420px) {
     #contact {
         text-align: center;
-    } 
+    }
 }
 /*  --------------------------------------------------------
 22. CLIENTS
@@ -1832,7 +1845,7 @@ ul.breadcrumb li a:hover {
     #blog div.blog-three-mini p,
     .blog-one .blog-one-body p {
         word-wrap: break-word;
-    }   
+    }
 
 }
 #blog div.blog-three-mini .blog-three-attrib {
@@ -1977,284 +1990,6 @@ ul.breadcrumb li a:hover {
 #info h2 {
     font-family: $f-primary;
     text-transform: capitalize;
-}
-
-/*  --------------------------------------------------------
-25. ONLINE SHOP
--------------------------------------------------------- */
-#shop [class*="col-"] {
-    position: relative;
-}
-#shop [class*="col-md-3"] a.add-to-cart,
-#shop [class*="col-sm-3"] a.add-to-cart,
-#shop [class*="col-xs-3"] a.add-to-cart {
-    font-size: 10px;
-}
-
-.shop-item-container-out {
-    margin-right: 30px;
-}
-.shop-item-container-in {
-    background: #fff;
-    padding: 25px 0;
-    margin-top: 20px;
-    border: 1px solid #eaeff3;
-    -webkit-border-radius: 3px;
-       -moz-border-radius: 3px;
-            border-radius: 3px;
-    -webkit-transition: all .25s ease-in-out;
-       -moz-transition: all .25s ease-in-out;
-            transition: all .25s ease-in-out;
-}
-.shop-item-container-in:hover {
-    -webkit-box-shadow: 0 0 40px #ddd;
-}
-.shop-item-title {
-    font-size: 13px;
-    text-transform: uppercase;
-    margin: 15px 0 10px 0;
-    color: #323a45;
-}
-.shop-item-price {
-    font-family: $f-primary;
-    font-size: 20px;
-}
-
-/* Shop Item Detail */
-#shop-item-details {
-    font-size: 13px;
-}
-#shop-item-details h3 {
-    font-family: 'Montserrat', sans-serif;
-    margin-top: 0;
-}
-#shop-item-details form label {
-    float: left;
-    margin-top: 8px;
-    margin-right: 10px;
-}
-.shop-item-review {
-    font-size: 13px;
-    color: #aaa;
-}
-.shop-item-detail-price {
-    font-family: $f-primary;
-}
-.shop-item-detail-price ins {
-    font-size: 50px;
-    color: #ff4530;
-    text-decoration: none;
-}
-.shop-item-detail-price del {
-    font-size: 20px;
-    color: #aaa;
-    margin-top: -20px;
-}
-
-.shop-item-detail-photo {
-    background-color: #f8f8f8;
-    max-width: 360px;
-    padding-bottom: 25px;
-}
-.shop-item-detail-photo-active {
-    margin-left: 12%;
-    margin-top: 5%;
-    margin-bottom: 30px;
-    float: left;
-    -webkit-border-radius: 4px;
-       -moz-border-radius: 4px;
-            border-radius: 4px;
-}
-
-#shop-item-detail-photo-gallery {
-    padding-left: 25px;
-    margin-top: 40px;
-}
-.shop-item-detail-photo-thumbnail {
-    border: 1px solid #e6e6e6;
-    padding: 10px;
-    -webkit-border-radius: 2px;
-       -moz-border-radius: 2px;
-            border-radius: 2px;
-}
-.shop-item-sku,
-.shop-item-available {
-    font-size: 13px;
-}
-.shop-item-quantity {
-    width: 50px !important;
-    height: 40px;
-}
-.shop-item-size {
-    width: 50px !important;
-    height: 40px;
-}
-.shop-item-color {
-    width: 20px;
-    height: 20px;
-    display: block;
-    float: left;
-    margin-right: 5px;
-    margin-top: 8px;
-    -webkit-transition: all .25s ease;
-       -moz-transition: all .25s ease;
-            transition: all .25s ease;
-    -webkit-border-radius: 2px;
-       -moz-border-radius: 2px;
-            border-radius: 2px;
-}
-.shop-item-color.blue   { background-color: #2873ac;}
-.shop-item-color.brown  { background-color: #bfa386;}
-.shop-item-color.cyan   { background-color: #309873;}
-.shop-item-color.green  { background-color: #6b9549;}
-.shop-item-color.orange { background-color: #f87f09;}
-.shop-item-color.purple { background-color: #3f4698;}
-.shop-item-color.red    { background-color: #ff3366;}
-.shop-item-color.yellow { background-color: #edbc48;}
-
-.shop-item-color:hover,
-.shop-item-color.active,
-.shop-item-color.active:hover {
-    border: 2px solid #fff;
-}
-.shop-item-color.blue:hover,
-.shop-item-color.blue.active {
-    -webkit-box-shadow: 0 0 20px #2873ac;
-       -moz-box-shadow: 0 0 20px #2873ac;
-            box-shadow: 0 0 20px #2873ac;
-}
-.shop-item-color.brown:hover,
-.shop-item-color.brown.active {
-    -webkit-box-shadow: 0 0 20px #bfa386;
-       -moz-box-shadow: 0 0 20px #bfa386;
-            box-shadow: 0 0 20px #bfa386;
-}
-.shop-item-color.cyan:hover,
-.shop-item-color.cyan.active {
-    -webkit-box-shadow: 0 0 20px #309873;
-       -moz-box-shadow: 0 0 20px #309873;
-            box-shadow: 0 0 20px #309873;
-}
-.shop-item-color.green:hover,
-.shop-item-color.green.active {
-    -webkit-box-shadow: 0 0 20px #6b9549;
-       -moz-box-shadow: 0 0 20px #6b9549;
-            box-shadow: 0 0 20px #6b9549;
-}
-.shop-item-color.orange:hover,
-.shop-item-color.orange.active {
-    -webkit-box-shadow: 0 0 20px #f87f09;
-       -moz-box-shadow: 0 0 20px #f87f09;
-            box-shadow: 0 0 20px #f87f09;
-}
-.shop-item-color.purple:hover,
-.shop-item-color.purple.active {
-    -webkit-box-shadow: 0 0 20px #3f4698;
-       -moz-box-shadow: 0 0 20px #3f4698;
-            box-shadow: 0 0 20px #3f4698;
-}
-.shop-item-color.red:hover,
-.shop-item-color.red.active {
-    -webkit-box-shadow: 0 0 20px #ff3366;
-       -moz-box-shadow: 0 0 20px #ff3366;
-            box-shadow: 0 0 20px #ff3366;
-}
-.shop-item-color.yellow:hover,
-.shop-item-color.yellow.active {
-    -webkit-box-shadow: 0 0 20px #edbc48;
-       -moz-box-shadow: 0 0 20px #edbc48;
-            box-shadow: 0 0 20px #edbc48;
-}
-.shop-item-img-list-view {
-    height: 200px;
-}
-
-a.add-to-wishlist,
-a.send-to-friend,
-a.add-to-cart {
-    background: #fff;
-    margin-top: 10px;
-    margin-bottom: 40px;
-    padding: 10px 0;
-    display: block;
-    color: #323a45;
-    transition: all .5s ease-in-out;
-    border: 1px solid #eaeff3;
-    -webkit-border-radius: 3px;
-       -moz-border-radius: 3px;
-            border-radius: 3px;
-}
-a.add-to-cart {
-    width: 100%;
-    position: absolute;
-    left: 0;
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    padding: 12.5px;
-}
-a.add-to-wishlist:hover,
-a.send-to-friend:hover {
-    color: #fff !important;
-    background: #323a45;
-    border: 1px solid #323a45;
-}
-a.add-to-cart:hover {
-    color: #fff !important;
-    border-width: 1px;
-    border-style: solid;
-}
-
-.shop-label {
-    position: absolute;
-    color: #fff;
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    padding: 3px 7px;
-    float: left;
-    margin-left: 5px;
-    top: 25px;
-    -webkit-border-radius: 2px;
-       -moz-border-radius: 2px;
-            border-radius: 2px;
-}
-.shop-label:nth-child(2) {
-    margin-top: 25px;
-}
-.shop-label:nth-child(3) {
-    margin-top: 50px;
-}
-.shop-control-prev,
-.shop-control-next {
-    background-color: #fff;
-    cursor: pointer;
-    display: block;
-    width: 40px;
-    height: 30px;
-    margin-right: 10px;
-    padding-top: 7px;
-    border: 1px solid #eaeff3;
-    -webkit-border-radius: 2px;
-       -moz-border-radius: 2px;
-            border-radius: 2px;
-    -webkit-transition: all .3s ease-in-out;
-       -moz-transition: all .3s ease-in-out;
-            transition: all .3s ease-in-out;
-}
-
-.shop-layout {
-    padding: 5px 10px;
-    -webkit-border-radius: 2px;
-       -moz-border-radius: 2px;
-            border-radius: 2px;
-    border: 1px solid #ccc;
-    -webkit-transition: all .2s ease;
-       -moz-transition: all .2s ease;
-            transition: all .2s ease;
-}
-.shop-layout:hover {
-    background-color: transparent;
 }
 
 /* pagination */

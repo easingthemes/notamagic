@@ -3,6 +3,7 @@ import Slide from '../Slide/Slide';
 import SlideSvg from '../SlideSvg/SlideSvg';
 import data from '../data';
 import getPostsData from '../../../utils/getPostsData';
+import './Carousel.scss';
 
 export class Carousel extends React.Component {
 
@@ -73,7 +74,7 @@ export class Carousel extends React.Component {
 
 	renderArrow (direction) {
 		const style = direction + ' carousel-control';
-		const icon = 'glyphicon glyphicon-chevron-' + direction;
+		const icon = 'fa fa-angle-' + direction;
 		let type = 'next';
 		if (direction === 'left') {
 			type = 'prev';
