@@ -127,7 +127,8 @@ export class Carousel extends React.Component {
 		const numberOfSlides = slides.length;
 		const initialSlideIndex = this.props.initialSlideIndex;
 		const loaderStyle = {
-			height: (window.innerHeight || 800) + 'px'
+			height: (window.innerHeight || 800) + 'px',
+			background: 'url("https://www.blog.frontenddot.com/wp-content/uploads/2016/08/img-bg-23.jpg") no-repeat'
 		};
 
 		if (this.state.isLoading) {

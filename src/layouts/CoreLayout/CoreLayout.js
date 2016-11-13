@@ -18,9 +18,6 @@ export class CoreLayout extends React.Component {
 		this.setState({
 			isLoaded: true
 		});
-		// Remove page loader
-		$('.loader-item').delay(700).fadeOut();
-		$('#pageloader').delay(800).fadeOut('slow');
 		helperScroll();
 	}
 	/* eslint-enable react/no-did-mount-set-state */
