@@ -10,6 +10,7 @@ export class Carousel extends React.Component {
 	constructor (props) {
 		super(props);
 		this.state = {
+			isLoading: true,
 			activeSlideIndex: 0,
 			prevSlideIndex: 0
 		};
@@ -126,6 +127,10 @@ export class Carousel extends React.Component {
 		const numberOfSlides = slides.length;
 		const initialSlideIndex = this.props.initialSlideIndex;
 
+		if (this.state.isLoading) {
+			return (<span></span>);
+		}
+		
 		return (
 			<div
 				ref={(c) => (this._carousel = c)}
