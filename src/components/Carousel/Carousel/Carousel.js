@@ -127,11 +127,11 @@ export class Carousel extends React.Component {
 		const numberOfSlides = slides.length;
 		const initialSlideIndex = this.props.initialSlideIndex;
 		const loaderStyle = {
-			height: (window.innerHeight || 400) + 'px'
+			height: (window.innerHeight || 800) + 'px'
 		};
 
 		if (this.state.isLoading) {
-			return (<span style={loaderStyle}></span>);
+			return (<div style={loaderStyle}></div>);
 		}
 
 		return (
