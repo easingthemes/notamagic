@@ -5,7 +5,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import ScriptExtHtmlWebpackPlugin from 'script-ext-html-webpack-plugin';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 // import StyleExtHtmlWebpackPlugin from 'style-ext-html-webpack-plugin';
-//import Purify from 'purifycss-webpack-plugin';
+import Purify from 'purifycss-webpack-plugin';
 import CompressionPlugin from 'compression-webpack-plugin';
 import config from '../config';
 import _debug from 'debug';
@@ -330,22 +330,22 @@ if (!__DEV__) {
 		})
 	);
 
-	// debug('Apply Purify');
-	// webpackConfig.plugins.push(
-	// 	new Purify({
-	// 		basePath: __dirname + '/../',
-	// 		paths: [
-	// 			"src/index.html",
-	// 			"src/**/*.js"
-	// 		],
-	// 		resolveExtensions: ['.html'],
-	// 		purifyOptions: {
-	// 			minify: true,
-	// 			// rejected: true,
-	// 			info: true
-	// 		}
-	// 	})
-	// );
+	debug('Apply Purify');
+	webpackConfig.plugins.push(
+		new Purify({
+			basePath: __dirname + '/../',
+			paths: [
+				"src/index.html",
+				"src/**/*.js"
+			],
+			resolveExtensions: ['.html'],
+			purifyOptions: {
+				minify: true,
+				// rejected: true,
+				info: true
+			}
+		})
+	);
 
 	debug('Apply CompressionPlugin');
 	webpackConfig.plugins.push(
