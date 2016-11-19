@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 import moment from 'moment';
 import Loader from 'components/Loader';
 import TopRow from 'components/TopRow';
-import BlogAuthor from '../BlogAuthor';
+import BlogAuthor from '../BlogAuthor/BlogAuthor';
 import CommentsForm from '../../CommentsForm';
 
 /**
