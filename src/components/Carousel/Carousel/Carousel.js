@@ -16,7 +16,7 @@ export class Carousel extends React.Component {
 
 	componentDidMount () {
 		const _this = this;
-		getPostsData('Carousel', _this.successCallback.bind(_this), _this.errorCallback.bind(_this));
+		getPostsData(4, _this.successCallback.bind(_this), _this.errorCallback.bind(_this));
 		$(this._carousel).on('slide.bs.carousel', (e) => {
 			const prev = $(e.target).find('.carousel-inner > .item.active').index();
 			const active = $(e.relatedTarget).index();

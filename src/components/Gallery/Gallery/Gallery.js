@@ -213,7 +213,14 @@ export class Gallery extends React.Component {
 		const medias = this.state.medias || {};
 		const media = medias[id] || {};
 		const platform = media.platform || '';
-		const platforms = platform.split(',') || [];
+		let platforms = [];
+		let description = '';
+		try {
+			platforms = platform.split(',') || [];
+		} catch(err) {}
+		try {
+			description = media.description.rendered;
+		} catch(err) {}
 
 		return (
 			<div id={'media-' + id} className="media-wrapper mfp-hide" data-id={id}>
@@ -221,7 +228,7 @@ export class Gallery extends React.Component {
 				<div className="media-content">
 					<h2>{media.title}</h2>
 					<h4>{this.renderPlatforms(platforms)}</h4>
-					<div className="media-text" dangerouslySetInnerHTML={{__html: media.description}} />
+					<div className="media-text" dangerouslySetInnerHTML={{__html: description}} />
 				</div>
 			</div>
 		);

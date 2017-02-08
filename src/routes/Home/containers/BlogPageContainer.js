@@ -25,6 +25,10 @@ const mapData = (data) => {
 		}
 		const acf = post.acf || {};
 		const leadTitle = acf.subtitle || '';
+		let imageMedium = '';
+		try {
+			imageMedium = post._embedded['wp:featuredmedia'][0].media_details.sizes.medium.source_url;
+		} catch (err){}
 		posts.push({
 			subtitle: post.content.rendered,
 			leadTitle: leadTitle,
@@ -41,7 +45,7 @@ const mapData = (data) => {
 				avatar: post._embedded.author[0].avatar_urls[96],
 				name: post._embedded.author[0].name
 			},
-			imageMedium: post._embedded['wp:featuredmedia'][0].media_details.sizes.medium.source_url
+			imageMedium: imageMedium
 		});
 	});
 

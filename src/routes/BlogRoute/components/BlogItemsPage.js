@@ -4,7 +4,7 @@ import Blog from '../../../components/Blog';
 export const BlogItemsPage = React.createClass({
 
 	componentWillMount () {
-		const category = 'Blog';
+		const category = 7;
 		if (!this.props.children) {
 			this.props.fetchBlogItems(category);
 		}

@@ -8,4 +8,8 @@
 //<!-- Load Theme CSS
 //=====================================-->
 @import 'theme/color/red';
+// quick fixes
+.media-text .attachment {
+	display: none;
+}
 

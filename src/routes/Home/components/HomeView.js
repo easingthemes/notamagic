@@ -14,7 +14,7 @@ import Contact from 'components/Contact';
 
 export const HomeView = React.createClass({
 	componentWillMount () {
-		const category = 'Blog';
+		const category = 7;
 		if (typeof this.props.fetchBlogItems === 'function') {
 			this.props.fetchBlogItems(category, 3);
 		}

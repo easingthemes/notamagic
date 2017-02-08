@@ -6,7 +6,7 @@ const getPostsData = (category, successCallback, errorCallback, number) => {
 		filterNumber = '&per_page=' + number;
 	}
 	$.ajax({
-		url: Constants.apiUrl + 'posts?filter[category_name]=' + category + filterNumber + '&_embed=1',
+		url: Constants.apiUrl + 'posts?categories=' + category + filterNumber + '&_embed=1',
 		crossDomain: true
 	})
 	.done((data) => {

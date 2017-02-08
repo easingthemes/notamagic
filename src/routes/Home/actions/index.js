@@ -10,7 +10,7 @@ export function fetchBlogItems(category, number) {
 	return dispatch => {
 		dispatch(requestPosts());
 		$.ajax({
-			url: Constants.apiUrl + 'posts?filter[category_name]=' + category + filterNumber + '&_embed=1',
+			url: Constants.apiUrl + 'posts?categories=' + category + filterNumber + '&_embed=1',
 			crossDomain: true
 		})
 		.done(function (data) {
